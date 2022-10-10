@@ -1,2 +1,6 @@
 * CREWS Simulator
 Go code to simulate the crews protocol.
+
+#+BEGIN_SRC bash
+go run main.go bloom.go crews.go simulation.go
+#+END_SRC

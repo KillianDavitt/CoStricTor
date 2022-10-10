@@ -3,12 +3,13 @@ package main
 import (
 	"hash"
 	"hash/fnv"
+	"math/rand"
 )
 
 // The design of this structure is adapted from https://github.com/tylertreat/BoomFilters
 type BloomFilter struct {
 	data []uint    // filter data
-	hash    hash.Hash64 // hash function (kernel for all k functions)
+	hash    hash.Hash64 
 	filterSize       uint        
 	numHashes       uint       
 	count   uint      
@@ -23,12 +24,25 @@ func NewBloomFilter(filterSize uint, numHashes uint) *BloomFilter {
 	}
 }
 
-func (b *BloomFilter) Add(data []byte) *BloomFilter {
+func (b *BloomFilter) Add(data []byte, p float64, q float64) *BloomFilter {
 	lower, upper := hashKernel(data, b.hash)
-
+	
 	for i := uint(0); i < b.numHashes; i++ {
-		// Times the upper bit by i to ensure a different index per hash function
-		b.data[((uint(lower)+uint(upper)*i)%b.filterSize)]+=1
+		trueBit := ((uint(lower)+uint(upper)*i)%b.filterSize)
+		for j:= uint(0); j<b.filterSize; j++ {
+			r := rand.Float64()
+			if j==trueBit {
+				// q chance of returning 1
+				if r<q {
+					b.data[j]+=1
+				}
+			} else {
+				// p chance of returning 1
+				if r<p {
+					b.data[j] += 1
+				}
+			}
+		}
 	}
 
 	b.count++
