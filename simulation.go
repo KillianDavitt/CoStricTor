@@ -18,6 +18,7 @@ func generateSites(sites []string, hstsProp float64, httpProp float64) ([]string
 			// So it can't be chosen as a http site or a https_no_hsts site
 			sites[i] = sites[len(sites)-1]
 			sites = sites[:len(sites)-1]
+		
 		}
 	}
 	// Generate n sites which don't have https
@@ -36,30 +37,21 @@ func generateSites(sites []string, hstsProp float64, httpProp float64) ([]string
 	return hsts,http,https_no_hsts
 }
 
-func runSim(prms []interface{}, lines []string,  wg * sync.WaitGroup){
+func runSim(prms []interface{}, hsts []string, http []string, https_no_hsts []string,  wg * sync.WaitGroup){
 	filterSize := prms[0].(int)
 	numSamples := prms[1].(int)
 	numSites := prms[2].(int)
 	numHashes := prms[9].(int)
-	hstsProp := prms[3].(float64)
-	httpProp := prms[4].(float64)
+	//hstsProp := prms[3].(float64)
+	//httpProp := prms[4].(float64)
 	var primaryThreshold float64 = prms[5].(float64)
 	var secondaryThreshold float64 = prms[6].(float64)
 	var p float64 = prms[7].(float64)
 	var q float64 = prms[8].(float64)
 
-	var initialSites []string = make([]string, numSites)
-	initialSites = lines[0:numSites]
-
-	var sites []string = make([]string, len(initialSites))
-	_ = copy(sites, initialSites)
 	
-	// We will be destroying the main list, copy it for use later
-	var total_sites []string = make([]string, len(sites))
-	_ = copy(total_sites, sites)
-
 	
-	hsts, http, https_no_hsts := generateSites(sites, hstsProp, httpProp);
+
 
 	c := NewCrews(filterSize, numHashes, primaryThreshold, secondaryThreshold, p, q);
 	

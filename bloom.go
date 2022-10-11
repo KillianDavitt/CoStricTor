@@ -49,15 +49,21 @@ func (b *BloomFilter) Add(data []byte, p float64, q float64) *BloomFilter {
 	return b
 }
 
-func (b *BloomFilter) Test(data []byte) []uint {
+func (b *BloomFilter) Test(data []byte) uint {
 	lower, upper := hashKernel(data, b.hash)
 	var result []uint = make([]uint, b.numHashes);
 	// Get the bit counts for each hash function
 	for i := uint(0); i < b.numHashes; i++ {
 		result[i] = b.data[((uint(lower)+uint(upper)*i)%b.filterSize)]
 	}
-
-	return result;
+	var min uint;
+	for i, e := range result {
+		if i==0 || e < min {
+			min = e
+		}
+	}
+	
+	return min;
 }
 
 func hashKernel(data []byte, hash hash.Hash64) (uint32, uint32) {

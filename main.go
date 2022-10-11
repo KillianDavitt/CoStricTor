@@ -23,23 +23,26 @@ func main() {
 		lines = append(lines, scanner.Text())
 	}
 	
-	filterSizes := []interface{}{2048}
-	sampleSizes := []interface{}{100,2000}
+	filterSizes := []interface{}{1024,2048,4092,8192}
+	sampleSizes := []interface{}{100,500,2000}
 	numsSites := []interface{}{100}
 	hstsProps := []interface{}{0.2}
 	httpProps := []interface{}{0.2}
-	primaryThresholds := []interface{}{0.001,0.01,0.0001,0.00001}
-	secondaryThresholds := []interface{}{0.001,0.01}
-	ps := []interface{}{0.01}
-	qs := []interface{}{0.99}
-	numsHashes := []interface{}{1,2}
+	primaryThresholds := []interface{}{0.05,0.01,0.005,0.001}
+	secondaryThresholds := []interface{}{0.1,0.5}
+	ps := []interface{}{0.2}
+	qs := []interface{}{0.8}
+	numsHashes := []interface{}{1,2,4,6,8}
 	
 	prm := cartesian.Iter(filterSizes, sampleSizes,numsSites,hstsProps, httpProps, primaryThresholds, secondaryThresholds, ps, qs, numsHashes)
+	var sites []string = make([]string, 100)
+	sites = lines[0:100]
+	hsts, http, https_no_hsts := generateSites(sites, 0.2, 0.2);
 	
         var wg sync.WaitGroup
 	for params := range prm {
 		wg.Add(1)
-		go runSim(params, lines, &wg)
+		go runSim(params, hsts, http, https_no_hsts, &wg)
 	}
 	wg.Wait()
 }
