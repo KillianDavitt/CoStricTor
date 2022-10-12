@@ -29,7 +29,7 @@ func main() {
 	// Some need to be in an interface for the library to get cartesian product of all parameters
 	hstsProp := 0.2
 	httpProp := 0.2
-	filterSizes := []interface{}{2048}
+	filterSizes := []interface{}{4048}
 	sampleSizes := []interface{}{10000}
 	numSites := 100
 	primaryThresholds := []interface{}{0.001}
