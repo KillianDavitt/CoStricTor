@@ -29,14 +29,14 @@ func main() {
 	// Some need to be in an interface for the library to get cartesian product of all parameters
 	hstsProp := 0.2
 	httpProp := 0.2
-	filterSizes := []interface{}{2048,4092,8164,16328}
+	filterSizes := []interface{}{2048}
 	sampleSizes := []interface{}{10000}
 	numSites := 100
-	primaryThresholds := []interface{}{0.1,0.05,0.01,0.001,0.0005}
-	secondaryThresholds := []interface{}{0.1,0.5,0.001,0.0005}
+	primaryThresholds := []interface{}{0.1}
+	secondaryThresholds := []interface{}{0.1}
 	ps := []interface{}{0.2}
 	qs := []interface{}{0.8}
-	numsHashes := []interface{}{1,32,128}
+	numsHashes := []interface{}{1}
 
 	// Get the cartesian product, i.e. all possible combinations of the parameters
 	prm := cartesian.Iter(filterSizes, sampleSizes, primaryThresholds, secondaryThresholds, ps, qs, numsHashes)
@@ -48,7 +48,7 @@ func main() {
 	}
 
 	// Divide the parameters in chunks for the array job
-	numJobs := 50
+	numJobs := 1
 	sizeChunks := int(len(perms)/numJobs)
 	var jobs [][]interface{};
 	jobs, err = chunkSlice(perms, sizeChunks)
