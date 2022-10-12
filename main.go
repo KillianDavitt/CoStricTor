@@ -66,7 +66,7 @@ func main() {
 		return
 	}
 
-	var sites []string = make([]string, 100)
+	var sites []string = make([]string, numSites)
 	sites = lines[0:numSites]
 	hsts, http, https_no_hsts := generateSites(sites, hstsProp, httpProp);
 	
