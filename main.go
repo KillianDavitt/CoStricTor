@@ -73,7 +73,7 @@ func main() {
         var wg sync.WaitGroup
 	for _,params := range jobs[jobNumber-1] {
 		wg.Add(1)
-		go runSim(params.([]interface{}), hsts, http, https_no_hsts, &wg, hstsProp, httpProp)
+		go runSim(params.([]interface{}), hsts, http, https_no_hsts, &wg, hstsProp, httpProp, numSites)
 	}
 	wg.Wait()
 }
