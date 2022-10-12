@@ -29,7 +29,7 @@ func main() {
 	// Some need to be in an interface for the library to get cartesian product of all parameters
 	hstsProp := 0.2
 	httpProp := 0.2
-	filterSizes := []interface{}{1024,2048,4092,8164}
+	filterSizes := []interface{}{1024,2048,4092,8164,40000}
 	sampleSizes := []interface{}{2000}
 	numSites := 100
 	primaryThresholds := []interface{}{0.1,0.05,0.01,0.005,0.001,0.0005}
@@ -81,10 +81,10 @@ func main() {
 func chunkSlice(slice []interface{}, chunkSize int) ([][]interface{}, error) {
 
 	chunks := make([][]interface{}, 0, (len(slice)+chunkSize-1)/chunkSize)
-  for chunkSize < len(slice) {
-    slice, chunks = slice[chunkSize:], append(chunks, slice[0:chunkSize:chunkSize])
-  }
-  chunks = append(chunks, slice)
+	for chunkSize < len(slice) {
+		slice, chunks = slice[chunkSize:], append(chunks, slice[0:chunkSize:chunkSize])
+	}
+	chunks = append(chunks, slice)
 
-  return chunks, nil
+	return chunks, nil
 }
