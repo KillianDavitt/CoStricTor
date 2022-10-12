@@ -5,6 +5,8 @@ import (
 	"bufio"
 	"github.com/schwarmco/go-cartesian-product"
 	"sync"
+	"fmt"
+	"strconv"
 )
 
 func main() {
@@ -22,28 +24,67 @@ func main() {
 	for scanner.Scan() {
 		lines = append(lines, scanner.Text())
 	}
-	
-	filterSizes := []interface{}{1024,2048,4092,8192}
-	sampleSizes := []interface{}{100,500,2000}
+
+	// Sort out parameters
+	// Some need to be in an interface for the library to get cartesian product of all parameters
+	hstsProp := 0.2
+	httpProp := 0.2
+	filterSizes := []interface{}{1024,2048,4092,8164}
+	sampleSizes := []interface{}{2000}
 	numsSites := []interface{}{100}
-	hstsProps := []interface{}{0.2}
-	httpProps := []interface{}{0.2}
-	primaryThresholds := []interface{}{0.05,0.01,0.005,0.001}
-	secondaryThresholds := []interface{}{0.1,0.5}
+	primaryThresholds := []interface{}{0.1,0.05,0.01,0.005,0.001,0.0005}
+	secondaryThresholds := []interface{}{0.1,0.5,0.05,0.001,0.0005}
 	ps := []interface{}{0.2}
 	qs := []interface{}{0.8}
-	numsHashes := []interface{}{1,2,4,6,8}
-	
-	prm := cartesian.Iter(filterSizes, sampleSizes,numsSites,hstsProps, httpProps, primaryThresholds, secondaryThresholds, ps, qs, numsHashes)
+	numsHashes := []interface{}{1,2,4,6,8,16,32}
+
+	// Get the cartesian product, i.e. all possible combinations of the parameters
+	prm := cartesian.Iter(filterSizes, sampleSizes,numsSites, primaryThresholds, secondaryThresholds, ps, qs, numsHashes)
+
+	// Result is a channel, draw all items from it to make it a slice
+	perms := make([]interface{},len(prm))
+	for x := range prm{
+		perms = append(perms,x)
+	}
+
+	// Divide the parameters in chunks for the array job
+	numJobs := 50
+	sizeChunks := int(len(perms)/numJobs)
+	var jobs [][]interface{};
+	jobs, err = chunkSlice(perms, sizeChunks)
+	if err != nil {
+		fmt.Println("Error dividing up the job chunks")
+		return
+	}
+
+	// Get current job number
+	jobString := os.Getenv("SGE_TASK_ID")
+	jobNumber, err := strconv.Atoi(jobString)
+	if err != nil {
+		fmt.Println(err)
+		fmt.Println("Error reading the job number from environment")
+		return
+	}
+
 	var sites []string = make([]string, 100)
-	sites = lines[0:100]
-	hsts, http, https_no_hsts := generateSites(sites, 0.2, 0.2);
+	sites = lines[0:numSites]
+	hsts, http, https_no_hsts := generateSites(sites, hstsProp, httpProp);
 	
         var wg sync.WaitGroup
-	for params := range prm {
+	for _,params := range jobs[jobNumber-1] {
 		wg.Add(1)
-		go runSim(params, hsts, http, https_no_hsts, &wg)
+		go runSim(params.([]interface{}), hsts, http, https_no_hsts, &wg, hstsProp, httpProp)
 	}
 	wg.Wait()
 }
 
+func chunkSlice(slice []interface{}, chunkSize int) ([][]interface{}, error) {
+
+	chunks := make([][]interface{}, 0, (len(slice)+chunkSize-1)/chunkSize)
+  for chunkSize < len(slice) {
+    slice, chunks = slice[chunkSize:], append(chunks, slice[0:chunkSize:chunkSize])
+  }
+  chunks = append(chunks, slice)
+
+  return chunks, nil
+}
