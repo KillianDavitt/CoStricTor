@@ -36,7 +36,7 @@ func main() {
 	secondaryThresholds := []interface{}{0.1,0.5,0.05,0.001,0.0005}
 	ps := []interface{}{0.2}
 	qs := []interface{}{0.8}
-	numsHashes := []interface{}{1,2,4,6,8,16,32}
+	numsHashes := []interface{}{1,32,128}
 
 	// Get the cartesian product, i.e. all possible combinations of the parameters
 	prm := cartesian.Iter(filterSizes, sampleSizes, primaryThresholds, secondaryThresholds, ps, qs, numsHashes)
