@@ -32,7 +32,7 @@ func main() {
 	filterSizes := []interface{}{4048}
 	sampleSizes := []interface{}{10000}
 	numSites := 100
-	primaryThresholds := []interface{}{0.001}
+	primaryThresholds := []interface{}{0.0001}
 	secondaryThresholds := []interface{}{0.01}
 	ps := []interface{}{0.2}
 	qs := []interface{}{0.8}
