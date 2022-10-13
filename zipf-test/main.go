@@ -9,10 +9,10 @@ import (
 func main(){
 
 	source := rand.NewSource(time.Now().UnixNano()) 
-	hsts_zipf := rand.NewZipf(rand.New(source), 1.1, 9999.0, 99)
+	hsts_zipf := rand.NewZipf(rand.New(source), 1.1, 9999.0, 499)
 	
 	numReports := 1000
-	var reports []uint = make([]uint, 100) 
+	var reports []uint = make([]uint, 500) 
 	
 	for i:=0; i<numReports; i++ {
 		n := hsts_zipf.Uint64()
