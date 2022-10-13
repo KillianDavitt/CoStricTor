@@ -16,7 +16,7 @@ func main(){
 	
 	for i:=0; i<numReports; i++ {
 		n := hsts_zipf.Uint64()
-		reports[n]+=1
+		reports[n-1]+=1
 	}
 
 	fmt.Println(reports)
