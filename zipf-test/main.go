@@ -15,7 +15,7 @@ func main(){
 	var reports []int = make([]int, 100) 
 	
 	for i:=0; i<numReports; i++ {
-		n = hsts_zipf.Uint64()
+		n := hsts_zipf.Uint64()
 		reports[n]+=1
 	}
 
