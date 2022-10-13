@@ -37,17 +37,15 @@ func generateSites(sites []string, hstsProp float64, httpProp float64) ([]string
 	return hsts,http,https_no_hsts
 }
 
-func runSim(prms []interface{}, hsts []string, http []string, https_no_hsts []string,  wg * sync.WaitGroup){
+func runSim(prms []interface{}, hsts []string, http []string, https_no_hsts []string,  wg * sync.WaitGroup, hstsProp float64, httpProp float64, numSites int){
 	filterSize := prms[0].(int)
 	numSamples := prms[1].(int)
-	numSites := prms[2].(int)
-	numHashes := prms[9].(int)
-	//hstsProp := prms[3].(float64)
-	//httpProp := prms[4].(float64)
-	var primaryThreshold float64 = prms[5].(float64)
-	var secondaryThreshold float64 = prms[6].(float64)
-	var p float64 = prms[7].(float64)
-	var q float64 = prms[8].(float64)
+	numHashes := prms[6].(int)
+	
+	var primaryThreshold float64 = prms[2].(float64)
+	var secondaryThreshold float64 = prms[3].(float64)
+	var p float64 = prms[4].(float64)
+	var q float64 = prms[5].(float64)
 
 	
 	
@@ -56,17 +54,19 @@ func runSim(prms []interface{}, hsts []string, http []string, https_no_hsts []st
 	c := NewCrews(filterSize, numHashes, primaryThreshold, secondaryThreshold, p, q);
 	
 	source := rand.NewSource(time.Now().UnixNano()) 
-	hsts_zipf := rand.NewZipf(rand.New(source), 1.1, 9999.0, uint64(len(hsts)-1))
+	hsts_zipf := rand.NewZipf(rand.New(source), 1.1, 1, uint64(len(hsts)-1))
 
+	numHstsReports := int(float64(numSamples) * hstsProp)
 	// Sample n sites to report to crews, these can and will be duplicates
-	for i:=0; i<numSamples; i++ {
-		_ = hsts_zipf.Uint64()
-		n := int(rand.Uint32()) % len(hsts)
+	for i:=0; i<numHstsReports; i++ {
+		n = hsts_zipf.Uint64()
 		c.ReportHsts(hsts[n])
 	}
 
 	http_zipf := rand.NewZipf(rand.New(source), 1.1, 4.0, uint64(len(http)-1))
-	for i:=0; i<numSamples; i++ {
+
+	numHttpReports := int(float64(numSamples) * httpProp)
+	for i:=0; i<numHttpReports; i++ {
 		n := http_zipf.Uint64()
 		c.ReportHttp(http[n]);
 	}
