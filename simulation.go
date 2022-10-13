@@ -63,7 +63,7 @@ func runSim(prms []interface{}, hsts []string, http []string, https_no_hsts []st
 		c.ReportHsts(hsts[n])
 	}
 
-	http_zipf := rand.NewZipf(rand.New(source), 1.1, 4.0, uint64(len(http)-1))
+	http_zipf := rand.NewZipf(rand.New(source), 1.1, 1, uint64(len(http)-1))
 
 	numHttpReports := int(float64(numSamples) * httpProp)
 	for i:=0; i<numHttpReports; i++ {
