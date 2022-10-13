@@ -62,7 +62,6 @@ func (b *BloomFilter) Test(data []byte) uint {
 			min = e
 		}
 	}
-	
 	return min;
 }
 

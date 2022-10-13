@@ -31,10 +31,14 @@ func (c *Crews) ReportHttp(s string) *Crews {
 }
 
 func (c *Crews) PrimaryTest(s string) bool {
-	return c.primary.Test([]byte(s)) >= uint(c.primaryThreshold * float64(c.primary.count))
+	count := c.primary.Test([]byte(s))
+	adjustedCount := uint((float64(count) - c.p * float64(c.primary.count))/(c.q-c.p))
+	return  adjustedCount >= uint((c.primaryThreshold * float64(c.primary.count)))
 }
 
 func (c *Crews) SecondaryTest(s string) bool {
-	return c.secondary.Test([]byte(s)) >= uint((c.secondaryThreshold * float64(c.secondary.count)))
+	count := c.secondary.Test([]byte(s))
+	adjustedCount := uint((float64(count) - c.p * float64(c.secondary.count))/(c.q-c.p))
+	return  adjustedCount >= uint((c.secondaryThreshold * float64(c.secondary.count)))
 }
 
