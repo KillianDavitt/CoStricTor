@@ -12,11 +12,11 @@ func main(){
 	hsts_zipf := rand.NewZipf(rand.New(source), 1.1, 9999.0, 100)
 	
 	numReports := 1000
-	var reports []uint = make([]uint, 100) 
+	var reports []uint = make([]uint, 100-1) 
 	
 	for i:=0; i<numReports; i++ {
 		n := hsts_zipf.Uint64()
-		reports[n-1]+=1
+		reports[n]+=1
 	}
 
 	fmt.Println(reports)
