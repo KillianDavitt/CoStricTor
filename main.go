@@ -48,7 +48,7 @@ func main() {
 	}
 
 	// Divide the parameters in chunks for the array job
-	numJobs := 1
+	numJobs := 225
 	sizeChunks := int(len(perms)/numJobs)
 	var jobs [][]interface{};
 	jobs, err = chunkSlice(perms, sizeChunks)
