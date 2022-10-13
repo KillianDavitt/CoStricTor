@@ -47,10 +47,6 @@ func runSim(prms []interface{}, hsts []string, http []string, https_no_hsts []st
 	var p float64 = prms[4].(float64)
 	var q float64 = prms[5].(float64)
 
-	
-	
-
-
 	c := NewCrews(filterSize, numHashes, primaryThreshold, secondaryThreshold, p, q);
 	
 	source := rand.NewSource(time.Now().UnixNano()) 
@@ -59,7 +55,7 @@ func runSim(prms []interface{}, hsts []string, http []string, https_no_hsts []st
 	numHstsReports := int(float64(numSamples) * hstsProp)
 	// Sample n sites to report to crews, these can and will be duplicates
 	for i:=0; i<numHstsReports; i++ {
-		n = hsts_zipf.Uint64()
+		n := hsts_zipf.Uint64()
 		c.ReportHsts(hsts[n])
 	}
 
