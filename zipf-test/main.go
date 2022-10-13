@@ -13,7 +13,7 @@ func main(){
 	
 	numReports := 1000
 	var reports []int = make([]int, 100) 
-	// Sample n sites to report to crews, these can and will be duplicates
+	
 	for i:=0; i<numReports; i++ {
 		n = hsts_zipf.Uint64()
 		reports[n]+=1
