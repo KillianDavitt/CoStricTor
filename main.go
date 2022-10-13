@@ -32,8 +32,8 @@ func main() {
 	filterSizes := []interface{}{4096,8192,16384}
 	sampleSizes := []interface{}{3000000}
 	numSites := 10000
-	primaryThresholds := []interface{}{0.005,0.001,0.0005,0.0001,0.00001}
-	secondaryThresholds := []interface{}{0.05,0.01,0.005,0.001,0.0005}
+	primaryThresholds := []interface{}{0.01,0.005,0.001,0.0005,0.0001,0.00001}
+	secondaryThresholds := []interface{}{0.5,0.1,0.05,0.01,0.005,0.001,0.0005}
 	ps := []interface{}{0.1,0.2,0.25}
 	qs := []interface{}{0.75,0.8,0.9}
 	numsHashes := []interface{}{1}
@@ -48,7 +48,7 @@ func main() {
 	}
 
 	// Divide the parameters in chunks for the array job
-	numJobs := 225
+	numJobs := 900
 	sizeChunks := int(len(perms)/numJobs)
 	var jobs [][]interface{};
 	jobs, err = chunkSlice(perms, sizeChunks)
