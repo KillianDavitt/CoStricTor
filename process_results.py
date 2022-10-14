@@ -5,7 +5,7 @@ with open("results/run_7/crews_full_output.csv") as f:
 d = [x.split(',') for x in data]
 #e = [x for x in d if int(x[2])==0]
 
-a = sorted(d, key=lambda x:int(x[1]/x[2]), reverse=True)
+a = sorted(d, key=lambda x:float(x[1])/float(x[2]), reverse=True)
 print(a[0])
 print(a[1])
 print(a[2])
