@@ -1,5 +1,5 @@
 import sys
-with open("crews_output5.csv") as f:
+with open("results/run_7/crews_full_output.csv") as f:
     data = f.readlines()
 
 d = [x.split(',') for x in data]
