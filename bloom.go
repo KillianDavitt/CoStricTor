@@ -30,7 +30,12 @@ func (b *BloomFilter) Add(data []byte, p float64, q float64) *BloomFilter {
 	for i := uint(0); i < b.numHashes; i++ {
 		trueBit := ((uint(lower)+uint(upper)*i)%b.filterSize)
 		for j:= uint(0); j<b.filterSize; j++ {
-			r := rand.Float64()
+			var r float64;
+			if q==1 && p==0 {
+				r = 0.5
+			} else {
+				r = rand.Float64()
+			}
 			if j==trueBit {
 				// q chance of returning 1
 				if r<q {
