@@ -107,7 +107,7 @@ func runSim(prms []interface{}, hsts []string, http []string, https_no_hsts []st
 			}
 		}
 	}
-	fmt.Printf("%d,%d,%d,%d,%d,%d,%d,%f,%f,%f,%f,%d\n",len(hsts), final_benefit,disasters, initial_true_hsts, filterSize, numSamples, numSites, primaryThreshold, secondaryThreshold, p,q, numHashes)
+	fmt.Printf("%d,%d,%d,%d,%d,%d,%d,%g,%g,%g,%g,%d\n",len(hsts), final_benefit,disasters, initial_true_hsts, filterSize, numSamples, numSites, primaryThreshold, secondaryThreshold, p,q, numHashes)
 	defer wg.Done()
 }
 
