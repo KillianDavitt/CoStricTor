@@ -33,7 +33,7 @@ func main() {
 	sampleSizes := []interface{}{3000000}
 	numSites := 10000
 	primaryThresholds := []interface{}{0.00001}
-	secondaryThresholds := []interface{}{0.001,0.0005,0.0001,0.00001,0.000001}
+	secondaryThresholds := []interface{}{0.0005,0.0001,0.00001,0.000001}
 	ps := []interface{}{0.0}
 	qs := []interface{}{1.0}
 	numsHashes := []interface{}{1}
