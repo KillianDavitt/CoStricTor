@@ -29,14 +29,14 @@ func main() {
 	// Some need to be in an interface for the library to get cartesian product of all parameters
 	hstsProp := 0.2
 	httpProp := 0.2
-	filterSizes := []interface{}{35000}
+	filterSizes := []interface{}{35000,45000}
 	sampleSizes := []interface{}{3000000}
 	numSites := 10000
 	primaryThresholds := []interface{}{0.00001}
 	secondaryThresholds := []interface{}{0.00001}
 	ps := []interface{}{0.1}
 	qs := []interface{}{0.9}
-	numsHashes := []interface{}{16}
+	numsHashes := []interface{}{16,32,64}
 
 	// Get the cartesian product, i.e. all possible combinations of the parameters
 	prm := cartesian.Iter(filterSizes, sampleSizes, primaryThresholds, secondaryThresholds, ps, qs, numsHashes)
