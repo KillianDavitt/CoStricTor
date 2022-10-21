@@ -34,8 +34,8 @@ func main() {
 	numSites := 10000
 	primaryThresholds := []interface{}{0.00001}
 	secondaryThresholds := []interface{}{0.00001}
-	ps := []interface{}{0.0}
-	qs := []interface{}{1.0}
+	ps := []interface{}{0.1}
+	qs := []interface{}{0.9}
 	numsHashes := []interface{}{16}
 
 	// Get the cartesian product, i.e. all possible combinations of the parameters
