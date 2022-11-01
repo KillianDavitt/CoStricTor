@@ -34,7 +34,7 @@ func main() {
 	numSites := 10000
 	primaryThresholds := []interface{}{0.00001}
 	secondaryThresholds := []interface{}{0.00001}
-	ps := []interface{}{0.0}
+	ps := []interface{}{0.0001}
 	qs := []interface{}{0.9}
 	numsHashes := []interface{}{16,32,64}
 
