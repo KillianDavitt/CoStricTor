@@ -47,7 +47,7 @@ func runSim(prms []interface{}, hsts []string, http []string, https_no_hsts []st
 	var p float64 = prms[4].(float64)
 	var q float64 = prms[5].(float64)
 
-	c := NewCrews(filterSize, numHashes, primaryThreshold, secondaryThreshold, p, q);
+	c := NewCrews(filterSize, numHashes, primaryThreshold, secondaryThreshold, uint64(numSites*0.2), p, q);
 	
 	source := rand.NewSource(time.Now().UnixNano()) 
 	hsts_zipf := rand.NewZipf(rand.New(source), 1.1, 1, uint64(len(hsts)-1))
