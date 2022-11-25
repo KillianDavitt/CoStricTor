@@ -30,7 +30,7 @@ func main() {
 	hstsProp := 0.2
 	httpProp := 0.2
 	filterSizes := []interface{}{1000}
-	sampleSizes := []interface{}{3000000}
+	sampleSizes := []interface{}{30000}
 	numSites := 10000
 	primaryThresholds := []interface{}{0.00005}
 	secondaryThresholds := []interface{}{0.00005}
