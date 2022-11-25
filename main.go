@@ -33,7 +33,7 @@ func main() {
 	sampleSizes := []interface{}{900000}
 	numSites := 10000
 	primMod := []interface{}{0.02}
-	secMod := []interface{}{0.5}
+	secMod := []interface{}{0.1}
 	ps := []interface{}{0.000001}
 	qs := []interface{}{0.9}
 	numsHashes := []interface{}{1}
