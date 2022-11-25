@@ -5,7 +5,7 @@ type Crews struct {
 	secondary *BloomFilter
 	primaryThreshold float64
 	secondaryThreshold float64
-	numWebsites int64
+	numWebsites int
 	p float64
 	q float64
 }
