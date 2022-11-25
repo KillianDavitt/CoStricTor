@@ -36,7 +36,7 @@ func main() {
 	secMod := []interface{}{0.1}
 	ps := []interface{}{0.000001}
 	qs := []interface{}{0.9}
-	numsHashes := []interface{}{8}
+	numsHashes := []interface{}{6}
 
 	// Get the cartesian product, i.e. all possible combinations of the parameters
 	prm := cartesian.Iter(filterSizes, sampleSizes, ps, qs, numsHashes, primMod, secMod)
