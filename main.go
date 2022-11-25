@@ -32,8 +32,8 @@ func main() {
 	filterSizes := []interface{}{4000}
 	sampleSizes := []interface{}{300000}
 	numSites := 1000
-	primMod := 0.8
-	secMod := 1
+	primMod := []interface{}{0.8}
+	secMod := []interface{}{1}
 	ps := []interface{}{0.000001}
 	qs := []interface{}{0.9}
 	numsHashes := []interface{}{1}
