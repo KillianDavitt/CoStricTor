@@ -42,7 +42,6 @@ func runSim(prms []interface{}, hsts []string, http []string, https_no_hsts []st
 	numSamples := prms[1].(int)
 	numHashes := prms[4].(int)
 	
-
 	var p float64 = prms[2].(float64)
 	var q float64 = prms[3].(float64)
 
