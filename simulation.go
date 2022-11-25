@@ -40,11 +40,11 @@ func generateSites(sites []string, hstsProp float64, httpProp float64) ([]string
 func runSim(prms []interface{}, hsts []string, http []string, https_no_hsts []string,  wg * sync.WaitGroup, hstsProp float64, httpProp float64, numSites int){
 	filterSize := prms[0].(int)
 	numSamples := prms[1].(int)
-	numHashes := prms[5].(int)
+	numHashes := prms[4].(int)
 	
 
-	var p float64 = prms[3].(float64)
-	var q float64 = prms[4].(float64)
+	var p float64 = prms[2].(float64)
+	var q float64 = prms[3].(float64)
 
 	c := NewCrews(filterSize, numHashes, uint(float64(numSites)*0.2), p, q);
 	
