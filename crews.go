@@ -15,6 +15,8 @@ func NewCrews(filterSize int, numHashes int, numWebsites uint, p float64, q floa
 		primary: NewBloomFilter(uint(filterSize), uint(numHashes)),
 		secondary:   NewBloomFilter(uint(filterSize), uint(numHashes)),
 		numWebsites: numWebsites,
+		primaryThresholdModifier: primaryThresholdModifier,
+		secondaryThresholdModifier: secondaryThresholdModifier,
 		p: p,
 		q: q,
 	}
