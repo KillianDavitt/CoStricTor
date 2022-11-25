@@ -32,14 +32,12 @@ func main() {
 	filterSizes := []interface{}{1000}
 	sampleSizes := []interface{}{30000}
 	numSites := 10000
-	primaryThresholds := []interface{}{0.00005}
-	secondaryThresholds := []interface{}{0.00005}
 	ps := []interface{}{0.000001}
 	qs := []interface{}{0.9}
 	numsHashes := []interface{}{1}
 
 	// Get the cartesian product, i.e. all possible combinations of the parameters
-	prm := cartesian.Iter(filterSizes, sampleSizes, primaryThresholds, secondaryThresholds, ps, qs, numsHashes)
+	prm := cartesian.Iter(filterSizes, sampleSizes, ps, qs, numsHashes)
 
 	// Result is a channel, draw all items from it to make it a slice
 	perms := make([]interface{},len(prm))
