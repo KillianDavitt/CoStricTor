@@ -4,6 +4,8 @@ type Crews struct {
 	primary *BloomFilter    // filter data
 	secondary *BloomFilter
 	numWebsites uint
+	primaryThresholdModifier float64
+	secondaryThresholdModifier float64
 	p float64
 	q float64
 }
