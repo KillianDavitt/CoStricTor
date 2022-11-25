@@ -31,7 +31,7 @@ func main() {
 	httpProp := 0.2
 	filterSizes := []interface{}{4000}
 	sampleSizes := []interface{}{300000}
-	numSites := 1000
+	numSites := 10000
 	primMod := []interface{}{0.1}
 	secMod := []interface{}{0.5}
 	ps := []interface{}{0.000001}
