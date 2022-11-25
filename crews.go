@@ -3,19 +3,15 @@ package main
 type Crews struct {
 	primary *BloomFilter    // filter data
 	secondary *BloomFilter
-	primaryThreshold float64
-	secondaryThreshold float64
 	numWebsites uint
 	p float64
 	q float64
 }
 
-func NewCrews(filterSize int, numHashes int, primaryThreshold float64, secondaryThreshold float64, numWebsites uint, p float64, q float64) *Crews {
+func NewCrews(filterSize int, numHashes int, numWebsites uint, p float64, q float64) *Crews {
 	return &Crews{
 		primary: NewBloomFilter(uint(filterSize), uint(numHashes)),
 		secondary:   NewBloomFilter(uint(filterSize), uint(numHashes)),
-		primaryThreshold: primaryThreshold,
-		secondaryThreshold: secondaryThreshold,
 		numWebsites: numWebsites,
 		p: p,
 		q: q,
