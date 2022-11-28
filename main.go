@@ -34,9 +34,9 @@ func main() {
 	numSites := 50000
 	primMod := []interface{}{0.02}
 	secMod := []interface{}{0.1}
-	ps := []interface{}{0.000001}
+	ps := []interface{}{0.000001,0.00001,0.0001}
 	qs := []interface{}{0.9}
-	numsHashes := []interface{}{10}
+	numsHashes := []interface{}{7}
 
 	// Get the cartesian product, i.e. all possible combinations of the parameters
 	prm := cartesian.Iter(filterSizes, sampleSizes, ps, qs, numsHashes, primMod, secMod)
