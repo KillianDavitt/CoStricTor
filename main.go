@@ -7,6 +7,7 @@ import (
 	"sync"
 	"fmt"
 	"strconv"
+	"flag"
 )
 
 var cpuprofile = flag.String("cpuprofile", "", "write cpu profile to `file`")
