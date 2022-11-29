@@ -33,6 +33,7 @@ func (b *BloomFilter) Add(data []byte, p float64, q float64) *BloomFilter {
 		for j:= uint(0); j<b.filterSize; j++ {
 			var r float64;
 			if q==1 && p==0 {
+				// 0.5 is an arbritrary number which is less than 1 and greater than 0
 				r = 0.5
 			} else {
 				r = float64(fastrand.FastRand())/float64(4294967295.0)
