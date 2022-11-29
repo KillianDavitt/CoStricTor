@@ -42,12 +42,12 @@ func (b *BloomFilter) Add(data []byte, p float64, q float64) *BloomFilter {
 			}
 			if j==trueBit {
 				// q chance of returning 1
-				if r<q {
+				if r<adq {
 					b.data[j]+=1
 				}
 			} else {
 				// p chance of returning 1
-				if r<p {
+				if r<adp {
 					b.data[j] += 1
 				}
 			}
