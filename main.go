@@ -9,6 +9,10 @@ import (
 	"strconv"
 )
 
+var cpuprofile = flag.String("cpuprofile", "", "write cpu profile to `file`")
+var memprofile = flag.String("memprofile", "", "write memory profile to `file`")
+
+
 func main() {
 
 	// Load in the big list of websites 
