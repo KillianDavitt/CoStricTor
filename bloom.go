@@ -3,7 +3,7 @@ package main
 import (
 	"hash"
 	"hash/fnv"
-	"math/rand"
+	//"math/rand"
 	"github.com/detailyang/fastrand-go"
 )
 
