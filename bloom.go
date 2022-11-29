@@ -34,7 +34,7 @@ func (b *BloomFilter) Add(data []byte, p float64, q float64) *BloomFilter {
 			if q==1 && p==0 {
 				r = 0.5
 			} else {
-				r = rand.Float64()
+				r = fastrand.FastRand()
 			}
 			if j==trueBit {
 				// q chance of returning 1
