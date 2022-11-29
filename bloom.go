@@ -4,6 +4,7 @@ import (
 	"hash"
 	"hash/fnv"
 	"math/rand"
+	"github.com/detailyang/fastrand-go"
 )
 
 // The design of this structure is adapted from https://github.com/tylertreat/BoomFilters
@@ -34,7 +35,7 @@ func (b *BloomFilter) Add(data []byte, p float64, q float64) *BloomFilter {
 			if q==1 && p==0 {
 				r = 0.5
 			} else {
-				r = fastrand.FastRand()
+				r = fastrand.FastRand()/4294967295
 			}
 			if j==trueBit {
 				// q chance of returning 1
