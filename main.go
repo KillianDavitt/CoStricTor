@@ -10,7 +10,7 @@ import (
 	"flag"
 	"log"
 	"runtime"
-	import "runtime/pprof"
+"runtime/pprof"
 	"net/http/pprof"
 )
 
