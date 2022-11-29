@@ -30,7 +30,7 @@ func (b *BloomFilter) Add(data []byte, p float64, q float64) *BloomFilter {
 	adq := uint32(q * float64(4294967295.0))
 	adp := uint32(p * float64(4294967295.0))
 	adr := uint32(2147483647)
-	for i := uint32(0); i < b.numHashes; i++ {
+	for i := uint32(0); i < uint32(b.numHashes); i++ {
 		trueBit := ((uint32(lower)+uint32(upper)*i)%b.filterSize)
 		for j:= uint32(0); j<b.filterSize; j++ {
 			var r uint32;
