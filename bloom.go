@@ -33,12 +33,12 @@ func (b *BloomFilter) Add(data []byte, p float64, q float64) *BloomFilter {
 	for i := uint(0); i < b.numHashes; i++ {
 		trueBit := ((uint(lower)+uint(upper)*i)%b.filterSize)
 		for j:= uint(0); j<b.filterSize; j++ {
-			var r float64;
+			var r int;
 			if q==1 && p==0 {
 				// 0.5 is an arbritrary number which is less than 1 and greater than 0
-				r = 0.5
+				r = adr
 			} else {
-				r = float64(fastrand.FastRand())/float64(4294967295.0)
+				r = fastrand.FastRand()
 			}
 			if j==trueBit {
 				// q chance of returning 1
