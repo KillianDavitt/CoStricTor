@@ -8,6 +8,8 @@ import (
 	"fmt"
 	"strconv"
 	"flag"
+	"log"
+	"pprof"
 )
 
 var cpuprofile = flag.String("cpuprofile", "", "write cpu profile to `file`")
