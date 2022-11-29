@@ -9,7 +9,7 @@ import (
 	"strconv"
 	"flag"
 	"log"
-	"runtime/pprof"
+	"net/http/pprof"
 )
 
 var cpuprofile = flag.String("cpuprofile", "", "write cpu profile to `file`")
