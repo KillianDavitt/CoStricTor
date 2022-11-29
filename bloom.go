@@ -27,13 +27,13 @@ func NewBloomFilter(filterSize uint, numHashes uint) *BloomFilter {
 
 func (b *BloomFilter) Add(data []byte, p float64, q float64) *BloomFilter {
 	lower, upper := hashKernel(data, b.hash)
-	adq := int(q * float64(4294967295.0))
-	adp := int(p * float64(4294967295.0))
-	adr := int(0.5 * float64(4294967295.0))
+	adq := uint(q * float64(4294967295.0))
+	adp := uint(p * float64(4294967295.0))
+	adr := uint(0.5 * float64(4294967295.0))
 	for i := uint(0); i < b.numHashes; i++ {
 		trueBit := ((uint(lower)+uint(upper)*i)%b.filterSize)
 		for j:= uint(0); j<b.filterSize; j++ {
-			var r int;
+			var r uint;
 			if q==1 && p==0 {
 				// 0.5 is an arbritrary number which is less than 1 and greater than 0
 				r = adr
