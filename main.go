@@ -30,6 +30,7 @@ func main() {
 	// Some need to be in an interface for the library to get cartesian product of all parameters
 	hstsProp := 0.2
 	httpProp := 0.2
+	sitesToCheck := 100000
 	filterSizes := []interface{}{479253}
 	sampleSizes := []interface{}{3000000}
 	numSites := 50000
@@ -69,12 +70,13 @@ func main() {
 
 	var sites []string = make([]string, numSites)
 	sites = lines[0:numSites]
+	checkSites = lines[numSites:sitesToCheck]
 	hsts, http, https_no_hsts := generateSites(sites, hstsProp, httpProp);
-	
+	checkHsts, checkHttp, checkHttpsNoHsts := generateSites(sites, hstsProp, httpProp);
         var wg sync.WaitGroup
 	for _,params := range jobs[jobNumber-1] {
 		wg.Add(1)
-		go runSim(params.([]interface{}), hsts, http, https_no_hsts, &wg, hstsProp, httpProp, numSites)
+		go runSim(params.([]interface{}), hsts, http, https_no_hsts, checkHsts, checkHttp, checkHttpNoHsts, &wg, hstsProp, httpProp, numSites)
 	}
 	wg.Wait()
 }
