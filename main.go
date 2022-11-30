@@ -72,7 +72,7 @@ func main() {
 	sites = lines[0:numSites]
 	checkSites := lines[numSites:sitesToCheck]
 	hsts, http, https_no_hsts := generateSites(sites, hstsProp, httpProp);
-	checkHsts, checkHttp, checkHttpsNoHsts := generateSites(sites, hstsProp, httpProp);
+	checkHsts, checkHttp, checkHttpsNoHsts := generateSites(checkSites, hstsProp, httpProp);
         var wg sync.WaitGroup
 	for _,params := range jobs[jobNumber-1] {
 		wg.Add(1)
