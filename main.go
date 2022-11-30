@@ -31,12 +31,12 @@ func main() {
 	hstsProp := 0.2
 	httpProp := 0.2
 	sitesToCheck := 100000
-	filterSizes := []interface{}{479253}
+	filterSizes := []interface{}{47925}
 	sampleSizes := []interface{}{3000000}
-	numSites := 50000
+	numSites := 10000
 	primMod := []interface{}{0.02}
 	secMod := []interface{}{0.1}
-	ps := []interface{}{0.000001,0.00001,0.0001}
+	ps := []interface{}{0.000001}
 	qs := []interface{}{0.9}
 	numsHashes := []interface{}{7}
 
