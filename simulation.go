@@ -118,7 +118,7 @@ func runSim(prms []interface{}, hsts []string, http []string, https_no_hsts []st
 	var extra_accidental_upgrades_averted uint = 0
 	for i:=0; i<len(checkHsts);i++ {
 		if c.PrimaryTest(checkHsts[i]) {
-			initial_accidental_hsts_upgrade += 1
+			extra_initial_true_hsts += 1
 			if c.SecondaryTest(checkHsts[i]) {
 				extra_no_benefit += 1
 			} else {
