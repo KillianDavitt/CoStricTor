@@ -106,6 +106,39 @@ func runSim(prms []interface{}, hsts []string, http []string, https_no_hsts []st
 			}
 		}
 	}
+
+
+	// extra checking
+		for i:=0; i<len(checkHsts);i++ {
+		if c.PrimaryTest(checkHsts[i]) {
+			initial_accidental_hsts_upgrade += 1
+			if c.SecondaryTest(checkHsts[i]) {
+				extra_no_benefit += 1
+			} else {
+				extra_final_benefit +=1
+			}
+		}
+	}
+
+	for i:=0; i<len(http);i++ {
+		if c.PrimaryTest(http[i]) {
+			if c.SecondaryTest(http[i]) {
+				extra_disasters_averted += 1
+			} else {
+				extra_disasters += 1
+			}
+		}
+	}
+
+	for i:=0; i<len(https_no_hsts);i++ {
+		if c.PrimaryTest(https_no_hsts[i]) {
+			if c.SecondaryTest(https_no_hsts[i]) {
+				extra_accidental_upgrades += 1
+			} else {
+				extra_accidental_upgrades_averted += 1
+			}
+		}
+	}
 	fmt.Printf("%d,%d,%d,%d,%d,%d,%d,%g,%g,%d\n",len(hsts), final_benefit,disasters, initial_true_hsts, filterSize, numSamples, numSites, p,q, numHashes)
 	defer wg.Done()
 }
