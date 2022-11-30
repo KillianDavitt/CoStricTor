@@ -7,7 +7,7 @@ import (
 	"fmt"
 )
 
-func generateSites(sites []string, checkingSites []string, hstsProp float64, httpProp float64) ([]string,[]string,[]string) {
+func generateSites(sites []string, hstsProp float64, httpProp float64) ([]string,[]string,[]string) {
 	// Generate n sites which have hsts
 	hsts := make([]string, 0)
 	for i:=0; i<len(sites); i++ {
