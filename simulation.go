@@ -109,7 +109,14 @@ func runSim(prms []interface{}, hsts []string, http []string, https_no_hsts []st
 
 
 	// extra checking
-		for i:=0; i<len(checkHsts);i++ {
+	var extra_disasters uint = 0
+	var extra_final_benefit uint = 0
+	var extra_no_benefit uint = 0
+	var extra_initial_true_hsts uint = 0
+	var extra_disasters_averted uint = 0
+	var extra_accidental_upgrades uint = 0
+	var extra_accidental_upgrades_averted uint = 0
+	for i:=0; i<len(checkHsts);i++ {
 		if c.PrimaryTest(checkHsts[i]) {
 			initial_accidental_hsts_upgrade += 1
 			if c.SecondaryTest(checkHsts[i]) {
@@ -120,9 +127,9 @@ func runSim(prms []interface{}, hsts []string, http []string, https_no_hsts []st
 		}
 	}
 
-	for i:=0; i<len(http);i++ {
-		if c.PrimaryTest(http[i]) {
-			if c.SecondaryTest(http[i]) {
+	for i:=0; i<len(checkHttp);i++ {
+		if c.PrimaryTest(checkHttp[i]) {
+			if c.SecondaryTest(checkHttp[i]) {
 				extra_disasters_averted += 1
 			} else {
 				extra_disasters += 1
@@ -130,9 +137,9 @@ func runSim(prms []interface{}, hsts []string, http []string, https_no_hsts []st
 		}
 	}
 
-	for i:=0; i<len(https_no_hsts);i++ {
-		if c.PrimaryTest(https_no_hsts[i]) {
-			if c.SecondaryTest(https_no_hsts[i]) {
+	for i:=0; i<len(checkHttpsNoHsts);i++ {
+		if c.PrimaryTest(checkHttpsNoHsts[i]) {
+			if c.SecondaryTest(checkHttpsNoHsts[i]) {
 				extra_accidental_upgrades += 1
 			} else {
 				extra_accidental_upgrades_averted += 1
