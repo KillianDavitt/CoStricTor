@@ -31,14 +31,14 @@ func main() {
 	hstsProp := 0.2
 	httpProp := 0.2
 	sitesToCheck := 100000
-	filterSizes := []interface{}{47925}
+	filterSizes := []interface{}{10000,30000,40000,50000,60000,70000,80000,90000}
 	sampleSizes := []interface{}{3000000}
 	numSites := 10000
 	primMod := []interface{}{0.02}
 	secMod := []interface{}{0.1}
-	ps := []interface{}{0.000001}
+	ps := []interface{}{0.000001,0.00001}
 	qs := []interface{}{0.9}
-	numsHashes := []interface{}{3}
+	numsHashes := []interface{}{3,}
 
 	// Get the cartesian product, i.e. all possible combinations of the parameters
 	prm := cartesian.Iter(filterSizes, sampleSizes, ps, qs, numsHashes, primMod, secMod)
