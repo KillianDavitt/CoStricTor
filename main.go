@@ -36,7 +36,7 @@ func main() {
 	numSites := 10000
 	primMod := []interface{}{0.02}
 	secMod := []interface{}{0.1}
-	ps := []interface{}{0.000001,0.00001}
+	ps := []interface{}{0.000001}
 	qs := []interface{}{0.9}
 	//numsHashes := []interface{}{3,4,5,6,7,8}
 
