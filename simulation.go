@@ -135,7 +135,7 @@ func runSim(prms []interface{}, hsts []string, http []string, https_no_hsts []st
 				extra_disasters_averted += 1
 			} else {
 				extra_disasters += 1
-				extraDisasterList[i]=True
+				extraDisasterList[i]=true
 			}
 		}
 	}
