@@ -1,12 +1,12 @@
 package main
 
 import (
-	"os"
-	"bufio"
+	//"os"
+	//"bufio"
 	"github.com/schwarmco/go-cartesian-product"
 	"sync"
 	"fmt"
-	"strconv"
+	//"strconv"
 )
 
 
