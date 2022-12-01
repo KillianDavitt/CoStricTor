@@ -152,6 +152,20 @@ func runSim(prms []interface{}, hsts []string, http []string, https_no_hsts []st
 	}
 	fmt.Printf("%d,%d,%d,%d,%d,%d,%d,%g,%g,%d,%d\n",len(hsts), final_benefit,disasters, initial_true_hsts, filterSize, numSamples, numSites, p,q, extra_disasters)
 	err := os.WriteFile("test", extraDisasterList, 0644)
+	file, err := os.OpenFile("test.txt", os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644)
+ 
+	if err != nil {
+		log.Fatalf("failed creating file: %s", err)
+	}
+ 
+	datawriter := bufio.NewWriter(file)
+ 
+	for _, data := range extraDisasterList {
+		_, _ = datawriter.WriteString(data + ",")
+	}
+ 
+	datawriter.Flush()
+	file.Close()
 	defer wg.Done()
 }
 
