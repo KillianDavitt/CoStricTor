@@ -31,7 +31,7 @@ func main() {
 	hstsProp := 0.2
 	httpProp := 0.2
 	sitesToCheck := 100000
-	filterSizes := []interface{}{10000}
+	filterSizes := []interface{}{40000}
 	sampleSizes := []interface{}{3000000}
 	numSites := 10000
 	primMod := []interface{}{0.02}
