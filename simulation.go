@@ -46,6 +46,7 @@ func runSim(prms []interface{}, hsts []string, http []string, https_no_hsts []st
 	filterSize := prms[0].(int)
 	numSamples := prms[1].(int)
 	numHashes := int(math.Round((float64(filterSize) / (float64(numSamples)*hstsProp) * math.Log(2))))
+	fmt.Println(numHashes)
 	primaryThresholdModifier := prms[4].(float64)
 	secondaryThresholdModifier := prms[5].(float64)
 	var p float64 = prms[2].(float64)
