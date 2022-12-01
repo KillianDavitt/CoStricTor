@@ -111,6 +111,7 @@ func runSim(prms []interface{}, hsts []string, http []string, https_no_hsts []st
 
 	// extra checking
 	var extra_disasters uint = 0
+	var extraDisasterList = make([]bool, 100000)
 	var extra_final_benefit uint = 0
 	var extra_no_benefit uint = 0
 	var extra_initial_true_hsts uint = 0
@@ -134,6 +135,7 @@ func runSim(prms []interface{}, hsts []string, http []string, https_no_hsts []st
 				extra_disasters_averted += 1
 			} else {
 				extra_disasters += 1
+				extraDisasterList[i]=True
 			}
 		}
 	}
@@ -147,7 +149,7 @@ func runSim(prms []interface{}, hsts []string, http []string, https_no_hsts []st
 			}
 		}
 	}
-	fmt.Printf("%d,%d,%d,%d,%d,%d,%d,%g,%g,%d,%d\n",len(hsts), final_benefit,disasters, initial_true_hsts, filterSize, numSamples, numSites, p,q, numHashes, extra_disasters)
+	fmt.Printf("%d,%d,%d,%d,%d,%d,%d,%g,%g,%d,%d\n",len(hsts), final_benefit,disasters, initial_true_hsts, filterSize, numSamples, numSites, p,q, extra_disasters)
 	defer wg.Done()
 }
 
