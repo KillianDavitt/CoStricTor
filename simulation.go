@@ -7,6 +7,7 @@ import (
 	"fmt"
 	"math"
 	"os"
+	"bufio"
 )
 
 func generateSites(sites []string, hstsProp float64, httpProp float64) ([]string,[]string,[]string) {
