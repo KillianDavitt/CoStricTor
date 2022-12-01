@@ -45,7 +45,7 @@ func generateSites(sites []string, hstsProp float64, httpProp float64) ([]string
 func runSim(prms []interface{}, hsts []string, http []string, https_no_hsts []string, checkHsts []string, checkHttp []string, checkHttpsNoHsts []string,  wg * sync.WaitGroup, hstsProp float64, httpProp float64, numSites int){
 	filterSize := prms[0].(int)
 	numSamples := prms[1].(int)
-	numHashes := int(math.Round(((float64(filterSize) / (float64(numSamples)*hstsProp)) * math.Log(2))))
+	numHashes := int(math.Round(((float64(filterSize) / (float64(len(hsts)))) * math.Log(2))))
 	fmt.Println(numHashes)
 	primaryThresholdModifier := prms[4].(float64)
 	secondaryThresholdModifier := prms[5].(float64)
