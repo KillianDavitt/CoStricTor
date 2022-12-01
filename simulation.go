@@ -5,7 +5,8 @@ import (
 	"sync"
 	"time"
 	"fmt"
-	"math""os"
+	"math"
+	"os"
 )
 
 func generateSites(sites []string, hstsProp float64, httpProp float64) ([]string,[]string,[]string) {
