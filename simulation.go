@@ -161,7 +161,7 @@ func runSim(prms []interface{}, hsts []string, http []string, https_no_hsts []st
 	datawriter := bufio.NewWriter(file)
  
 	for _, data := range extraDisasterList {
-		_, _ = datawriter.WriteString(data + ",")
+		_, _ = datawriter.WriteString(string(data) + ",")
 	}
  
 	datawriter.Flush()
