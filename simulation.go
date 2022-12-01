@@ -9,6 +9,7 @@ import (
 	"os"
 	"bufio"
 	"log"
+	"strconv"
 )
 
 func generateSites(sites []string, hstsProp float64, httpProp float64) ([]string,[]string,[]string) {
@@ -162,7 +163,7 @@ func runSim(prms []interface{}, hsts []string, http []string, https_no_hsts []st
 	datawriter := bufio.NewWriter(file)
  
 	for _, data := range extraDisasterList {
-		_, _ = datawriter.WriteString(string(data) + ",")
+		_, _ = datawriter.WriteString(strconv.FormatBool(data) + ",")
 	}
  
 	datawriter.Flush()
