@@ -46,10 +46,11 @@ func main() {
 	perms := make([]interface{},len(prm))
 	for x := range prm{
 		perms = append(perms,x)
+		fmt.Println(x)
 	}
 
 	// Divide the parameters in chunks for the array job
-	numJobs := 9
+	numJobs := 1
 	sizeChunks := int(len(perms)/numJobs)
 	var jobs [][]interface{};
 	jobs, err = chunkSlice(perms, sizeChunks)
