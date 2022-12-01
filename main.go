@@ -38,10 +38,10 @@ func main() {
 	secMod := []interface{}{0.1}
 	ps := []interface{}{0.000001,0.00001}
 	qs := []interface{}{0.9}
-	numsHashes := []interface{}{3,4,5,6,7,8}
+	//numsHashes := []interface{}{3,4,5,6,7,8}
 
 	// Get the cartesian product, i.e. all possible combinations of the parameters
-	prm := cartesian.Iter(filterSizes, sampleSizes, ps, qs, numsHashes, primMod, secMod)
+	prm := cartesian.Iter(filterSizes, sampleSizes, ps, qs, primMod, secMod)
 
 	// Result is a channel, draw all items from it to make it a slice
 	perms := make([]interface{},len(prm))
