@@ -40,6 +40,7 @@ func main() {
 		perms = append(perms,p)
 	}
 	fmt.Println(len(filterSizes))
+	fmt.Println(len(perms))
 	// Divide the parameters in chunks for the array job
 	
 	sizeChunks := int(len(perms)/numJobs)
