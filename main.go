@@ -32,7 +32,7 @@ func main() {
 	filterSizes := [9]int{10000,20000,30000,40000,50000,60000,70000,80000,90000}
 
 	numSites := 10000
-	numJobs := 1
+	numJobs := 9
 
 	perms := make([]interface{},0)
 	for i:=0; i<len(filterSizes); i++ {
