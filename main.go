@@ -26,7 +26,6 @@ func main() {
 	}
 
 	// Sort out parameters
-	// Some need to be in an interface for the library to get cartesian product of all parameters
 	hstsProp := 0.2
 	httpProp := 0.2
 	sitesToCheck := 100000
@@ -40,7 +39,7 @@ func main() {
 		p := []interface{}{filterSizes[i],3000000,0.00001,0.9,0.02,0.1}
 		perms = append(perms,p)
 	}
-
+	fmt.Println(len(filterSizes))
 	// Divide the parameters in chunks for the array job
 	
 	sizeChunks := int(len(perms)/numJobs)
