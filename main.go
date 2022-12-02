@@ -42,7 +42,7 @@ func main() {
 	// Result is a channel, draw all items from it to make it a slice
 	perms := make([]interface{},len(filterSizes))
 	for i:=0; i<len(filterSizes); i++ {
-		p := interface{filterSizes[i],3000000,0.00001,0.9,0.02,0.1}
+		p := interface{}{filterSizes[i],3000000,0.00001,0.9,0.02,0.1}
 		perms = append(perms,p)
 	}
 
