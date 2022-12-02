@@ -31,12 +31,12 @@ func main() {
 	sitesToCheck := 100000
 	filterSizes := [1]int{10000}
 
-	numSites := 10000
+	numSites := 1000
 	numJobs := 1
 
 	perms := make([]interface{},0)
 	for i:=0; i<len(filterSizes); i++ {
-		p := []interface{}{filterSizes[i],3000000,0.00001,0.9,0.02,0.06}
+		p := []interface{}{filterSizes[i],300000,0.00001,0.9,0.02,0.06}
 		perms = append(perms,p)
 	}
 	// Divide the parameters in chunks for the array job
