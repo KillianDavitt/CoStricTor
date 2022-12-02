@@ -29,7 +29,7 @@ func main() {
 	hstsProp := 0.2
 	httpProp := 0.2
 	sitesToCheck := 100000
-	filterSizes := [4]int{20000,30000,40000,50000}
+	filterSizes := [4]int{10000}
 
 	numSites := 10000
 	numJobs := 4
