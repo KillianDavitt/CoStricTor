@@ -37,12 +37,8 @@ func main() {
 	perms := make([]interface{},0)
 	for i:=0; i<len(filterSizes); i++ {
 		p := []interface{}{filterSizes[i],3000000,0.00001,0.9,0.02,0.1}
-		fmt.Println(i)
-		fmt.Println(len(perms))
 		perms = append(perms,p)
 	}
-	fmt.Println(len(filterSizes))
-	fmt.Println(len(perms))
 	// Divide the parameters in chunks for the array job
 	
 	sizeChunks := int(len(perms)/numJobs)
@@ -70,7 +66,6 @@ func main() {
         var wg sync.WaitGroup
 	for _,params := range jobs[jobNumber-1] {
 		wg.Add(1)
-		fmt.Println(params)
 		go runSim(params.([]interface{}), hsts, http, https_no_hsts, checkHsts, checkHttp, checkHttpsNoHsts, &wg, hstsProp, httpProp, numSites)
 	}
 	wg.Wait()
