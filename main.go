@@ -70,7 +70,7 @@ func main() {
 	for _,params := range jobs[jobNumber-1] {
 		wg.Add(1)
 		fmt.Println(params)
-		go runSim(params.([]interface{}), hsts, http, https_no_hsts, checkHsts, checkHttp, checkHttpsNoHsts, &wg, hstsProp, httpProp, numSites)
+		go runSim(params, hsts, http, https_no_hsts, checkHsts, checkHttp, checkHttpsNoHsts, &wg, hstsProp, httpProp, numSites)
 	}
 	wg.Wait()
 }
