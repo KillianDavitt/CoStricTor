@@ -3,7 +3,6 @@ package main
 import (
 	"os"
 	"bufio"
-	"github.com/schwarmco/go-cartesian-product"
 	"sync"
 	"fmt"
 	"strconv"
@@ -32,12 +31,9 @@ func main() {
 	httpProp := 0.2
 	sitesToCheck := 100000
 	filterSizes := [9]int{10000,20000,30000,40000,50000,60000,70000,80000,90000}
-	sampleSizes := []interface{}{3000000}
+
 	numSites := 10000
-	primMod := []interface{}{0.02}
-	secMod := []interface{}{0.1}
-	ps := []interface{}{0.000001}
-	qs := []interface{}{0.9}
+
 
 	// Result is a channel, draw all items from it to make it a slice
 	perms := make([]interface{},len(filterSizes))
