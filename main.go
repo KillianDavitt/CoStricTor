@@ -31,7 +31,7 @@ func main() {
 	hstsProp := 0.2
 	httpProp := 0.2
 	sitesToCheck := 100000
-	filterSizes := []interface{}{10000,20000,30000,40000,50000,60000,70000,80000,90000}
+	filterSizes := [10000,20000,30000,40000,50000,60000,70000,80000,90000]
 	sampleSizes := []interface{}{3000000}
 	numSites := 10000
 	primMod := []interface{}{0.02}
@@ -39,14 +39,11 @@ func main() {
 	ps := []interface{}{0.000001}
 	qs := []interface{}{0.9}
 
-	// Get the cartesian product, i.e. all possible combinations of the parameters
-	prm := cartesian.Iter(filterSizes, sampleSizes, ps, qs, primMod, secMod)
-
 	// Result is a channel, draw all items from it to make it a slice
-	perms := make([]interface{},len(prm))
-	for x := range prm{
-		perms = append(perms,x)
-		fmt.Println(x)
+	perms := make([]interface{},len(filterSizes))
+	for i:=0; i<len(filterSizes); i++ {
+		p := interface{filterSizes[i],3000000,0.00001,0.9,0.02,0.1}
+		perms = append(perms,p)
 	}
 
 	// Divide the parameters in chunks for the array job
