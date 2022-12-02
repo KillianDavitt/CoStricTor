@@ -33,7 +33,7 @@ func main() {
 	filterSizes := [9]int{10000,20000,30000,40000,50000,60000,70000,80000,90000}
 
 	numSites := 10000
-
+	numJobs := 1
 
 	// Result is a channel, draw all items from it to make it a slice
 	perms := make([]interface{},len(filterSizes))
@@ -43,7 +43,7 @@ func main() {
 	}
 
 	// Divide the parameters in chunks for the array job
-	numJobs := 1
+	
 	sizeChunks := int(len(perms)/numJobs)
 	var jobs [][]interface{};
 	jobs, err = chunkSlice(perms, sizeChunks)
