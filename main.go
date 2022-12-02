@@ -29,14 +29,14 @@ func main() {
 	hstsProp := 0.2
 	httpProp := 0.2
 	sitesToCheck := 100000
-	filterSizes := [9]int{10000,20000,30000,40000,50000,60000,70000,80000,90000}
+	filterSizes := [9]int{30000}
 
 	numSites := 10000
 	numJobs := 9
 
 	perms := make([]interface{},0)
 	for i:=0; i<len(filterSizes); i++ {
-		p := []interface{}{filterSizes[i],3000000,0.00001,0.9,0.02,0.1}
+		p := []interface{}{filterSizes[i],3000000,0.00001,0.9,0.02,0.3}
 		perms = append(perms,p)
 	}
 	// Divide the parameters in chunks for the array job
