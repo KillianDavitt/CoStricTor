@@ -36,7 +36,7 @@ func main() {
 
 	perms := make([]interface{},0)
 	for i:=0; i<len(filterSizes); i++ {
-		p := []interface{}{filterSizes[i],3000000,0.00001,0.9,0.02,0.3}
+		p := []interface{}{filterSizes[i],3000000,0.00001,0.9,0.02,0.1}
 		perms = append(perms,p)
 	}
 	// Divide the parameters in chunks for the array job
