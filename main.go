@@ -37,7 +37,7 @@ func main() {
 
 	perms := make([]interface{},0)
 	for i:=0; i<len(secondaryThresholds); i++ {
-		p := []interface{}{10000,300000,0.00001,0.9,0.03,secondaryThresholds[i]}
+		p := []interface{}{20000,300000,0.00001,0.9,0.03,secondaryThresholds[i]}
 		perms = append(perms,p)
 	}
 	// Divide the parameters in chunks for the array job
