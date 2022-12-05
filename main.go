@@ -30,7 +30,7 @@ func main() {
 	httpProp := 0.2
 	sitesToCheck := 100000
 	//filterSizes := [1]int{10000}
-	secondaryThresholds := [6]int{0.01,0.02,0.03,0.04,0.05,0.06}
+	secondaryThresholds := [6]float64{0.01,0.02,0.03,0.04,0.05,0.06}
 
 	numSites := 1000
 	numJobs := 1
