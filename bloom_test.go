@@ -22,4 +22,6 @@ func TestNewFilter(t *testing.T) {
 
 func TestFilterTest(t *testing.T) {
 	b := NewBloomFilter(1000,5)
+		data := []byte("Hi")
+		b.Add(data, 0, 1)
 }
