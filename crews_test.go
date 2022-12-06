@@ -8,6 +8,11 @@ func TestNewCrews(t *testing.T) {
 	if 8 != sumFilter(c.primary) {
 		t.Errorf("Error in reporting")
 	}
+
+	c.ReportHttp("www.example.com")
+	if 8 != sumFilter(c.secondary) {
+		t.Errorf("Error in reporting")
+	}
 }
 
 func sumFilter(b *BloomFilter) (uint) {
