@@ -14,8 +14,9 @@ func TestNewCrews(t *testing.T) {
 		t.Errorf("Error in reporting")
 	}
 
-
-	c.PrimaryTest("www.google.com")
+	if c.PrimaryTest("www.google.com") {
+		
+	}
 }
 
 func sumFilter(b *BloomFilter) (uint) {
