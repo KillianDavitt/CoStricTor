@@ -7,7 +7,6 @@ func TestNewFilter(t *testing.T) {
 	b := NewBloomFilter(5000, h)
 	data := []byte("Hi")
 	b.Add(data, 0, 1)
-	t.Errorf("hi")
 
 	d = b.data
 	sumBits := 0
