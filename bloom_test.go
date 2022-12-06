@@ -9,7 +9,7 @@ func TestNewFilter(t *testing.T) {
 	b.Add(data, 0, 1)
 
 	d := b.data
-	sumBits := 0
+	var sumBits uint = 0
 	for i:=0; i<len(d); i++ {
 		sumBits += d[i]
 	}
