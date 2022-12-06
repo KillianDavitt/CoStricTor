@@ -3,7 +3,7 @@ package main
 import "testing"
 
 func TestNewFilter(t *testing.T) {
-	h:=20
+	var h uint =20
 	b := NewBloomFilter(5000, h)
 	data := []byte("Hi")
 	b.Add(data, 0, 1)
