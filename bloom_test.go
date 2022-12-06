@@ -19,3 +19,7 @@ func TestNewFilter(t *testing.T) {
 		}
 	}
 }
+
+func TestFilterTest(t *testing.T) {
+	b := NewBloomFilter(1000,5)
+}
