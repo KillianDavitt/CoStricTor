@@ -15,6 +15,7 @@ func TestNewCrews(t *testing.T) {
 	}
 
 	if c.PrimaryTest("www.google.com") {
+		fmt.Println( c.primary.count/c.numWebsites)
 		t.Errorf("Getting wrong result from primaryTest")
 	}
 }
