@@ -10,7 +10,7 @@ func TestNewCrews(t *testing.T) {
 	}
 }
 
-func sumFilter(b *BloomFilter) (int) {
+func sumFilter(b *BloomFilter) (uint) {
 	var sum uint = 0
 	for i:= 0; i<len(b.data); i++ {
 		sum += b.data[i]
