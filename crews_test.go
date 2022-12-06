@@ -15,7 +15,7 @@ func TestNewCrews(t *testing.T) {
 	}
 
 	if c.PrimaryTest("www.google.com") {
-		
+		t.Errorf("Getting wrong result from primaryTest")
 	}
 }
 
