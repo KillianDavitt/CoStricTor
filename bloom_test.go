@@ -14,7 +14,7 @@ func TestNewFilter(t *testing.T) {
 		for j:=0; j<len(d); j++ {
 			sumBits += d[j]
 		}
-		if sumBits != h {
+		if sumBits != hs[i] {
 			t.Errorf("Perturbation happening for q=1, p=0")
 		}
 	}
