@@ -8,7 +8,7 @@ func TestNewFilter(t *testing.T) {
 	data := []byte("Hi")
 	b.Add(data, 0, 1)
 
-	d = b.data
+	d := b.data
 	sumBits := 0
 	for i:=0; i<len(d); i++ {
 		sumBits += d[i]
