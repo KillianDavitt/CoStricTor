@@ -13,6 +13,9 @@ func TestNewCrews(t *testing.T) {
 	if 8 != sumFilter(c.secondary) {
 		t.Errorf("Error in reporting")
 	}
+
+
+	c.PrimaryTest("www.google.com")
 }
 
 func sumFilter(b *BloomFilter) (uint) {
