@@ -12,9 +12,9 @@ import (
 type BloomFilter struct {
 	data []uint    // filter data
 	hash    hash.Hash64 
-	filterSize       uint        
+	filterSize       uint       
 	numHashes       uint       
-	count   uint      
+	count   uint    
 }
 
 func NewBloomFilter(filterSize uint, numHashes uint) *BloomFilter {
@@ -33,8 +33,8 @@ func (b *BloomFilter) Add(data []byte, p float64, q float64) *BloomFilter {
 	adp := uint32(p * float64(4294967295.0))
 	//adr := uint32(2147483647)
 	var newData []uint = make([]uint, b.filterSize)
-	for i := uint32(0); i < uint32(b.numHashes); i++ {
-		trueBit := ((uint32(lower)+uint32(upper)*i)%uint32(b.filterSize))
+	for i := uint(0); i < b.numHashes; i++ {
+		trueBit := ((lower+upper*i)%b.filterSize)
 		newData[trueBit]+=1
 
 	}
@@ -60,8 +60,8 @@ func (b *BloomFilter) Test(data []byte) uint {
 	lower, upper := hashKernel(data, b.hash)
 	var result []uint = make([]uint, b.numHashes);
 	// Get the bit counts for each hash function
-	for i := uint32(0); i < uint32(b.numHashes); i++ {
-		trueBit := ((uint32(lower)+uint32(upper)*i)%uint32(b.filterSize))		
+	for i := uint(0); i < b.numHashes; i++ {
+		trueBit := ((lower+upper*i)%b.filterSize)		
 		result[i] = b.data[trueBit]
 	}
 	var min uint = 0
@@ -74,12 +74,12 @@ func (b *BloomFilter) Test(data []byte) uint {
 	return min;
 }
 
-func hashKernel(data []byte, hash hash.Hash64) (uint32, uint32) {
+func hashKernel(data []byte, hash hash.Hash64) (uint, uint) {
 	hash.Write(data)
 	sum := hash.Sum64()
 	hash.Reset()
 	// Separating the bits out seems odd, but is useful for filter indexing
-	upper := uint32(sum & 0xffffffff)
-	lower := uint32((sum >> 32) & 0xffffffff)
+	upper := uint(sum & 0xffffffff)
+	lower := uint((sum >> 32) & 0xffffffff)
 	return upper, lower
 }
