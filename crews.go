@@ -1,5 +1,6 @@
 package main
 
+
 type Crews struct {
 	primary *BloomFilter    // filter data
 	secondary *BloomFilter

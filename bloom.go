@@ -4,6 +4,7 @@ import (
 	"hash"
 	"hash/fnv"
 	//"math/rand"
+	//"fmt"
 	"github.com/detailyang/fastrand-go"
 )
 
@@ -21,7 +22,8 @@ func NewBloomFilter(filterSize uint, numHashes uint) *BloomFilter {
 		data: make([]uint, filterSize),
 		hash:    fnv.New64(),
 		filterSize:       filterSize,
-		numHashes:       numHashes,
+			numHashes:       numHashes,
+			count: 0,
 	}
 }
 
@@ -29,31 +31,27 @@ func (b *BloomFilter) Add(data []byte, p float64, q float64) *BloomFilter {
 	lower, upper := hashKernel(data, b.hash)
 	adq := uint32(q * float64(4294967295.0))
 	adp := uint32(p * float64(4294967295.0))
-	adr := uint32(2147483647)
+	//adr := uint32(2147483647)
+	var newData []uint = make([]uint, b.filterSize)
 	for i := uint32(0); i < uint32(b.numHashes); i++ {
 		trueBit := ((uint32(lower)+uint32(upper)*i)%uint32(b.filterSize))
-		for j:= uint32(0); j<uint32(b.filterSize); j++ {
-			var r uint32;
-			if q==1 && p==0 {
-				// 0.5 is an arbritrary number which is less than 1 and greater than 0
-				r = adr
-			} else {
-				r = fastrand.FastRand()
+		newData[trueBit]+=1
+
+	}
+	for i:=uint(0); i<b.filterSize; i++ {
+		r := fastrand.FastRand()
+		if newData[i]==1 {
+			if r>=adq {
+				newData[i]=0
 			}
-			if j==trueBit {
-				// q chance of returning 1
-				if r<adq {
-					b.data[j]+=1
-				}
-			} else {
-				// p chance of returning 1
-				if r<adp {
-					b.data[j] += 1
-				}
+		} else {
+			if r<adp {
+				newData[i]=1
 			}
 		}
+		b.data[i]+=newData[i]
 	}
-
+	
 	b.count++
 	return b
 }
@@ -62,10 +60,12 @@ func (b *BloomFilter) Test(data []byte) uint {
 	lower, upper := hashKernel(data, b.hash)
 	var result []uint = make([]uint, b.numHashes);
 	// Get the bit counts for each hash function
-	for i := uint(0); i < b.numHashes; i++ {
-		result[i] = b.data[((uint(lower)+uint(upper)*i)%b.filterSize)]
+	for i := uint32(0); i < uint32(b.numHashes); i++ {
+		trueBit := ((uint32(lower)+uint32(upper)*i)%uint32(b.filterSize))		
+		result[i] = b.data[trueBit]
 	}
-	var min uint;
+	var min uint = 0
+	//fmt.Println(result)
 	for i, e := range result {
 		if i==0 || e < min {
 			min = e
