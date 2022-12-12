@@ -29,7 +29,7 @@ func main() {
 	hstsProp := 0.2
 	httpProp := 0.2
 	sitesToCheck := 500000
-	filterSizes := [1]int{2000000}
+	filterSizes := [1]int{100000}
 	//secondaryThresholds := [6]float64{0.01,0.02,0.03,0.04,0.05,0.06}
 
 	numSites := 10000
