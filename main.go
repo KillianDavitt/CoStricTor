@@ -29,16 +29,18 @@ func main() {
 	hstsProp := 0.2
 	httpProp := 0.2
 	sitesToCheck := 500000
-	filterSizes := [1]int{100000}
+	primaryThresh := [11]int{0.2,0.1,0.09,0.08,0.07,0.06,0.05,0.04,0.03,0.02,0.01}
 	//secondaryThresholds := [6]float64{0.01,0.02,0.03,0.04,0.05,0.06}
-
+	secondaryThreshs := [11]int{0.2,0.1,0.09,0.08,0.07,0.06,0.05,0.04,0.03,0.02,0.0}
 	numSites := 10000
-	numJobs := 1
+	numJobs := 121
 
 	var perms []interface{};
-	for i:=0; i<len(filterSizes); i++ {
-		p := []interface{}{filterSizes[i],3000000,0.00001,0.9,0.08,0.9}
-		perms = append(perms,p)
+	for i:=0; i<len(primaryThresh); i++ {
+		for j:=0; j<len(secondThreshs); j++ {
+			p := []interface{}{10000,3000000,0.00001,0.9,primaryThresh[i],secondaryThreshs[j]}
+			perms = append(perms,p)
+		}
 	}
 	// Divide the parameters in chunks for the array job
 	
