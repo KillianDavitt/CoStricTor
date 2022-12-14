@@ -29,9 +29,9 @@ func main() {
 	hstsProp := 0.2
 	httpProp := 0.2
 	sitesToCheck := 500000
-	primaryThresh := [13]float64{0.09,0.08,0.07,0.06,0.05,0.04,0.03,0.02,0.01,0.001,0.005,0.0005,0.0001}
+	primaryThresh := [13]float64{0.0001}
 	//secondaryThresholds := [6]float64{0.01,0.02,0.03,0.04,0.05,0.06}
-	secondaryThreshs := [13]float64{0.09,0.08,0.07,0.06,0.05,0.04,0.03,0.02,0.0,0.001,0.005,0.0005,0.0001}
+	secondaryThreshs := [13]float64{0.0001}
 	numSites := 10000
 	numJobs := 1
 
