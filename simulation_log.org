@@ -6,3 +6,5 @@ did not appear to help, will return to finding good options for the same low p
 tried a general sim with the usual p , perfect results, changing threshold does nothing, results are still great
 
 next try: increase p by a tiny bit, 0.000005 instead of 0.000001 my worry is that the program just cannot cope with any noise at all, because like this value is still really tiny, yet its utterly ruining the results. Surely it can't be that bad.
+* sim 31
+trying with half the bloom filter size
