@@ -4,3 +4,5 @@ does increasing the number of samples allow us to increase p without trashing th
 did not appear to help, will return to finding good options for the same low p
 * sim 30
 tried a general sim with the usual p , perfect results, changing threshold does nothing, results are still great
+
+next try: increase p by a tiny bit, 0.000005 instead of 0.000001
