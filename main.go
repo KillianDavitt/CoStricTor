@@ -38,7 +38,7 @@ func main() {
 	var perms []interface{};
 	for i:=0; i<len(primaryThresh); i++ {
 		for j:=0; j<len(secondaryThreshs); j++ {
-			p := []interface{}{80000,3000000,0.00001,0.9,primaryThresh[i],secondaryThreshs[j]}
+			p := []interface{}{80000,3000000,0.000001,0.9,primaryThresh[i],secondaryThreshs[j]}
 			perms = append(perms,p)
 		}
 	}
