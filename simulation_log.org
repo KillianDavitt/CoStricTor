@@ -9,3 +9,5 @@ next try: increase p by a tiny bit, 0.000005 instead of 0.000001 my worry is tha
 * sim 31
 trying with half the bloom filter size, results should be the same, still should be a big enough filter
 basically the same, but seems to be  mostly 3 extra fp's
+* sim 33
+clear demonstration that increasing the filter size reduces false positive, but also reduces true positives. this shows I think, that we need to adjust threshold based on filter size
