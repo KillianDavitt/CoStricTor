@@ -14,4 +14,4 @@ clear demonstration that increasing the filter size reduces false positive, but 
 * sim 34
 ran the simulation to see where I left off. It seems I was trying to adjust the threshold based on filter size. Dividing threshold by log off the filter size didn't seem to have enough effect
 * sim 35
-now dividing the threshold by the filter size, lets see what effect that has
+now dividing the threshold by the filter size, lets see what effect that has. The other way of doing this would be to pick 3 different filter sizes, find the optimal threshold and graph the result to find how the threshold should change with filter size
