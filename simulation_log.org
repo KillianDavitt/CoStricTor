@@ -11,3 +11,7 @@ trying with half the bloom filter size, results should be the same, still should
 basically the same, but seems to be  mostly 3 extra fp's
 * sim 33
 clear demonstration that increasing the filter size reduces false positive, but also reduces true positives. this shows I think, that we need to adjust threshold based on filter size
+* sim 34
+ran the simulation to see where I left off. It seems I was trying to adjust the threshold based on filter size. Dividing threshold by log off the filter size didn't seem to have enough effect
+* sim 35
+now dividing the threshold by the filter size, lets see what effect that has
