@@ -36,14 +36,14 @@ func (c *Crews) ReportHttp(s string) *Crews {
 func (c *Crews) PrimaryTest(s string) bool {
 	count := c.primary.Test([]byte(s))
 	adjustedCount := uint((float64(count) - c.p * float64(c.primary.count))/(c.q-c.p))
-	threshold := uint((float64((c.primary.count/c.numWebsites))*c.primaryThresholdModifier)/float64(c.primary.filterSize))
+	threshold := uint((float64((c.primary.count/c.numWebsites))*c.primaryThresholdModifier))
 	return  adjustedCount >= threshold
 }
 
 func (c *Crews) SecondaryTest(s string) bool {
 	count := c.secondary.Test([]byte(s))
 	adjustedCount := uint((float64(count) - c.p * float64(c.secondary.count))/(c.q-c.p))
-	threshold := uint((float64((c.secondary.count/c.numWebsites))*c.secondaryThresholdModifier)/float64(c.secondary.filterSize))
+	threshold := uint((float64((c.secondary.count/c.numWebsites))*c.secondaryThresholdModifier))
 	return  adjustedCount >= threshold
 }
 
