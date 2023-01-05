@@ -40,7 +40,7 @@ func main() {
 	var perms []interface{};
 	for i:=0; i<len(filterSizes); i++ {
 		//for j:=0; j<len(secondaryThreshs); j++ {
-			p := []interface{}{filterSizes[i],3000000,0.000005,0.9,0.079,0.07}
+			p := []interface{}{filterSizes[i],3000000,0.000005,0.9,0.0785,0.07}
 			perms = append(perms,p)
 			//}
 	}
