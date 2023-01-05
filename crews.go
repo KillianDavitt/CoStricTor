@@ -1,6 +1,5 @@
 package main
 
-import "math"
 
 type Crews struct {
 	primary *BloomFilter    // filter data
