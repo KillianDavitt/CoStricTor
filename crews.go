@@ -1,5 +1,6 @@
 package main
 
+import "math"
 
 type Crews struct {
 	primary *BloomFilter    // filter data
@@ -36,12 +37,14 @@ func (c *Crews) ReportHttp(s string) *Crews {
 func (c *Crews) PrimaryTest(s string) bool {
 	count := c.primary.Test([]byte(s))
 	adjustedCount := uint((float64(count) - c.p * float64(c.primary.count))/(c.q-c.p))
-	return  adjustedCount >= uint(float64(( c.primary.count/c.numWebsites))*c.primaryThresholdModifier)
+	threshold := uint((float64((c.primary.count/c.numWebsites))*c.primaryThresholdModifier)/float64(c.primary.filterSize))
+	return  adjustedCount >= threshold
 }
 
 func (c *Crews) SecondaryTest(s string) bool {
 	count := c.secondary.Test([]byte(s))
 	adjustedCount := uint((float64(count) - c.p * float64(c.secondary.count))/(c.q-c.p))
-	return  adjustedCount >= uint(float64((c.secondary.count/c.numWebsites))*c.secondaryThresholdModifier)
+	threshold := uint((float64((c.secondary.count/c.numWebsites))*c.secondaryThresholdModifier)/(float64(c.secondary.filterSize))
+	return  adjustedCount >= threshold
 }
 
