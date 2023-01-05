@@ -17,3 +17,5 @@ ran the simulation to see where I left off. It seems I was trying to adjust the 
 now dividing the threshold by the filter size, lets see what effect that has. The other way of doing this would be to pick 3 different filter sizes, find the optimal threshold and graph the result to find how the threshold should change with filter size
 * quick testing locally
 with 5000 filter size, I could reach about 550 hits with no fp. At 10,000 filter size, I have messed extensively with the primary and secondary threshold params, but I cannot reach 550 hits. I am confused by this, surely it should be better??
+
+Going back to what I was saying before, it could be that having a bigger filter means a greater chance of reporting false 1's. This could be whats happening to me here, for each report, theres twice the chance of reporting a false 1, and therefore bigger filters are less accurate. Is this addressed in rappor? Whats the solution? Does this mean that for every insertion size, there is an ideal filter size too?  The other question, does having a bigger filter then mean more differential privacy?
