@@ -29,18 +29,20 @@ func main() {
 	hstsProp := 0.2
 	httpProp := 0.2
 	sitesToCheck := 500000
-	primaryThresh := [1]float64{0.09}
+	//primaryThresh := [16]float64{0.1,0.2,0.3,0.09,0.08,0.07,0.06,0.05,0.04,0.03,0.02,0.1,0.001,0.005,0.0005,0.0001}
+	filterSizes := [1]int{5000,10000,15000,20000,25000,30000}
+	
 	//secondaryThresholds := [6]float64{0.01,0.02,0.03,0.04,0.05,0.06}
-	secondaryThreshs := [16]float64{0.1,0.2,0.3,0.09,0.08,0.07,0.06,0.05,0.04,0.03,0.02,0.1,0.001,0.005,0.0005,0.0001}
+	//secondaryThreshs := [16]float64{0.1,0.2,0.3,0.09,0.08,0.07,0.06,0.05,0.04,0.03,0.02,0.1,0.001,0.005,0.0005,0.0001}
 	numSites := 10000
-	numJobs := 16
+	numJobs := 1
 
 	var perms []interface{};
-	for i:=0; i<len(primaryThresh); i++ {
-		for j:=0; j<len(secondaryThreshs); j++ {
-			p := []interface{}{80000,30000000,0.00001,0.9,primaryThresh[i],secondaryThreshs[j]}
+	for i:=0; i<len(filterSizes); i++ {
+		//for j:=0; j<len(secondaryThreshs); j++ {
+			p := []interface{}{filterSizes[i],3000000,0.000005,0.9,0.01,0.07}
 			perms = append(perms,p)
-		}
+			//}
 	}
 	// Divide the parameters in chunks for the array job
 	
@@ -53,6 +55,7 @@ func main() {
 	}
 
 	// Get current job number
+	// The CS TSG cluster sets this environment variable depending on how many jobs are being run simultaneously
 	jobString := os.Getenv("SGE_TASK_ID")
 	jobNumber, err := strconv.Atoi(jobString)
 	if err != nil {
