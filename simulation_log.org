@@ -19,3 +19,14 @@ now dividing the threshold by the filter size, lets see what effect that has. Th
 with 5000 filter size, I could reach about 550 hits with no fp. At 10,000 filter size, I have messed extensively with the primary and secondary threshold params, but I cannot reach 550 hits. I am confused by this, surely it should be better??
 
 Going back to what I was saying before, it could be that having a bigger filter means a greater chance of reporting false 1's. This could be whats happening to me here, for each report, theres twice the chance of reporting a false 1, and therefore bigger filters are less accurate. Is this addressed in rappor? Whats the solution? Does this mean that for every insertion size, there is an ideal filter size too?  The other question, does having a bigger filter then mean more differential privacy?
+
+okay so, 8 bit bloom filter.
+
+I submit google.com, it sets bits 2 and 6. None of the bits get flipped because we have low p and high q
+
+2048 bit bloom filter, it sets bits 9 and 34. 10 other 0's get turned to 1's because we have loads of chances to flip them.
+
+Whats the privacy of this system.
+
+I am the central server and I want to find out what john is reporting.
+In the 8 bit system, 2 bits are set most of the time and its pretty easy to see what it could be. 
