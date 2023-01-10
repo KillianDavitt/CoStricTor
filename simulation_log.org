@@ -29,4 +29,15 @@ I submit google.com, it sets bits 2 and 6. None of the bits get flipped because 
 Whats the privacy of this system.
 
 I am the central server and I want to find out what john is reporting.
-In the 8 bit system, 2 bits are set most of the time and its pretty easy to see what it could be. 
+In the 8 bit system, 2 bits are set most of the time and its pretty easy to see what it could be.
+
+* The final testing
+The result of this is that a simple simulation that tries all the params for that set of inputs is the best solution.
+
+Very simple.
+
+I say, we have 10k sites, 3 mil samples. The sim outputs the best params.
+
+adapt the sim to use multiple params again, hone in on best ones.
+
+Is there some easy way of making it binary search the best params.
