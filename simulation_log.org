@@ -60,3 +60,5 @@ Must increase number of sites to show the progression. Then make bigger step cha
 but I can also graph the progression for the higher p?
 * sim 36
 testing if results deteriorate at 150000 size bloom filter
+* sim 39
+failure, I was supposed to use the smaller p, but forget to change it so results were terrible
