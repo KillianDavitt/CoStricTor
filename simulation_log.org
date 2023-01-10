@@ -43,3 +43,9 @@ adapt the sim to use multiple params again, hone in on best ones.
 Is there some easy way of making it binary search the best params..
 
 The order of search is important. I feel like finding best filter size should be first, but don't know how to concretely state that.
+* sim 36
+
+fix num sites at 10000
+fix samples at 3000000
+fix q at 0.9
+fix p at 0.000001
