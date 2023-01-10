@@ -49,3 +49,10 @@ fix num sites at 10000
 fix samples at 3000000
 fix q at 0.9
 fix p at 0.000001
+
+move filter size between 1000 and 20000
+alter thresholds slightly maybe?
+
+no this all changes if I select the smaller p.
+filter size can now be in excess of 60000. Still searching for max possible filter size.
+Must increase number of sites to show the progression. Then make bigger step changes to filter size for graphing.
