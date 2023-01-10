@@ -43,7 +43,7 @@ adapt the sim to use multiple params again, hone in on best ones.
 Is there some easy way of making it binary search the best params..
 
 The order of search is important. I feel like finding best filter size should be first, but don't know how to concretely state that.
-* sim 36
+
 
 fix num sites at 10000
 fix samples at 3000000
@@ -58,3 +58,5 @@ filter size can now be in excess of 60000. Still searching for max possible filt
 Must increase number of sites to show the progression. Then make bigger step changes to filter size for graphing.
 
 but I can also graph the progression for the higher p?
+* sim 36
+testing if results deteriorate at 150000 size bloom filter
