@@ -28,13 +28,13 @@ func main() {
 	// Sort out parameters
 	hstsProp := 0.2
 	httpProp := 0.2
-	sitesToCheck := 150000
+	sitesToCheck := 100000
 	//primaryThresh := [16]float64{0.1,0.2,0.3,0.09,0.08,0.07,0.06,0.05,0.04,0.03,0.02,0.1,0.001,0.005,0.0005,0.0001}
 	filterSizes := [6]int{14000,16000,17000,18000,20000}//500,1000,1500,2000,2500,3000,3500,4000,4500,5000,5500,6000,6500,7000,7500,8000}
 	
 	//secondaryThresholds := [6]float64{0.01,0.02,0.03,0.04,0.05,0.06}
 	//secondaryThreshs := [16]float64{0.1,0.2,0.3,0.09,0.08,0.07,0.06,0.05,0.04,0.03,0.02,0.1,0.001,0.005,0.0005,0.0001}
-	numSites := 10000
+	numSites := 15000
 	numJobs := 1
 
 	var perms []interface{};
