@@ -47,7 +47,6 @@ func (b *BloomFilter) Add(data []byte, p float64, q float64) *BloomFilter {
 		} else {
 			if r<adp {
 				newData[i]=1
-				fmt.Println("lie")
 			}
 		}
 		b.data[i]+=newData[i]
