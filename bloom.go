@@ -31,7 +31,6 @@ func (b *BloomFilter) Add(data []byte, p float64, q float64) *BloomFilter {
 	lower, upper := hashKernel(data, b.hash)
 	adq := uint32(q * float64(4294967295.0))
 	adp := uint32(p * float64(4294967295.0))
-	fmt.Println(adp)
 	//adr := uint32(2147483647)
 	var newData []uint = make([]uint, b.filterSize)
 	for i := uint(0); i < b.numHashes; i++ {
@@ -48,6 +47,7 @@ func (b *BloomFilter) Add(data []byte, p float64, q float64) *BloomFilter {
 		} else {
 			if r<adp {
 				newData[i]=1
+				fmt.Println("lie")
 			}
 		}
 		b.data[i]+=newData[i]
