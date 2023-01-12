@@ -53,7 +53,9 @@ func (b *BloomFilter) Add(data []byte, p float64, q float64) *BloomFilter {
 		}
 		b.data[i]+=newData[i]
 	}
-	fmt.Println(falseBits)
+	if falseBits > 0{
+		fmt.Println(falseBits)
+	}
 	b.count++
 	return b
 }
