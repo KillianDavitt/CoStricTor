@@ -4,7 +4,7 @@ import (
 	"hash"
 	"hash/fnv"
 	//"math/rand"
-	"fmt"
+	//"fmt"
 	"github.com/detailyang/fastrand-go"
 )
 
