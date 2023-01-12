@@ -38,6 +38,7 @@ func (b *BloomFilter) Add(data []byte, p float64, q float64) *BloomFilter {
 		newData[trueBit]+=1
 
 	}
+	falseBits := 0
 	for i:=uint(0); i<b.filterSize; i++ {
 		r := fastrand.FastRand()
 		if newData[i]==1 {
@@ -47,11 +48,12 @@ func (b *BloomFilter) Add(data []byte, p float64, q float64) *BloomFilter {
 		} else {
 			if r<adp {
 				newData[i]=1
+				falseBits+=1
 			}
 		}
 		b.data[i]+=newData[i]
 	}
-	
+	fmt.Println(falseBits)
 	b.count++
 	return b
 }
