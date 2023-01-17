@@ -1,5 +1,5 @@
 package main
-
+import "fmt"
 
 type Crews struct {
 	primary *BloomFilter    // filter data
