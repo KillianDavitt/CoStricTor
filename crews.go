@@ -47,7 +47,12 @@ func (c *Crews) PrimaryTest(s string) bool {
 
 func (c *Crews) SecondaryTest(s string) bool {
 	count := c.secondary.Test([]byte(s))
-	adjustedCount := uint((float64(count) - c.p * float64(c.secondary.count))/(c.q-c.p))
+
+	adq := uint64(c.q * float64(1000000))
+	adp := uint64(c.p * float64(1000000))
+	adcount := uint64(count * 1000000)
+	
+	adjustedCount := (adcount - adp * uint64(c.secondary.count))/(adq-adp)
 	threshold := uint(float64(c.secondary.count/c.numWebsites)*c.secondaryThresholdModifier)
 	return  adjustedCount >= threshold
 }
