@@ -39,7 +39,7 @@ func (c *Crews) PrimaryTest(s string) bool {
 	adq := uint64(c.q * float64(1000000))
 	adp := uint64(c.p * float64(1000000))
 	adcount := uint64(count * 1000000)
-	fmt.Println(count + "," + string(c.primary.count))
+	fmt.Println(string(count) + "," + string(c.primary.count))
 	adjustedCount := (adcount - adp * uint64(c.primary.count))/(adq-adp)
 	threshold := uint64(float64((c.primary.count/c.numWebsites))*c.primaryThresholdModifier)
 	return  adjustedCount >= threshold
