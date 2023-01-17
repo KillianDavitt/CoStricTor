@@ -36,7 +36,7 @@ func main() {
 	//secondaryThreshs := [16]float64{0.1,0.2,0.3,0.09,0.08,0.07,0.06,0.05,0.04,0.03,0.02,0.1,0.001,0.005,0.0005,0.0001}
 	ps := [5]float64{0.000005}
 	numSites := 20000
-	numJobs := 200
+	numJobs := 1
 
 	var perms []interface{};
 	for i:=0; i<len(filterSizes); i++ {
