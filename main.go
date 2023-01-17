@@ -35,13 +35,13 @@ func main() {
 	//secondaryThresholds := [6]float64{0.01,0.02,0.03,0.04,0.05,0.06}
 	//secondaryThreshs := [16]float64{0.1,0.2,0.3,0.09,0.08,0.07,0.06,0.05,0.04,0.03,0.02,0.1,0.001,0.005,0.0005,0.0001}
 	ps := [1]float64{0.000004}//[9]float64{0.000001,0.0000015,0.000002,0.0000025,0.000003,0.0000035,0.000004,0.0000045,0.000005}
-	numSites := 2000
+	numSites := 20000
 	numJobs := 1
 
 	var perms []interface{};
 	for i:=0; i<len(filterSizes); i++ {
 		for j:=0; j<len(ps); j++ {
-			p := []interface{}{filterSizes[i],30000,ps[j],0.9,0.045,0.07}
+			p := []interface{}{filterSizes[i],3000000,ps[j],0.9,0.045,0.07}
 			perms = append(perms,p)
 		}
 	}
