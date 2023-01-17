@@ -160,7 +160,7 @@ func runSim(prms []interface{}, hsts []string, http []string, https_no_hsts []st
 	hits_in_secondary :=0
 	for i:=0; i<len(http);i++ {
 		if c.SecondaryTest(http[i]){
-			hits_in_secondary++
+			hits_in_secondary+=1
 		}
 	}
 	
