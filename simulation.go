@@ -45,6 +45,7 @@ func generateSites(sites []string, hstsProp float64, httpProp float64) ([]string
 func runSim(prms []interface{}, hsts []string, http []string, https_no_hsts []string, checkHsts []string, checkHttp []string, checkHttpsNoHsts []string,  wg * sync.WaitGroup, hstsProp float64, httpProp float64, numSites int){
 	filterSize := prms[0].(int)
 	numSamples := prms[1].(int)
+	// This is the standard forumla for getting the optimal number of hashes
 	numHashes := int((math.Ceil(((float64(filterSize) / (float64(len(hsts))))) * math.Log(2))))
 	primaryThresholdModifier := prms[4].(float64)
 	secondaryThresholdModifier := prms[5].(float64)
@@ -114,6 +115,8 @@ func runSim(prms []interface{}, hsts []string, http []string, https_no_hsts []st
 
 
 	// extra checking
+	// Of our list of million websites, we have inserted and tested n
+	// We now test an additional m website to see if they have false positives, even thought they were never inserted
 	var extra_disasters uint = 0
 	var extraDisasterList = make([]bool, 100000)
 	var extra_final_benefit uint = 0
@@ -153,6 +156,14 @@ func runSim(prms []interface{}, hsts []string, http []string, https_no_hsts []st
 			}
 		}
 	}
+
+	hits_in_secondary :=0
+	for i:=0; i<len(http);i++ {
+		if c.SecondaryTest(http[i]){
+			hits_in_secondary++
+		}
+	}
+	
 	fmt.Printf("%d,%d,%d,%d,%d,%d,%d,%d,%g,%g,%g,%g,%d\n",len(hsts), final_benefit,disasters, initial_true_hsts,disasters_averted, filterSize, numSamples, numSites, p,q,primaryThresholdModifier,secondaryThresholdModifier , extra_disasters)
 	//file, err := os.OpenFile("test.txt", os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644)
  
