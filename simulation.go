@@ -157,7 +157,6 @@ func runSim(prms []interface{}, hsts []string, http []string, https_no_hsts []st
 		}
 	}
 
-	http,hsts,https_no_hsts
 	testSecondary := append(http,hsts,https_no_hsts)
 	hits_in_secondary :=0
 	for i:=0; i<len(testSecondary);i++ {
