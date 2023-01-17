@@ -4,7 +4,7 @@ import (
 	"hash"
 	"hash/fnv"
 	//"math/rand"
-	"fmt"
+	//"fmt"
 	"github.com/detailyang/fastrand-go"
 )
 
@@ -54,7 +54,7 @@ func (b *BloomFilter) Add(data []byte, p float64, q float64) *BloomFilter {
 		b.data[i]+=newData[i]
 	}
 	if falseBits > 0{
-		fmt.Println(falseBits)
+		//fmt.Println(falseBits)
 	}
 	b.count++
 	return b
