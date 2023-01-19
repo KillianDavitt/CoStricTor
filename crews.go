@@ -34,25 +34,18 @@ func (c *Crews) ReportHttp(s string) *Crews {
 }
 
 func (c *Crews) PrimaryTest(s string) bool {
-	count := c.primary.Test([]byte(s))
+	count := float64(c.primary.Test([]byte(s)))
 
-	adq := uint64(c.q * float64(1000000))
-	adp := uint64(c.p * float64(1000000))
-	adcount := uint64(count * 1000000)
-	adjustedCount := (adcount - adp * uint64(c.primary.count))/(adq-adp)
-	threshold := uint64(float64((c.primary.count/c.numWebsites))*c.primaryThresholdModifier)
+	adjustedCount := (count - c.p * float64(c.primary.count))/(c.q-c.p)
+	threshold := float64((c.primary.count/c.numWebsites))*c.primaryThresholdModifier
 	return  adjustedCount >= threshold
 }
 
 func (c *Crews) SecondaryTest(s string) bool {
 	count := c.secondary.Test([]byte(s))
-
-	adq := uint64(c.q * float64(1000000))
-	adp := uint64(c.p * float64(1000000))
-	adcount := uint64(count * 1000000)
 	
-	adjustedCount := (adcount - adp * uint64(c.secondary.count))/(adq-adp)
-	threshold := uint64(float64(c.secondary.count/c.numWebsites)*c.secondaryThresholdModifier)
+	adjustedCount := (float64(count) - c.p * float64(c.secondary.count))/(c.q-c.p)
+	threshold := float64(c.secondary.count/c.numWebsites)*c.secondaryThresholdModifier
 	return  adjustedCount >= threshold
 }
 
