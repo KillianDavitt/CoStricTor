@@ -17,9 +17,12 @@ $$q = \frac{p e^epsilon}{1-p+pe^epsilon}$$
   def p(q,ep):
         return (q)/((1-q)*(math.e**ep + q))
   
-  print(p(0.9,7))
+  def q(p,ep):
+        return (p * math.e ** ep)/(1-p+p*e**epsilon)
   
+  return (p(0.9,7))
+  return q(0.0082002,7)
 #+end_src
 
 #+RESULTS:
-: None
+: 0.00820020783052
