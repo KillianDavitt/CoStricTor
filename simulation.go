@@ -118,7 +118,7 @@ func runSim(prms []interface{}, hsts []string, http []string, https_no_hsts []st
 	// Of our list of million websites, we have inserted and tested n
 	// We now test an additional m website to see if they have false positives, even thought they were never inserted
 	var extra_disasters uint = 0
-	var extraDisasterList = make([]bool, 100000)
+	var extraDisasterList = make([]bool, 1000000)
 	var extra_final_benefit uint = 0
 	var extra_no_benefit uint = 0
 	var extra_initial_true_hsts uint = 0
