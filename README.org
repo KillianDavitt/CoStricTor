@@ -11,17 +11,25 @@ $$p = \frac{q}{(1-q)e^epsilon + q}$$
 
 $$q = \frac{p e^epsilon}{1-p+pe^epsilon}$$
 
-#+begin_src python
+#+begin_src python export:all
   import math
   
   def p(q,ep):
         return (q)/((1-q)*(math.e**ep + q))
   
   def q(p,ep):
-        return (p * math.e ** ep)/(1-p+p*math.e**epsilon)
+        return (p * math.e ** ep)/(1-p+p*math.e**ep)
   
   #return (p(0.9,7))
-  return q(0.0082002,7)
+  #return q(0.0082002,7)
+  
+  qs = [0.95,0.94,0.93,0.92,0.91,0.9,0.89,0.88,0.87,0.86,0.85]
+  ps = []
+  for i in qs:
+        ps.append(p(i,7))
+  
+  print(ps)
 #+end_src
 
 #+RESULTS:
+: None
