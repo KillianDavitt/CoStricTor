@@ -4,3 +4,22 @@ Go code to simulate the crews protocol.
 #+BEGIN_SRC bash
 go run main.go bloom.go crews.go simulation.go
 #+END_SRC
+
+* calculating p or q from epsilon
+
+$$p = \frac{q}{(1-q)e^epsilon + q}$$
+
+$$q = \frac{p e^epsilon}{1-p+pe^epsilon}$$
+
+#+begin_src python
+  import math
+  
+  def p(q,ep):
+        return (q)/((1-q)*(math.e**ep + q))
+  
+  print(p(0.9,7))
+  
+#+end_src
+
+#+RESULTS:
+: None
