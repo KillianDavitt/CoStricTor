@@ -41,7 +41,7 @@ func main() {
 	//}
 	
 	numSites := 50000
-	numJobs := 10
+	numJobs := 1
 
 	var perms []interface{};
 	for i:=0; i<len(filterSizes); i++ {
