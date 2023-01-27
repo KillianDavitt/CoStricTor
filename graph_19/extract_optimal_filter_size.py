@@ -13,6 +13,7 @@ for i in range(len(p_s)):
 
 
 qualifies = lambda x: int(x[2])<(int(x[1])/10)
+end_results = []
 ## for every p in the test, find the optimal filter size
 for d in results_per_p:
     
@@ -20,4 +21,4 @@ for d in results_per_p:
 
     sorted_results = sorted(first_filter, key=lambda x: x[1])
 
-    print(sorted_results[0])
+end_results.append(sorted_results[0])
