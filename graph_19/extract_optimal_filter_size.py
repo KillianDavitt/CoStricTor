@@ -21,4 +21,7 @@ for d in results_per_p:
 
     sorted_results = sorted(first_filter, key=lambda x: x[1])
 
-end_results.append(sorted_results[0])
+    end_results.append(sorted_results[0])
+
+
+import matplotlib.pyplot as plt
