@@ -48,6 +48,6 @@ for e in end:
 #plt.ylim(0,3000)
 labels = [str(get_ep(0.75,float(p))) for p in p_s]
 plt.legend(labels)
-plt.xlabel('filter size')
+plt.xlabel('websites considered')
 plt.ylabel('upgrades')
 plt.savefig('graph.png', dpi=600)
