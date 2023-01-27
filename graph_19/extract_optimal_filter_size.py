@@ -3,7 +3,7 @@ with open('crews_full_output.csv') as f:
 
 raw_data = [x.split(',') for x in d]
 
-p_s = set([x[8] for x in raw_data])
+p_s = list(set([x[8] for x in raw_data]))
 
 results_per_p = []
 
