@@ -40,6 +40,6 @@ def get_ep(q,p):
     return math.log(top_line/bottom_line)
     
 #plt.ylim(0,3000)
-labels = [str(get_ep(0.75,int(p))) for p in p_s]
+labels = [str(get_ep(0.75,float(p))) for p in p_s]
 plt.legend(labels)
 plt.savefig('graph.png', dpi=600)
