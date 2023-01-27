@@ -18,6 +18,6 @@ for i in eps:
   
 print(ps)
 
-x = q(0.75,6)
+x = q(0.1,6)
 y = p(x,6)
 print(y)
