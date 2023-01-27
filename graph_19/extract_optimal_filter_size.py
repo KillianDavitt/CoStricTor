@@ -14,7 +14,7 @@ for i in range(len(p_s)):
 
 qualifies = lambda x: int(x[2])<(int(x[1])/10)
 ## for every p in the test, find the optimal filter size
-for d in p_s:
+for d in results_per_p:
     
     first_filter = [x for x in d if qualifies(x)]
 
