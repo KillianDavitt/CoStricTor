@@ -27,8 +27,7 @@ print(end_results)
 import matplotlib.pyplot as plt
 
 for e in end_results:
-    results = [(int(x[2]),float(x[5])) for x in e]
 
-    x = [a[0] for a in results]
-    y = [a[1] for a in results]
+    x = e[5] 
+    y = e[1]
     plt.scatter(y,x, label=e[0])
