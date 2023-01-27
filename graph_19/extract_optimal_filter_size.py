@@ -30,6 +30,6 @@ for e in end_results:
 
     x = e[7] 
     y = e[1]
-    plt.scatter(y,x, label=e[0])
+    plt.scatter(x,y, label=e[0])
 
 plt.savefig('graph.png', dpi=600)
