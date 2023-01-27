@@ -23,7 +23,7 @@ for d in results_per_p:
 
     end_results.append(sorted_results[0])
 
-
+print(end_results)
 import matplotlib.pyplot as plt
 
 for e in end_results:
