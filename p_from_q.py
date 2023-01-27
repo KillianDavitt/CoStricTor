@@ -3,7 +3,7 @@ import math
 def p(q,ep):
     e_ep = math.e**ep
     
-    return q/e_ep-(e_ep*q)+q
+    return q/(e_ep-(e_ep*q)+q)
   
 def q(p,ep):
     return (p * math.e ** ep)/(1-p+p*math.e**ep)
