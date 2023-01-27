@@ -28,7 +28,7 @@ import matplotlib.pyplot as plt
 
 for e in end_results:
 
-    x = 7 
+    x = e[7] 
     y = e[1]
     plt.scatter(y,x, label=e[0])
 
