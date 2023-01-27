@@ -32,5 +32,7 @@ for e in end_results:
     y = e[1]
     plt.scatter(x,y, label=e[0])
 
-plt.ylim(0,3000)
+#plt.ylim(0,3000)
+labels = [str(p) for p in p_s]
+plt.legend(labels)
 plt.savefig('graph.png', dpi=600)
