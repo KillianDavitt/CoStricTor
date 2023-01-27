@@ -17,3 +17,7 @@ for i in eps:
     ps.append(p(0.75,i))
   
 print(ps)
+
+x = q(0.75,6)
+y = p(x,6)
+print(y)
