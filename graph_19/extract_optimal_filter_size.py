@@ -1,3 +1,5 @@
+import math
+
 with open('crews_full_output.csv') as f:
     d = f.readlines()
 
