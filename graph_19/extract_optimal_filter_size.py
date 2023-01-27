@@ -22,14 +22,14 @@ for i in range(len(p_s)):
 
 
 qualifies = lambda x: int(x[2])<(int(x[1])/10)
-if len(qualifies)<1:
-    print("none qualified")
+
 end_results = []
 ## for every p in the test, find the optimal filter size
 for d in results_per_p:
     
     first_filter = [x for x in d if qualifies(x)]
-
+    if len(first_filter)<1:
+        print("none qualified")
     sorted_results = sorted(first_filter, key=lambda x: x[1])
 
     end_results.append(sorted_results[0])
