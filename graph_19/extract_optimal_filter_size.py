@@ -28,7 +28,9 @@ for d in results_per_p:
 print(end_results)
 import matplotlib.pyplot as plt
 
-for e in end_results:
+
+end = sorted(end_results, key=lambda x: get_ep(0.75,x[8]))
+for e in end:
 
     x = e[7] 
     y = e[1]
