@@ -36,7 +36,7 @@ print(end_results)
 import matplotlib.pyplot as plt
 
 
-end = sorted(end_results, key=lambda x: get_ep(0.75,x[8]))
+end = sorted(end_results, key=lambda x: get_ep(0.75,float(x[8])))
 for e in end:
 
     x = e[7] 
