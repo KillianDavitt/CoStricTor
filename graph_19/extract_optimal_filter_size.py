@@ -9,4 +9,4 @@ first_filter = [x for x in data if qualifies(x)]
 
 sorted_results = sorted(first_filter, key=lambda x: x[1])
 
-print(sorted_results[0]
+print(sorted_results[0])
