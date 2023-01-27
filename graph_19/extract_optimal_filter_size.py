@@ -22,6 +22,8 @@ for i in range(len(p_s)):
 
 
 qualifies = lambda x: int(x[2])<(int(x[1])/10)
+if len(qualifies)<1:
+    print("none qualified")
 end_results = []
 ## for every p in the test, find the optimal filter size
 for d in results_per_p:
