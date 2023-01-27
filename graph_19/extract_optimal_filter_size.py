@@ -11,11 +11,13 @@ for i in range(len(p_s)):
     to_add = [x for x in raw_data if x[8]==p_s[i]]
     results_per_p.append(to_add)
 
-d1 = [x for x in data if x[8]=='0.0003700923931708333']
+
 qualifies = lambda x: int(x[2])<(int(x[1])/10)
+## for every p in the test, find the optimal filter size
+for d in p_s:
+    
+    first_filter = [x for x in d if qualifies(x)]
 
-first_filter = [x for x in d1 if qualifies(x)]
+    sorted_results = sorted(first_filter, key=lambda x: x[1])
 
-sorted_results = sorted(first_filter, key=lambda x: x[1])
-
-print(sorted_results[0])
+    print(sorted_results[0])
