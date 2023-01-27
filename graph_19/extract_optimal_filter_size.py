@@ -1,5 +1,12 @@
 import math
 
+def get_ep(q,p):
+    one_minus_p = 1-p
+    one_minus_q = 1-q
+    top_line = q*one_minus_p
+    bottom_line = p*one_minus_q
+    return math.log(top_line/bottom_line)
+
 with open('crews_full_output.csv') as f:
     d = f.readlines()
 
@@ -36,12 +43,7 @@ for e in end:
     y = e[1]
     plt.scatter(x,y, label=e[0])
 
-def get_ep(q,p):
-    one_minus_p = 1-p
-    one_minus_q = 1-q
-    top_line = q*one_minus_p
-    bottom_line = p*one_minus_q
-    return math.log(top_line/bottom_line)
+
     
 #plt.ylim(0,3000)
 labels = [str(get_ep(0.75,float(p))) for p in p_s]
