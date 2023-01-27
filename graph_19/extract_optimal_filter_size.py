@@ -1,7 +1,16 @@
 with open('crews_full_output.csv') as f:
     d = f.readlines()
 
-data = [x.split(',') for x in d]
+raw_data = [x.split(',') for x in d]
+
+p_s = set([x[8] for x in raw_data])
+
+results_per_p = []
+
+for i in range(len(p_s)):
+    to_add = [x for x in raw_data if x[8]==p_s[i]]
+    results_per_p.append(to_add)
+
 d1 = [x for x in data if x[8]=='0.0003700923931708333']
 qualifies = lambda x: int(x[2])<(int(x[1])/10)
 
