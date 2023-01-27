@@ -27,7 +27,7 @@ for d in results_per_p:
 import matplotlib.pyplot as plt
 
 for e in end_results:
-    results = [(int(x[1][2]),float(x[1][5])) for x in e]
+    results = [(int(x[2]),float(x[5])) for x in e]
 
     x = [a[0] for a in results]
     y = [a[1] for a in results]
