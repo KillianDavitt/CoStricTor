@@ -28,7 +28,7 @@ for i in range(len(p_s)):
     x = []
     y = []
     for f in filter_sizes:
-        qualifies = lambda x: int(x[2])<(int(x[1]) and x[7]==f)
+        qualifies = lambda x: (int(x[2])<int(x[1])) and x[7]==f)
         end_results = []
         ## for every p in the test, find the optimal filter size
         for d in results_per_p:
