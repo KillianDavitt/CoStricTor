@@ -36,17 +36,20 @@ for i in range(len(p_s)):
             first_filter = [x for x in d if qualifies(x)]
             if len(first_filter)<1:
                 print("none qualified")
-            sorted_results = sorted(first_filter, key=lambda x: x[1])
+                x.append('0')
+                y.append(f)
+            else:
+                sorted_results = sorted(first_filter, key=lambda x: x[1])
 
-            end_results.append(sorted_results[0])
+                end_results.append(sorted_results[0])
             
-            #print(end_results)
-            end = sorted(end_results, key=lambda x: get_ep(0.75,float(x[8])))
-            for e in end:
+                #print(end_results)
+                end = sorted(end_results, key=lambda x: get_ep(0.75,float(x[8])))
+                for e in end:
             
-                x.append(e[7]) 
-                y.append(e[1])
-            plt.plot(x,y, label=e[0])
+                    x.append(e[7]) 
+                    y.append(e[1])
+                plt.plot(x,y, label=e[0])
 
             
 #plt.ylim(0,3000)
