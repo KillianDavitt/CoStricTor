@@ -8,7 +8,7 @@ def get_ep(q,p):
     bottom_line = p*one_minus_q
     return math.log(top_line/bottom_line)
 
-with open('crews_full_output.csv') as f:
+with open('crews_combined_output.csv') as f:
     d = f.readlines()
 
 raw_data = [x.split(',') for x in d]
