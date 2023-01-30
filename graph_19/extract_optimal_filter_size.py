@@ -17,9 +17,10 @@ p_s = list(set([x[8] for x in raw_data]))
 filter_sizes = list(set([x[7] for x in raw_data]))
 
 
-
+# 2d array of results by p value
 results_per_p = []
 
+# For each value of p
 for i in range(len(p_s)):
     to_add = [x for x in raw_data if x[8]==p_s[i]]
     results_per_p.append(to_add)
@@ -28,7 +29,6 @@ for i in range(len(p_s)):
     y = []
     for f in filter_sizes:
         qualifies = lambda x: int(x[2])<(int(x[1]) and x[7]==f)
-        print(f)
         end_results = []
         ## for every p in the test, find the optimal filter size
         for d in results_per_p:
