@@ -39,9 +39,6 @@ for i in range(len(p_s)):
         end_results.append(sorted_results[0])
 
         #print(end_results)
-
-
-
         end = sorted(end_results, key=lambda x: get_ep(0.75,float(x[8])))
         for e in end:
             
@@ -50,7 +47,6 @@ for i in range(len(p_s)):
             plt.plot(x,y, label=e[0])
 
             
-    
 #plt.ylim(0,3000)
 labels = [str(get_ep(0.75,float(p))) for p in p_s]
 plt.legend(labels)
