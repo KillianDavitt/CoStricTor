@@ -25,7 +25,7 @@ for f in filter_sizes:
         results_per_p.append(to_add)
 
 
-        qualifies = lambda x: int(x[2])<(int(x[1])/1.5)
+        qualifies = lambda x: int(x[2])<(int(x[1]))
 
         end_results = []
         ## for every p in the test, find the optimal filter size
