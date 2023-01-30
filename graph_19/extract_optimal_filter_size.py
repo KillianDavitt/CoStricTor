@@ -36,7 +36,7 @@ for i in range(len(p_s)):
             first_filter = [x for x in d if qualifies(x)]
             if len(first_filter)<1:
                 print("none qualified")
-                y.append('0')
+                y.append(0)
                 x.append(f)
             else:
                 sorted_results = sorted(first_filter, key=lambda x: x[1])
@@ -47,8 +47,8 @@ for i in range(len(p_s)):
                 end = sorted(end_results, key=lambda x: get_ep(0.75,float(x[8])))
                 for e in end:
             
-                    x.append(e[7]) 
-                    y.append(e[1])
+                    x.append(int(e[7])) 
+                    y.append(int(e[1]))
                 plt.scatter(x,y, label=e[0])
 
             
