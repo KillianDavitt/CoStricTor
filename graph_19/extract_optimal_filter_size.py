@@ -1,5 +1,5 @@
 import math
-            import matplotlib.pyplot as plt
+import matplotlib.pyplot as plt
 
 def get_ep(q,p):
     one_minus_p = 1-p
