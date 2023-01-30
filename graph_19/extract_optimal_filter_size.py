@@ -36,8 +36,8 @@ for i in range(len(p_s)):
             first_filter = [x for x in d if qualifies(x)]
             if len(first_filter)<1:
                 print("none qualified")
-                x.append('0')
-                y.append(f)
+                y.append('0')
+                x.append(f)
             else:
                 sorted_results = sorted(first_filter, key=lambda x: x[1])
 
