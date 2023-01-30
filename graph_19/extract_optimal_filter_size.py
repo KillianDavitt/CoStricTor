@@ -21,7 +21,7 @@ for f in filter_sizes:
     results_per_p = []
 
     for i in range(len(p_s)):
-        to_add = [x for x in raw_data if x[8]==p_s[i]]
+        to_add = [x for x in raw_data if x[8]==p_s[i] and x[7]==f]
         results_per_p.append(to_add)
 
 
