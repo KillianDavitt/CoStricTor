@@ -49,7 +49,7 @@ for i in range(len(p_s)):
             
                     x.append(int(e[7])) 
                     y.append(int(e[1]))
-                plt.scatter(x,y, label=e[0])
+                plt.plot(x,y, label=e[0])
 
             
 #plt.ylim(0,3000)
