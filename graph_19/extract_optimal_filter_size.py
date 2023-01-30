@@ -24,6 +24,8 @@ for i in range(len(p_s)):
     to_add = [x for x in raw_data if x[8]==p_s[i]]
     results_per_p.append(to_add)
 
+    x = []
+    y = []
     for f in filter_sizes:
         qualifies = lambda x: int(x[2])<(int(x[1]) and x[7]==f)
 
@@ -42,9 +44,9 @@ for i in range(len(p_s)):
             end = sorted(end_results, key=lambda x: get_ep(0.75,float(x[8])))
             for e in end:
             
-                x = e[7] 
-                y = e[1]
-                plt.plot(x,y, label=e[0])
+                x.append(e[7]) 
+                y.append(e[1])
+            plt.plot(x,y, label=e[0])
 
             
 #plt.ylim(0,3000)
