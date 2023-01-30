@@ -38,7 +38,7 @@ for i in range(len(p_s)):
 
         end_results.append(sorted_results[0])
 
-        print(end_results)
+        #print(end_results)
 
 
 
@@ -47,7 +47,7 @@ for i in range(len(p_s)):
             
             x = e[7] 
             y = e[1]
-            plt.scatter(x,y, label=e[0])
+            plt.plot(x,y, label=e[0])
 
             
     
