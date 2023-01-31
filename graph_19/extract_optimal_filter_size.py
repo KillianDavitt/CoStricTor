@@ -50,7 +50,7 @@ for i in range(len(p_s)):
                 y.append(int(e[1]))
     #ss = np.random.randint(0,20,len(x))
     q = zip(x,y)
-    q = sorted(q,key=lambda x:int(x))
+    q = sorted(q,key=lambda x:int(x[0]))
     x,y = unzip(q)
     axs[0].plot(x,y, color=colours[i], label=str(round(get_ep(0.75,float(p_s[i])))))
     print(colours[i])
