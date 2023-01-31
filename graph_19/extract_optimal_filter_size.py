@@ -50,7 +50,7 @@ for i in range(len(p_s)):
                 x.append(int(e[7])) 
                 y.append(int(e[1]))
     ss = np.random.randint(0,20,50)
-    axs[0].scatter(x,y,s=ss*10 color=colours[i])
+    axs[0].scatter(x,y,s=ss*10, color=colours[i])
     print(colours[i])
             
 #plt.ylim(0,3000)
