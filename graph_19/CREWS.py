@@ -16,6 +16,14 @@ num_submissions = 3000000
 p=0.000001
 h=9
 
+def get_ep(p):
+    one_minus_p = 1-p
+    one_minus_q = 0.25
+    top_line = 0.75*one_minus_p
+    bottom_line = p*one_minus_q
+    return math.log(top_line/bottom_line)
+
+
 def match(x, p):
     
     if float(x[8])!=p:
@@ -59,12 +67,7 @@ axs[0].set(xlabel='Filter Size', ylabel='Upgrades')
 axs[1].set(xlabel='Filter Size', ylabel='Disasters')
 axs[2].set(xlabel='Filter Size', ylabel='Additional FPs')
 
-def get_ep(p):
-    one_minus_p = 1-p
-    one_minus_q = 0.25
-    top_line = 0.75*one_minus_p
-    bottom_line = p*one_minus_q
-    return math.log(top_line/bottom_line)
+
 
 labels = [str(round(get_ep(p))) for p in ps]
 axs[0].legend(labels)
