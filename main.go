@@ -40,7 +40,7 @@ func main() {
 	//	ps[i]=0.0000001 * float64(i)
 	//}
 	
-	numSites := 40000
+	numSites := 15000
 	numJobs := 1
 
 	var perms []interface{};
