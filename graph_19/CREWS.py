@@ -53,7 +53,7 @@ for e in entries:
 
     x = [a[0] for a in results]
     y = [a[1] for a in results]
-    axs[2].scatter(y,x, label=e[0])
+    axs[2].scatter(y,x, label=str(round(get_ep(e[0][0]))))
 
 axs[0].set(xlabel='Filter Size', ylabel='Upgrades')
 axs[1].set(xlabel='Filter Size', ylabel='Disasters')
@@ -66,7 +66,7 @@ def get_ep(p):
     bottom_line = p*one_minus_q
     return math.log(top_line/bottom_line)
 
-labels = [str(get_ep(p)) for p in ps]
+labels = [str(round(get_ep(p))) for p in ps]
 axs[0].legend(labels)
 axs[0].legend(labels=labels, loc='upper center', bbox_to_anchor=(0.5, 1.05),
           ncol=3, fancybox=True, shadow=True)
