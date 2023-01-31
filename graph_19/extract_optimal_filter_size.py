@@ -53,7 +53,7 @@ for i in range(len(p_s)):
     print(colours[i])
             
 #plt.ylim(0,3000)
-labels = [str(round(get_ep(0.75,float(p)))) for p in p_s]
+labels = sort([str(round(get_ep(0.75,float(p)))) for p in p_s])
 print(labels)
 axs[0].legend(labels)
 plt.xlabel('websites considered')
