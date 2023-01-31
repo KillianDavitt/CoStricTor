@@ -29,7 +29,7 @@ for i in range(len(p_s)):
     y = []
     # Get the best filter size for this p, and add it to x,y
     for f in filter_sizes:
-        qualifies = lambda x: ((int(x[2])<int(x[1])/1) and x[7]==f and x[8]==p_s[i])
+        qualifies = lambda x: (((int(x[2])<int(x[1])/1)) and x[7]==f and x[8]==p_s[i])
         end_results = []
         ## for every p in the test, find the optimal filter size
         
