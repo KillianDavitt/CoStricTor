@@ -1,7 +1,7 @@
 import math
 import matplotlib.pyplot as plt
 
-colours = ['red','green','blue','cyan','purple','orange','olive','gray','turquoise']
+colours = ['red','green','blue','brown','purple','orange','olive','gray','turquoise']
 
 def get_ep(q,p):
     one_minus_p = 1-p
