@@ -41,12 +41,12 @@ func main() {
 	//}
 	
 	numSites := 15000
-	numJobs := 1
+	numJobs := 540
 
 	var perms []interface{};
 	for i:=0; i<len(filterSizes); i++ {
 		for j:=0; j<len(ps); j++ {
-			p := []interface{}{filterSizes[i],3000000,ps[j],qs[0],0.045,0.7}
+			p := []interface{}{filterSizes[i],3000000,ps[j],qs[0],0.045,0.07}
 			perms = append(perms,p)
 		}
 	}
