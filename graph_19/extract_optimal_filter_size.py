@@ -1,6 +1,6 @@
 import math
 import matplotlib.pyplot as plt
-
+import np
 colours = ['red','green','blue','brown','purple','orange','olive','gray','turquoise']
 
 def get_ep(q,p):
@@ -49,7 +49,8 @@ for i in range(len(p_s)):
             
                 x.append(int(e[7])) 
                 y.append(int(e[1]))
-    axs[0].scatter(x,y, color=colours[i])
+    ss = np.random.randint(0,20,50)
+    axs[0].scatter(x,y,s=ss*10 color=colours[i])
     print(colours[i])
             
 #plt.ylim(0,3000)
