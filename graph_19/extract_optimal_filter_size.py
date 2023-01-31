@@ -49,6 +49,7 @@ for i in range(len(p_s)):
                 x.append(int(e[7])) 
                 y.append(int(e[1]))
     #ss = np.random.randint(0,20,len(x))
+    q = zip(x,y)
     axs[0].plot(x,y, color=colours[i], label=str(round(get_ep(0.75,float(p_s[i])))))
     print(colours[i])
             
