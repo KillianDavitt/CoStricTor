@@ -43,7 +43,7 @@ for i in range(len(p_s)):
             sorted_results = sorted(first_filter, key=lambda x: x[1], reverse=True)
             end_results.append(sorted_results[0])
             
-            end = end_reuslts #sorted(end_results, key=lambda x: get_ep(0.75,float(x[8])))
+            end = end_results #sorted(end_results, key=lambda x: get_ep(0.75,float(x[8])))
             for e in end:
             
                 x.append(int(e[7])) 
