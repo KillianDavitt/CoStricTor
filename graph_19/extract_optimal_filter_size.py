@@ -40,7 +40,7 @@ for i in range(len(p_s)):
             y.append(0)
             x.append(f)
         else:
-            sorted_results = sorted(first_filter, key=lambda x: x[1])
+            sorted_results = sorted(first_filter, key=lambda x: x[1], reversed=True)
 
             end_results.append(sorted_results[0])
             
