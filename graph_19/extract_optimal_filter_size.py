@@ -50,7 +50,7 @@ for i in range(len(p_s)):
                 y.append(int(e[1]))
     #ss = np.random.randint(0,20,len(x))
     q = zip(x,y)
-    q = sorted(q,key=lambda x:int(x[0]))
+    q = sorted(q,key=lambda x:int(x[1]))
     q2 = [[x[0] for x in q],[x[1] for x in q]]
     x = q2[0]
     y = q2[1]
