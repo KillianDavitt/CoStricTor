@@ -40,7 +40,7 @@ for i in range(len(p_s)):
             y.append(0)
             x.append(f)
         else:
-            sorted_results = sorted(first_filter, key=lambda x: x[1], reverse=True)
+            sorted_results = sorted(first_filter, key=lambda x: int(x[1]), reverse=True)
             end_results.append(sorted_results[0])
             
             end = end_results #sorted(end_results, key=lambda x: get_ep(0.75,float(x[8])))
