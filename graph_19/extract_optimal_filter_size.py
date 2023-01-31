@@ -43,13 +43,13 @@ for i in range(len(p_s)):
 
                 end_results.append(sorted_results[0])
             
-                #print(end_results)
+                
                 end = sorted(end_results, key=lambda x: get_ep(0.75,float(x[8])))
                 for e in end:
             
                     x.append(int(e[7])) 
                     y.append(int(e[1]))
-                plt.scatter(x,y, label=e[8])
+                plt.scatter(y,x, label=e[8])
 
             
 #plt.ylim(0,3000)
