@@ -68,6 +68,8 @@ def get_ep(p):
 
 labels = [str(get_ep(p)) for p in ps]
 axs[0].legend(labels)
+axs[0].legend(loc='upper center', bbox_to_anchor=(0.5, 1.05),
+          ncol=3, fancybox=True, shadow=True)
 #axs[1].legend(labels)
 #axs[2].legend(labels)
 
