@@ -49,11 +49,7 @@ for i in range(len(p_s)):
                 x.append(int(e[7])) 
                 y.append(int(e[1]))
     #ss = np.random.randint(0,20,len(x))
-    q = zip(x,y)
-    q = sorted(q,key=lambda x:int(x[1]))
-    q2 = [[x[0] for x in q],[x[1] for x in q]]
-    x = q2[0]
-    y = q2[1]
+  
     axs[0].scatter(x,y, color=colours[i], label=str(round(get_ep(0.75,float(p_s[i])))))
     print(colours[i])
             
