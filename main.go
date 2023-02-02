@@ -40,7 +40,7 @@ func main() {
 	//	ps[i]=0.0000001 * float64(i)
 	//}
 	
-	numSites := 45000
+	numSites := 50000
 	numJobs := 9
 
 	var perms []interface{};
@@ -53,8 +53,6 @@ func main() {
 	// Divide the parameters in chunks for the array job
 	
 	sizeChunks := int(len(perms)/numJobs)
-	fmt.Println(len(perms))
-	fmt.Println(numJobs)
 	var jobs [][]interface{};
 	jobs, err = chunkSlice(perms, sizeChunks)
 	if err != nil {
