@@ -18,7 +18,7 @@ eps = [9,8,7,6,5,4,3,2,1]
 for i in range(len(eps)):
     ps.append(p(qs[i],eps[i]))
   
-print(qs)
+print(ps)
 
 x = p(0.75,6)
 y = q(x,6)
