@@ -45,6 +45,7 @@ func main() {
 
 	var perms []interface{};
 	for i:=0; i<len(filterSizes); i++ {
+		fmt.Println("Hi")
 		for j:=0; j<len(ps); j++ {
 			p := []interface{}{filterSizes[i],3000000,ps[j],qs[j],0.045,0.07}
 			perms = append(perms,p)
