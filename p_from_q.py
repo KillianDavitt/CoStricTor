@@ -15,10 +15,10 @@ qs = []#[0.95,0.9,0.85,0.8,0.75,0.7,0.65,0.6,0.55,0.5]
 ps = [0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9]
 
 eps = [9,8,7,6,5,4,3,2,1]
-for i in eps:
-    ps.append(p(0.75,i))
+for i in range(eps):
+    qs.append(q(ps[i],eps[i]))
   
-print(ps)
+print(qs)
 
 x = p(0.75,6)
 y = q(x,6)
