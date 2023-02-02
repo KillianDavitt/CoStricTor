@@ -53,6 +53,8 @@ func main() {
 	// Divide the parameters in chunks for the array job
 	
 	sizeChunks := int(len(perms)/numJobs)
+	fmt.Println(len(perms))
+	fmt.Println(numJobs)
 	var jobs [][]interface{};
 	jobs, err = chunkSlice(perms, sizeChunks)
 	if err != nil {
