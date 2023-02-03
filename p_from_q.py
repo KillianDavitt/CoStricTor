@@ -16,6 +16,6 @@ ps = []
 
 eps = [9,8,7,6,5,4,3,2,1]
 for i in range(len(eps)):
-    ps.append(p(qs[i],7)
+    ps.append(p(qs[i],7))
   
 print(ps)
