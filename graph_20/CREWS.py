@@ -24,7 +24,7 @@ def match(x, q):
   
     return True
 
-qs = list(set([x[9] for x in d]))
+qs = list(set([x[8] for x in d]))
 print(qs)
 
 entries = []
