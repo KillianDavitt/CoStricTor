@@ -16,15 +16,6 @@ ps = []
 
 eps = [9,8,7,6,5,4,3,2,1]
 for i in range(len(eps)):
-    ps.append(p(qs[i],eps[i]))
+    ps.append(p(qs[i],7)
   
 print(ps)
-
-x = p(0.75,6)
-y = q(x,6)
-print(y)
-
-print(q(0.5246331135813284,1))
-
-print(p(0.6,1))
-print(p(0.99,1))
