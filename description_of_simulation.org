@@ -25,4 +25,4 @@ The first task of the simulation is to establish which size of bloom filter is a
 
 $$q = \frac{p e^epsilon}{1-p+pe^epsilon}$$
 
-Recall that
+Recall that $p$ is the probability of any true zero bit being reported as a false 1, and $q$ is the probability of any true bit being reported as a false zero.
