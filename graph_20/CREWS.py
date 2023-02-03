@@ -29,6 +29,7 @@ print(qs)
 
 entries = []
 for q in qs:
+    print("test")
     e = [(q,x) for x in d if match(x,q)]
     entries.append(e)
 
