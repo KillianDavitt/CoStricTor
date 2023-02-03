@@ -27,6 +27,8 @@ fig, axs = plt.subplots(2)
 for i in range(len(p_s)):
     x = []
     y = []
+    k = []
+    l = []
     # Get the best filter size for this p, and add it to x,y
     for f in filter_sizes:
         qualifies = lambda x: (((int(x[2])<int(x[1])/4)) and x[7]==f and x[8]==p_s[i])
@@ -46,11 +48,17 @@ for i in range(len(p_s)):
             end = end_results #sorted(end_results, key=lambda x: get_ep(0.75,float(x[8])))
             for e in end:
             
-                x.append(int(e[7])) 
+                x.append(int(e[7]))
+                k.append(int(e[7])) 
+                                
                 y.append(int(e[1]))
+                l.append(int(e[2])) 
+
     #ss = np.random.randint(0,20,len(x))
   
     axs[0].scatter(x,y, color=colours[i], label=str(round(get_ep(0.75,float(p_s[i])))))
+    axs[1].scatter(x,y, color=colours[i], label=str(round(get_ep(0.75,float(p_s[i])))))
+
     print(colours[i])
             
 #plt.ylim(0,3000)
