@@ -11,11 +11,11 @@ def q(p,ep):
 #return (p(0.9,7))
 #return q(0.0082002,7)
   
-qs = [0.95,0.9,0.85,0.8,0.75,0.7,0.65,0.6,0.55]
-ps = []
+qs = []
+ps = [0.1,0.2,0.3,0.4,0.5,0.6,0.7]
 
 eps = [9,8,7,6,5,4,3,2,1]
-for i in range(len(eps)):
-    ps.append(p(qs[i],7))
+for i in range(len(ps)):
+    qs.append(q(ps[i],7))
   
-print(ps)
+print(qs)
