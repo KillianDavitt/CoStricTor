@@ -36,7 +36,7 @@ for q in qs:
 fig, axs = plt.subplots(3)
 fig.suptitle('CREWS Results')
 
-NUM_COLORS = len(plist)
+NUM_COLORS = len(qs)
 
 cm = plt.get_cmap('gist_rainbow')
 fig = plt.figure()
