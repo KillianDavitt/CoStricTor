@@ -48,7 +48,6 @@ for e in entries:
 
     x = [a[0] for a in results]
     y = [a[1] for a in results]
-    print(len(x))
     axs[0].scatter(y,x, label=e[0])
     
 
