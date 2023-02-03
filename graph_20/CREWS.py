@@ -36,7 +36,7 @@ fig.suptitle('CREWS Results')
 NUM_COLORS = len(qs)
 
 cm = plt.get_cmap('gist_rainbow')
-print(cm[0])
+print(cm(1))
 fig = plt.figure()
 axs[0].set_prop_cycle('color', [cm(1.*i/NUM_COLORS) for i in range(NUM_COLORS)])
 
