@@ -64,7 +64,7 @@ for i in range(len(p_s)):
 #plt.ylim(0,3000)
 labels = ([str(round(get_ep(0.75,float(p)))) for p in p_s])
 print(labels)
-axs[0].legend(labels,bbox_to_anchor=(1.1, 1.05))
+axs[0].legend(labels,bbox_to_anchor=(1.2, 1.05))
 plt.xlabel('websites considered')
 plt.ylabel('upgrades')
 plt.savefig('graph.png', dpi=600)
