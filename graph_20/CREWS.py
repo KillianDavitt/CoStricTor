@@ -21,7 +21,7 @@ def match(x, q):
     if float(x[9])!=q:
         return False
 
-  
+    print("match")
     return True
 
 qs = list(set([x[9] for x in d]))
