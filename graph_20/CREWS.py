@@ -28,7 +28,6 @@ qs = list(set([float(x[9]) for x in d]))
 entries = []
 for q in qs:
     e = [(q,x) for x in d if match(x,q)]
-    print(len(e))
     entries.append(e)
 
 fig, axs = plt.subplots(3)
