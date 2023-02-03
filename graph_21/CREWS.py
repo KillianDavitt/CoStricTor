@@ -43,8 +43,8 @@ axs[1].set_prop_cycle('color', [cm(1.*i/NUM_COLORS) for i in range(NUM_COLORS)])
 axs[2].set_prop_cycle('color', [cm(1.*i/NUM_COLORS) for i in range(NUM_COLORS)])
 
 axs[0].set_ylim(1200,2400)
-axs[1].set_ylim(0,3000)
-axs[2].set_ylim(0,50000)
+axs[1].set_ylim(0,2000)
+axs[2].set_ylim(0,40000)
 for e in entries:
     results = [(int(x[1][1]),float(x[1][8])) for x in e]
 
