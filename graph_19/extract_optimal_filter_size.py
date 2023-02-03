@@ -57,7 +57,7 @@ for i in range(len(p_s)):
     #ss = np.random.randint(0,20,len(x))
   
     axs[0].scatter(x,y, color=colours[i], label=str(round(get_ep(0.75,float(p_s[i])))))
-    axs[1].scatter(x,y, color=colours[i], label=str(round(get_ep(0.75,float(p_s[i])))))
+    axs[1].scatter(k,l, color=colours[i], label=str(round(get_ep(0.75,float(p_s[i])))))
 
     print(colours[i])
             
