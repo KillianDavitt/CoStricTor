@@ -29,8 +29,8 @@ print(qs)
 
 entries = []
 for q in qs:
-    print("test")
     e = [(q,x) for x in d if match(x,q)]
+    print(len(e))
     entries.append(e)
 
 fig, axs = plt.subplots(3)
