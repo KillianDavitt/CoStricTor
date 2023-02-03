@@ -31,7 +31,7 @@ for q in qs:
     entries.append(e)
 
 fig, axs = plt.subplots(3)
-fig.suptitle('CREWS Results')
+fig.suptitle('p vs q for same epsilon: epsilon of 7')
 
 NUM_COLORS = len(qs)
 
