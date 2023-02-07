@@ -43,7 +43,7 @@ for e in entries:
     axs.scatter(y,x, label=e[0])
 
 for e in entries:
-    results = [(int(x[1][4])+int(x[1][2]),float(x[1][8])) for x in e]
+    results = [(int(x[1][4])+int(x[1][2]),float(x[1][5])) for x in e]
 
     x = [a[0] for a in results]
     y = [a[1] for a in results]
