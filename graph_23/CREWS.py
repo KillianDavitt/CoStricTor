@@ -14,12 +14,12 @@ h=9
 
 def match(x, q):
     
-    if float(x[7])!=q:
+    if float(x[5])!=q:
         return False
 
   
     return True
-qs = list(set([float(x[7]) for x in d]))
+qs = list(set([float(x[5]) for x in d]))
 
 entries = []
 for q in qs:
