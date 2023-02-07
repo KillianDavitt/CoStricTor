@@ -37,4 +37,4 @@ Our function $f$ then computes the optimal filter size for each epsilon.
 
 $$f(S,e,U,D,A) \to s$$
 
-in an ideal world, $f$ would return $max(u) \forall_s d=0 ^ a=0$
+in an ideal world, $f$ would return $S(max(u)) \forall_u d=0 ^ a=0$
