@@ -32,7 +32,7 @@ cm = plt.get_cmap('gist_rainbow')
 
 fig, axs = plt.subplots(2)
 
-axs.set_prop_cycle('color', [cm(1.*i/NUM_COLORS) for i in range(NUM_COLORS)])
+axs[0].set_prop_cycle('color', [cm(1.*i/NUM_COLORS) for i in range(NUM_COLORS)])
 
 for e in entries:
     results = [(int(x[1][1]),float(x[1][5])) for x in e]
