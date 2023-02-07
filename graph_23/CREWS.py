@@ -19,7 +19,7 @@ def match(x, q):
 
   
     return True
-qs = list(set([float(x[9]) for x in d]))
+qs = list(set([float(x[7]) for x in d]))
 
 entries = []
 for q in qs:
