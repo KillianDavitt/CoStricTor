@@ -14,7 +14,7 @@ h=9
 
 def match(x, q):
     
-    if float(x[9])!=q:
+    if float(x[7])!=q:
         return False
 
   
