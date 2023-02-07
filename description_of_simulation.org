@@ -36,3 +36,5 @@ For each value $s$ in $S$ the set of filter sizes being considered and $e$, the 
 Our function $f$ then computes the optimal filter size for each epsilon.
 
 $$f(S,e,U,D,A) \to s$$
+
+in an ideal world, $f$ would return $max(u) \forall_s d=0 ^ a=0$
