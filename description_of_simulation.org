@@ -33,4 +33,4 @@ Recall that $p$ is the probability of any true zero bit being reported as a fals
 
 In order to produce a clear representation of the number of sites which we can accurately represent, we compare the maximum number of sites we can consistently represent against different values of epsilon. For this we must also obtain the best suited value for filter size for each combination of epsilon and number of sites being represented. To do this we define a function $f$ which evaluates the optimal value of bloom filter size for a given epsilon and filter size. For any result we obtain $u$ the number of site upgrades which occur, $d$ the number of http sites which are falsely blocked by the protocol, and $e$ the number of 'additional' sites which would be blocked by the protocol. Our function $f$:
 
-$$f(S,U,D,E) \arrow s$$
+$$f(S,U,D,E) \to s$$
