@@ -41,21 +41,21 @@ for e in entries:
 
     x = [a[0] for a in results]
     y = [a[1] for a in results]
-    axs[0].scatter(y,x, label=e[0])
+    axs[0].scatter(y,x, label=e[0], color='blue')
 
 for e in entries:
     results = [(int(x[1][2]),float(x[1][5])) for x in e]
 
     x = [a[0] for a in results]
     y = [a[1] for a in results]
-    axs[1].scatter(y,x, label=e[0])
+    axs[1].scatter(y,x, label=e[0], color='red')
 
 for e in entries:
     results = [(int(x[1][4])+int(x[1][2]),float(x[1][5])) for x in e]
 
     x = [a[0] for a in results]
     y = [a[1] for a in results]
-    axs[1].scatter(y,x, label=e[0])
+    axs[1].scatter(y,x, label=e[0], color='green')
 
 
 
