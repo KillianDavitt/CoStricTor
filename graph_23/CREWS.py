@@ -19,8 +19,8 @@ def match(x, q):
 
   
     return True
-qs = list(set([float(x[8]) for x in d]))
-
+#qs = list(set([float(x[8]) for x in d]))
+qs = [0.01]
 entries = []
 for q in qs:
     e = [(q,x) for x in d if match(x,q)]
