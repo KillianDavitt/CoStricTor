@@ -42,3 +42,8 @@ in an ideal world, $f$ would return $S(max(u)) \forall_u d=0 \wedge a=0$
 This is of course impractical because by allowing a small number of false positives, we can obtain much much better results for number of upgrades. This then highlights that there is no correct definition for $f$ and in any particular implementation of this protocol, a different definition of $f$ could be chosen. For our own simulations we choose an arbitrary definition of $f$ which is  as follows.
 
 $$f(S,e,U,D,A) = S(max(u)) \forall_u d< \frac{u}{2}$$
+
+
+final results:
+
+by applying $f$ to a range of inputs we obtain data showing the best results our protocol can produce for any value of epsilon and the number of sites being considered. In figure x we can see the results from epsilon values 1-9 and sites values 
