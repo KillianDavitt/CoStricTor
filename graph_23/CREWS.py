@@ -30,24 +30,30 @@ NUM_COLORS = len(qs)
 
 cm = plt.get_cmap('gist_rainbow')
 
-fig, axs = plt.subplots(1)
+fig, axs = plt.subplots(2)
 
 axs.set_prop_cycle('color', [cm(1.*i/NUM_COLORS) for i in range(NUM_COLORS)])
 
+for e in entries:
+    results = [(int(x[1][1]),float(x[1][5])) for x in e]
+
+    x = [a[0] for a in results]
+    y = [a[1] for a in results]
+    axs[0].scatter(y,x, label=e[0])
 
 for e in entries:
     results = [(int(x[1][2]),float(x[1][5])) for x in e]
 
     x = [a[0] for a in results]
     y = [a[1] for a in results]
-    axs.scatter(y,x, label=e[0])
+    axs[1].scatter(y,x, label=e[0])
 
 for e in entries:
     results = [(int(x[1][4])+int(x[1][2]),float(x[1][5])) for x in e]
 
     x = [a[0] for a in results]
     y = [a[1] for a in results]
-    axs.scatter(y,x, label=e[0])
+    axs[1].scatter(y,x, label=e[0])
 
 
 
