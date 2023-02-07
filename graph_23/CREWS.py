@@ -64,7 +64,7 @@ plt.ylabel("False Upgrades")
 
 
 labels = [str(p) for p in qs]
-plt.legend(labels)
+#plt.legend(labels)
 
 
 
