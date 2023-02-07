@@ -62,6 +62,7 @@ for e in entries:
 plt.xlabel('Filter Size')
 plt.ylabel("False Upgrades")
 
+axs[1].set_ylim(0,1000)
 
 labels = ["corrected false positives","initial false positives"]
 plt.legend(labels)
