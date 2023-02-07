@@ -32,7 +32,7 @@ $$q = \frac{p e^epsilon}{1-p+pe^epsilon}$$
 Recall that $p$ is the probability of any true zero bit being reported as a false 1, and $q$ is the probability of any true bit being reported as a false zero. Epsilon is decreased by either a increase in $p$ or a decrease in $q$. As such, we must decide optimal settings for $p$ and $q$ for the value of epsilon we consider acceptable. We next then run the simulation with various combinations of $p$ and $q$ which result in the same values of epsilon. Figure x shows the results of these simulations showing mostly little difference between the values chosen. This supports using any arbitrary combination of $p$ and $q$ to achieve the desired value of epsilon.
 
 In order to produce a clear representation of the number of sites which we can accurately represent, we compare the maximum number of sites we can consistently represent against different values of epsilon. For this we must also obtain the best suited value for filter size for each combination of epsilon and number of sites being represented. To do this we define a function $f$ which evaluates the optimal value of bloom filter size for a given epsilon and filter size. For any result we obtain $u$ the number of site upgrades which occur, $d$ the number of http sites which are falsely blocked by the protocol, and $a$ the number of 'additional' sites which would be blocked by the protocol.
-For each value $s$ in $S$ the set of filter sizes being considered and $e$ in $E$, we obtain $U,D,E$ which are the set of values $u,d,e$ produced by the simulation for each value of $s$
-Our function $f$:
+For each value $s$ in $S$ the set of filter sizes being considered and $e$, the epsilon being considered. We obtain $U,D,E$ which are the set of values $u,d,a$ produced by the simulation for each value of $s,e$
+Our function $f$ then computes the optimal filter size for each epsilon.
 
-$$f(S,E,U,D,A) \to s$$
+$$f(S,e,U,D,A) \to s$$
