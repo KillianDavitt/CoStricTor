@@ -34,14 +34,14 @@ func main() {
 	
 	//secondaryThresholds := [6]float64{0.01,0.02,0.03,0.04,0.05,0.06}
 	//secondaryThreshs := [16]float64{0.1,0.2,0.3,0.09,0.08,0.07,0.06,0.05,0.04,0.03,0.02,0.1,0.001,0.005,0.0005,0.0001}
-	ps := [5]float64{0.1,0.01,0.001,0.0001,0.00001}
+	ps := [5]float64{0.1}
 	qs := [1]float64{0.75}
 	//for i:=1; i<200; i++ {
 	//	ps[i]=0.0000001 * float64(i)
 	//}
 	
 	numSites := 50000
-	numJobs := 300
+	numJobs := 1
 
 	var perms []interface{};
 	for i:=0; i<len(filterSizes); i++ {
