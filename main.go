@@ -41,7 +41,7 @@ func main() {
 	//}
 	
 	numSites := 50000
-	numJobs := 1
+	numJobs := 256
 
 	var perms []interface{};
 	for i:=0; i<len(primaryThresh); i++ {
