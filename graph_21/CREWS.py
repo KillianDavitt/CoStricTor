@@ -31,7 +31,7 @@ for q in qs:
     entries.append(e)
 
 fig, axs = plt.subplots(3)
-fig.suptitle('p vs q for same epsilon: epsilon of 4')
+#fig.suptitle('p vs q for same epsilon: epsilon of 4')
 
 NUM_COLORS = len(qs)
 
@@ -71,8 +71,8 @@ axs[0].set(xlabel='p', ylabel='Upgrades')
 axs[1].set(xlabel='p', ylabel='Disasters')
 axs[2].set(xlabel='p', ylabel='Additional FPs')
 
-labels = [str(p) for p in qs]
-axs[0].legend(labels,bbox_to_anchor=(1.1, 1.05))
+labels = [str(round(p,3)) for p in qs]
+axs[0].legend(labels,bbox_to_anchor=(1.1, 1.05), title="q")
 #axs[1].legend(labels)
 #axs[2].legend(labels)
 
