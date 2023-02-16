@@ -69,7 +69,7 @@ axs[1].set(xlabel='Filter Size', ylabel='Disasters')
 axs[2].set(xlabel='Filter Size', ylabel='Additional FPs')
 
 labels = [str(get_ep(p)) for p in ps]
-axs[0].legend(labels,title='p',bbox_to_anchor=(1.0001, 1.0501))
+axs[0].legend(labels,title='epsilon',bbox_to_anchor=(1.0001, 1.0501))
 #axs[1].legend(labels)
 #axs[2].legend(labels)
 
