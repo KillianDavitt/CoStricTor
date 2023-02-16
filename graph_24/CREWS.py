@@ -3,6 +3,7 @@
 # -- Sheet --
 
 import matplotlib.pyplot as plt
+import math
 
 def get_ep(p):
     one_minus_p = 1-p
