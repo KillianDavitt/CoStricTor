@@ -71,7 +71,9 @@ axs[0].set(xlabel='p', ylabel='Upgrades')
 axs[1].set(xlabel='p', ylabel='Disasters')
 axs[2].set(xlabel='p', ylabel='Additional FPs')
 
-labels = [str(round(p,3)) for p in qs]
+labels = [round(p,3) for p in qs]
+labels = sorted(labels)
+labels = [str(x) for x in labels]
 axs[0].legend(labels,bbox_to_anchor=(1.1, 1.05), title="q")
 #axs[1].legend(labels)
 #axs[2].legend(labels)
