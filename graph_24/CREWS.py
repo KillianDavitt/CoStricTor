@@ -60,7 +60,7 @@ axs[1].set(xlabel='Filter Size', ylabel='Disasters')
 axs[2].set(xlabel='Filter Size', ylabel='Additional FPs')
 
 labels = [str(p) for p in ps]
-plt.legend(labels,bbox_to_anchor=(1.05001, 1.00001))
+plt.legend(labels,bbox_to_anchor=(1.0001, 1.05001))
 #axs[1].legend(labels)
 #axs[2].legend(labels)
 
