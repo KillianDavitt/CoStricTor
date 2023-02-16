@@ -65,7 +65,7 @@ plt.legend(labels,bbox_to_anchor=(1.0001, 1.0501))
 #axs[2].legend(labels)
 
 
-plt.savefig('filename.png', dpi=600)
+plt.savefig('filename.png', dpi=600, bbox_inches='tight')
 
 entries
 
