@@ -30,7 +30,7 @@ for p in ps:
     entries.append(e)
 
 fig, axs = plt.subplots(3)
-fig.suptitle('Vertically stacked subplots')
+#fig.suptitle('Vertically stacked subplots')
 
 
 
