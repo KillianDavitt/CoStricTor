@@ -4,6 +4,14 @@
 
 import matplotlib.pyplot as plt
 
+def get_ep(p):
+    one_minus_p = 1-p
+    one_minus_q = 0.25
+    top_line = 0.75*one_minus_p
+    bottom_line = p*one_minus_q
+    return math.log(top_line/bottom_line)
+
+
 with open("crews_full_output.csv") as f:
     data = f.readlines()
     
@@ -59,7 +67,7 @@ axs[0].set(xlabel='Filter Size', ylabel='Upgrades')
 axs[1].set(xlabel='Filter Size', ylabel='Disasters')
 axs[2].set(xlabel='Filter Size', ylabel='Additional FPs')
 
-labels = [str(p) for p in ps]
+labels = [str(get_ep(p)) for p in ps]
 axs[0].legend(labels,title='p',bbox_to_anchor=(1.0001, 1.0501))
 #axs[1].legend(labels)
 #axs[2].legend(labels)
