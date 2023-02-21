@@ -82,7 +82,7 @@ axs[0].legend([h[1], h[0]], [l[1], l[0]])
 
 
 ##axs[0].legend(bbox_to_anchor=(1.2, 1.05),
-           fancybox=True, shadow=True, title="epsilon")
+##fancybox=True, shadow=True, title="epsilon")
 #axs[1].legend(labels)
 #axs[2].legend(labels)
 
