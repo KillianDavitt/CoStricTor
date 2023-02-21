@@ -77,7 +77,7 @@ axs[2].set(xlabel='Filter Size', ylabel='Additional FPs')
 ##labels = [round(get_ep(p)) for p in ps]
 ##labels = sorted(labels)
 ##labels = [str(s) for s in labels]
-h, l = axs[0].gca().get_legend_handles_labels()
+h, l = axs[0].get_legend_handles_labels()
 axs[0].legend([h[1], h[0]], [l[1], l[0]])
 
 
