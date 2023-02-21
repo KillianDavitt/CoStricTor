@@ -76,6 +76,12 @@ labels = [round(get_ep(p)) for p in ps]
 labels = sorted(labels)
 labels = [str(s) for s in labels]
 print(labels)
+
+handles, labels = axs[0].get_legend_handles_labels()
+# sort both labels and handles by labels
+labels, handles = zip(*sorted(zip(labels, handles), key=lambda t: t[0]))
+axs[0].legend(handles, labels)
+
 axs[0].legend(bbox_to_anchor=(1.2, 1.05),
            fancybox=True, shadow=True, title="epsilon")
 #axs[1].legend(labels)
