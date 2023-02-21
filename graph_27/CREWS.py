@@ -72,7 +72,9 @@ axs[2].set(xlabel='Filter Size', ylabel='Additional FPs')
 
 
 
-labels = sorted([str(round(get_ep(p))) for p in ps])
+labels = [round(get_ep(p)) for p in ps]
+labels = sorted(labels)
+labels = [str(s) for s in labels]
 axs[0].legend(bbox_to_anchor=(1.2, 1.05),
            fancybox=True, shadow=True, title="epsilon")
 #axs[1].legend(labels)
