@@ -79,7 +79,7 @@ axs[2].set(xlabel='Filter Size', ylabel='Additional FPs')
 ##labels = [str(s) for s in labels]
 h, l = axs[0].get_legend_handles_labels()
 
-labels, handles = zip(*sorted(zip(l, h), key=lambda t: foat(t[0])))
+labels, handles = zip(*sorted(zip(l, h), key=lambda t: float(t[0])))
 axs[0].legend(handles,labels)
 
 
