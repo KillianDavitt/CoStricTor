@@ -34,6 +34,8 @@ def match(x, p):
 
 ps = list(set([float(x[8]) for x in d]))
 d = sorted(d, key=lambda x:x[8])
+
+print(d[0])
 entries = []
 for p in ps:
     e = [(p,x) for x in d if match(x,p)]
