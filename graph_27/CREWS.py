@@ -31,7 +31,7 @@ def match(x, p):
 
   
     return True
-0.12995149343859222, 0.28876540577240617, 0.5246331135813284]
+
 ps = list(set([float(x[8]) for x in d]))
 
 entries = []
