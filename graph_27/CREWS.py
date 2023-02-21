@@ -83,8 +83,7 @@ labels, handles = zip(*sorted(zip(l, h), key=lambda t: float(t[0])))
 axs[0].legend(handles,labels)
 
 
-##axs[0].legend(bbox_to_anchor=(1.2, 1.05),
-##fancybox=True, shadow=True, title="epsilon")
+axs[0].legend(handles, labels,bbox_to_anchor=(1.2, 1.05),fancybox=True, shadow=True, title="epsilon")
 #axs[1].legend(labels)
 #axs[2].legend(labels)
 
