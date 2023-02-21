@@ -72,15 +72,9 @@ axs[2].set(xlabel='Filter Size', ylabel='Additional FPs')
 
 
 
-labels = [round(get_ep(p)) for p in ps]
-labels = sorted(labels)
-labels = [str(s) for s in labels]
-print(labels)
-
-handles, labels = axs[0].get_legend_handles_labels()
-# sort both labels and handles by labels
-labels, handles = zip(*sorted(zip(labels, handles), key=lambda t: int(t[0])))
-axs[0].legend(handles, labels)
+##labels = [round(get_ep(p)) for p in ps]
+##labels = sorted(labels)
+##labels = [str(s) for s in labels]
 
 axs[0].legend(bbox_to_anchor=(1.2, 1.05),
            fancybox=True, shadow=True, title="epsilon")
