@@ -41,7 +41,7 @@ for p in ps:
 
 fig, axs = plt.subplots(3)
 #fig.suptitle('')
-e = sorted(e, key=lambda x:x[5])
+e = sorted(e, key=lambda x:x[1][5])
 
 
 for e in entries:
