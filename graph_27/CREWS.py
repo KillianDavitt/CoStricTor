@@ -33,7 +33,7 @@ def match(x, p):
     return True
 
 ps = list(set([float(x[8]) for x in d]))
-d = sorted(d, key=lambda x:x[5])
+d = sorted(d, key=lambda x:x[8])
 entries = []
 for p in ps:
     e = [(p,x) for x in d if match(x,p)]
