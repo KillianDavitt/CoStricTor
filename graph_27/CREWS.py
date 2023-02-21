@@ -33,7 +33,7 @@ def match(x, p):
     return True
 
 ps = list(set([float(x[8]) for x in d]))
-
+d = sorted(d, key=lambda x:x[5])
 entries = []
 for p in ps:
     e = [(p,x) for x in d if match(x,p)]
@@ -41,7 +41,7 @@ for p in ps:
 
 fig, axs = plt.subplots(3)
 #fig.suptitle('')
-e = sorted(e, key=lambda x:x[1][5])
+
 
 
 for e in entries:
