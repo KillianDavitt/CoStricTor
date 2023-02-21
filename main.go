@@ -44,7 +44,7 @@ func main() {
 	numJobs := 500
 
 	var perms []interface{};
-	for i:=0; i<len(filterSize); i++ {
+	for i:=0; i<len(filterSizes); i++ {
 		for j:=0; j<len(ps); j++ {
 			p := []interface{}{filterSizes[i],20000000,ps[j],qs[0],primaryThresh[0],secondaryThreshs[0]}
 			perms = append(perms,p)
