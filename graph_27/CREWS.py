@@ -80,7 +80,7 @@ axs[2].set(xlabel='Filter Size', ylabel='Additional FPs')
 h, l = axs[0].get_legend_handles_labels()
 
 labels, handles = zip(*sorted(zip(l, h), key=lambda t: foat(t[0])))
-axs[0].legend([h[3],h[2],h[1], h[0]], [l[3],l[2],l[1], l[0]])
+axs[0].legend(handles,labels)
 
 
 ##axs[0].legend(bbox_to_anchor=(1.2, 1.05),
