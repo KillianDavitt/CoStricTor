@@ -36,19 +36,19 @@ func main() {
 	
 	//secondaryThresholds := [6]float64{0.01,0.02,0.03,0.04,0.05,0.06}
 	secondaryThreshs := [1]float64{0.07}
-	ps := [8]float64{0.4,0.3, 0.6, 0.1, 0.2, 0.7, 0.01, 0.5}
-	qs := [8]float64{0.75}
+	ps := [9]float64{0.0003700923931708333, 0.28876540577240617, 0.0027281825552509286, 0.00738136679298443, 0.12995149343859222, 0.0520850061724844, 0.5246331135813284, 0.01981333734650907, 0.0010053760853966232}
+	qs := [1]float64{0.75}
 	//for i:=1; i<200; i++ {
 	//	ps[i]=0.0000001 * float64(i)
 	//}
 	
-	numSites := 50000
-	numJobs := 8
+	numSites := 20000
+	numJobs := 900
 
 	var perms []interface{};
 	for i:=0; i<len(filterSizes); i++ {
 		for j:=0; j<len(ps); j++ {
-			p := []interface{}{filterSizes[i],20000000,ps[j],qs[j],primaryThresh[0],secondaryThreshs[0]}
+			p := []interface{}{filterSizes[i],20000000,ps[j],qs[0],primaryThresh[0],secondaryThreshs[0]}
 			perms = append(perms,p)
 		}
 	}
