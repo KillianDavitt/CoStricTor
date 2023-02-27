@@ -23,6 +23,7 @@ def match(x, q):
 
     return True
 
+d = sorted(d, key=lambda x:float(x[8]))
 qs = list(set([float(x[9]) for x in d]))
 
 entries = []
