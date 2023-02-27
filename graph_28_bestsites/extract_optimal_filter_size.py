@@ -24,6 +24,8 @@ results_per_p = []
 fig, axs = plt.subplots(2)
 
 # For each value of p
+i=0
+markers = ["s","o",'b','h','x','D','d']
 for i in range(len(p_s)):
     x = []
     y = []
@@ -57,7 +59,8 @@ for i in range(len(p_s)):
     #ss = np.random.randint(0,20,len(x))
   
     axs[0].scatter(x,y, color=colours[i], label=str(round(get_ep(0.75,float(p_s[i])))))
-    axs[1].scatter(k,l, color=colours[i], label=str(round(get_ep(0.75,float(p_s[i])))))
+    axs[1].scatter(k,l, color=colours[i], label=str(round(get_ep(0.75,float(p_s[i])))),marker=markers[i])
+    i+=1
 
     print(colours[i])
             
