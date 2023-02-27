@@ -21,7 +21,7 @@ filter_sizes = list(set([x[7] for x in raw_data]))
 
 # 2d array of results by p value
 results_per_p = []
-fig, axs = plt.subplots(2)
+fig, axs = plt.subplots(3)
 
 # For each value of p
 markers = ['s','o','h','x','D','d','8','*','>','p','P']
