@@ -48,7 +48,7 @@ axs[2].set_ylim(0,1000)
 
 markers = ['s','o','h','x','D','d','8','*','>','p','P']
 
-for i in range(entries):
+for i in len(entries):
     results = [(int(x[1][1]),float(x[1][8])) for x in entries[i]]
 
     x = [a[0] for a in results]
@@ -56,14 +56,14 @@ for i in range(entries):
     axs[0].scatter(y,x, label=round(float(entries[i][0][1][9]),3),marker=markers[i])
     
 
-for i in range(entries):
+for i in len(entries):
     results = [(int(x[1][2]),float(x[1][8])) for x in entries[i]]
 
     x = [a[0] for a in results]
     y = [a[1] for a in results]
     axs[1].scatter(y,x, label=round(float(entries[i][0][1][9]),3),marker=markers[i])
 
-for i in range(entries):
+for i in len(entries):
     results = [(int(x[1][12]),float(x[1][8])) for x in entries[i]]
 
     x = [a[0] for a in results]
