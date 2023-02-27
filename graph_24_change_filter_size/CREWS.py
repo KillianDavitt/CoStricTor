@@ -44,25 +44,25 @@ fig, axs = plt.subplots(3)
 markers = ['s','o','h','x','D','d','8','*','>','p','P']
 
 for i in range(len(entries)):
-    results = [(int(x[1][1]),float(x[1][5])) for x in e]
+    results = [(int(x[1][1]),float(x[1][5])) for x in entries[i]]
 
     x = [a[0] for a in results]
     y = [a[1] for a in results]
-    axs[0].scatter(y,x, label=e[0], marker=markers[i])
+    axs[0].scatter(y,x, label=entries[i][0], marker=markers[i])
 
 for i in range(len(entries)):
-    results = [(int(x[1][2]),float(x[1][5])) for x in e]
+    results = [(int(x[1][2]),float(x[1][5])) for x in entries[i]]
 
     x = [a[0] for a in results]
     y = [a[1] for a in results]
-    axs[1].scatter(y,x, label=e[0], marker=markers[i])
+    axs[1].scatter(y,x, label=entries[i][0], marker=markers[i])
 
 for i in range(len(entries)):
-    results = [(int(x[1][12]),float(x[1][5])) for x in e]
+    results = [(int(x[1][12]),float(x[1][5])) for x in entries[i]]
 
     x = [a[0] for a in results]
     y = [a[1] for a in results]
-    axs[2].scatter(y,x, label=e[0], marker=markers[i])
+    axs[2].scatter(y,x, label=entries[i][0], marker=markers[i])
 
 axs[0].set(xlabel='Filter Size', ylabel='Upgrades')
 axs[1].set(xlabel='Filter Size', ylabel='Disasters')
