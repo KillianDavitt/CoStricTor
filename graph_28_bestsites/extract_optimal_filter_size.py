@@ -70,12 +70,13 @@ for i in range(len(p_s)):
             
 #plt.ylim(0,3000)
 #labels = ([str(round(get_ep(0.75,float(p)))) for p in p_s])
-labels = [round(get_ep(0.75,float(p))) for p in p_s]
-labels = sorted(labels)
-labels = [str(x) for x in labels]
 
-print(labels)
-axs[0].legend(bbox_to_anchor=(1.2, 1.05), title="epsilon")
+h, l = axs[0].get_legend_handles_labels()
+
+labels, handles = zip(*sorted(zip(l, h), key=lambda t: float(t[0])))
+
+
+axs[0].legend(labels,handles,bbox_to_anchor=(1.2, 1.05), title="epsilon")
 plt.xlabel('websites considered')
 axs[0].set_ylabel('upgrades')
 axs[1].set_ylabel('false positives')
