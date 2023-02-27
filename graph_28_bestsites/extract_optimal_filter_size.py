@@ -25,7 +25,7 @@ fig, axs = plt.subplots(2)
 
 # For each value of p
 i=0
-markers = ['s','o','h','x','D','d']
+markers = ['s','o','h','x','D','d','8','*','>']
 for i in range(len(p_s)):
     x = []
     y = []
