@@ -64,7 +64,7 @@ for i in range(len(p_s)):
   
     axs[0].scatter(x,y, color=colours[i], label=str(round(get_ep(0.75,float(p_s[i])))),marker=markers[i])
     axs[1].scatter(k,l, color=colours[i], label=str(round(get_ep(0.75,float(p_s[i])))),marker=markers[i])
-    axs[2].scatter(z,t, color=colours[i], label=str(round(get_ep(0.75,float(p_s[i])))),marker=markers[i])
+    #axs[2].scatter(z,t, color=colours[i], label=str(round(get_ep(0.75,float(p_s[i])))),marker=markers[i])
 
     print(colours[i])
             
