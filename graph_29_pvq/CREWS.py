@@ -75,7 +75,12 @@ axs[1].set(xlabel='p', ylabel='Disasters')
 axs[2].set(xlabel='p', ylabel='Additional FPs')
 
 #labels = [str(p) for p in qs]
-axs[0].legend(title='q',bbox_to_anchor=(1.01, 1.05))
+
+h, l = axs[0].get_legend_handles_labels()
+
+labels, handles = zip(*sorted(zip(l, h), key=lambda t: float(t[0])))
+
+axs[0].legend(labels,handles,title='q',bbox_to_anchor=(1.01, 1.05))
 #axs[1].legend(labels)
 #axs[2].legend(labels)
 
