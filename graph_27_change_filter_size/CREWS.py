@@ -46,7 +46,7 @@ fig, axs = plt.subplots(3)
 
 markers = ['^','o','+','x','*','d','8','D','>','p','P']
 
-for i in range(len(entries):
+for i in range(len(entries)):
     results = [(int(x[1][1]),float(x[1][5])) for x in entries[i]]
 
     x = [a[0] for a in results]
