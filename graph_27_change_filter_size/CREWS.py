@@ -9,7 +9,7 @@ with open("crews_full_output.csv") as f:
     
 d = [x.split(',') for x in data]
 
-d = [x for x in d if int(x[7])%10000==0]
+d = [x for x in d if int(x[5])%10000==0]
 # Fix certain parameters
 num_websites = 10000
 num_submissions = 3000000
