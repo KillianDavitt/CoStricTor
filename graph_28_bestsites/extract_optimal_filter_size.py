@@ -76,7 +76,7 @@ h, l = axs[0].get_legend_handles_labels()
 labels, handles = zip(*sorted(zip(l, h), key=lambda t: float(t[0])))
 
 
-axs[0].legend(labels,handles,bbox_to_anchor=(1.2, 1.05), title="epsilon")
+axs[0].legend(bbox_to_anchor=(1.2, 1.05), title="epsilon")
 plt.xlabel('websites considered')
 axs[0].set_ylabel('upgrades')
 axs[1].set_ylabel('false positives')
