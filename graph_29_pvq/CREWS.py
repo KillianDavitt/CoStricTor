@@ -39,9 +39,9 @@ NUM_COLORS = len(qs)
 cm = plt.get_cmap('gist_rainbow')
 print(cm(1))
 
-#axs[0].set_prop_cycle('color', [cm(1.*i/NUM_COLORS) for i in range(NUM_COLORS)])
-#axs[1].set_prop_cycle('color', [cm(1.*i/NUM_COLORS) for i in range(NUM_COLORS)])
-#axs[2].set_prop_cycle('color', [cm(1.*i/NUM_COLORS) for i in range(NUM_COLORS)])
+axs[0].set_prop_cycle('color', [cm(1.*0/NUM_COLORS) for i in range(NUM_COLORS)])
+axs[1].set_prop_cycle('color', [cm(1.*0/NUM_COLORS) for i in range(NUM_COLORS)])
+axs[2].set_prop_cycle('color', [cm(1.*0/NUM_COLORS) for i in range(NUM_COLORS)])
 
 axs[0].set_ylim(00,1000)
 axs[1].set_ylim(0,200)
