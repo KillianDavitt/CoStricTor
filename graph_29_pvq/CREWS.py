@@ -72,7 +72,7 @@ for i in range(len(entries)):
     axs[2].scatter(y,x, label=round(float(entries[i][0][1][8]),3))
 
 axs[0].set(xlabel='p', ylabel='Upgrades')
-axs[1].set(xlabel='p', ylabel='Disasters')
+axs[1].set(xlabel='p', ylabel='Significant FPs')
 axs[2].set(xlabel='p', ylabel='Additional FPs')
 
 #labels = [str(p) for p in qs]
