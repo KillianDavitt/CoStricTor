@@ -15,9 +15,9 @@ with open('crews_combined_output.csv') as f:
 
 raw_data = [x.split(',') for x in d]
 
-p_s = list(set([x[8] for x in raw_data]))
+#p_s = list(set([x[8] for x in raw_data]))
 filter_sizes = list(set([x[7] for x in raw_data]))
-
+p_s = [0.5246331135813284,0.12995149343859222,0.01981333734650907,0.0027281825552509286,0.0003700923931708333]
 
 # 2d array of results by p value
 results_per_p = []
