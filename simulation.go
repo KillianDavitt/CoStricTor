@@ -6,10 +6,6 @@ import (
 	"time"
 	"fmt"
 	"math"
-	//"os"
-	//"bufio"
-	//"log"
-	//"strconv"
 )
 
 func generateSites(sites []string, hstsProp float64, httpProp float64) ([]string,[]string,[]string) {
@@ -174,20 +170,7 @@ func runSim(prms []interface{}, hsts []string, http []string, https_no_hsts []st
 	}
 	
 	fmt.Printf("%d,%d,%d,%d,%d,%d,%d,%d,%g,%g,%g,%g,%d,%d,%d\n",len(hsts), final_benefit,disasters, initial_true_hsts,disasters_averted, filterSize, numSamples, numSites, p,q,primaryThresholdModifier,secondaryThresholdModifier , extra_disasters, hits_in_secondary, hits_in_primary)
-	//file, err := os.OpenFile("test.txt", os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644)
- 
-	//if err != nil {
-	//	log.Fatalf("failed creating file: %s", err)
-	//}
- 
-	//datawriter := bufio.NewWriter(file)
- 
-	//for _, data := range extraDisasterList {
-	//	_, _ = datawriter.WriteString(strconv.FormatBool(data) + ",")
-	//}
- 
-	//datawriter.Flush()
-	//file.Close()
+
 	defer wg.Done()
 }
 
