@@ -1,9 +1,11 @@
-* CREWS Simulator
-Go code to simulate the crews protocol.
+* CoStricTor Simulator
+Go code to simulate the CoStricTor protocol.
 
 #+BEGIN_SRC bash
 go run main.go bloom.go crews.go simulation.go
 #+END_SRC
+
+The code is designed to run on the cs high performance cluster, as such you will see references to this in the main.go file
 
 * calculating p or q from epsilon
 
@@ -11,7 +13,7 @@ $$p = \frac{q}{(1-q)e^epsilon + q}$$
 
 $$q = \frac{p e^epsilon}{1-p+pe^epsilon}$$
 
-#+begin_src python export:all
+#+begin_src python :export all
   import math
   
   def p(q,ep):
@@ -20,16 +22,11 @@ $$q = \frac{p e^epsilon}{1-p+pe^epsilon}$$
   def q(p,ep):
         return (p * math.e ** ep)/(1-p+p*math.e**ep)
   
-  #return (p(0.9,7))
-  #return q(0.0082002,7)
   
   qs = [0.95,0.94,0.93,0.92,0.91,0.9,0.89,0.88,0.87,0.86,0.85]
   ps = []
   for i in qs:
         ps.append(p(i,7))
   
-  print(ps)
+  return qs
 #+end_src
-
-#+RESULTS:
-: None
