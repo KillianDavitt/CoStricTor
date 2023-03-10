@@ -1,15 +1,4 @@
-#   This is the most basic QSUB file needed for this cluster.
-#   Further examples can be found under /share/apps/examples
-#   Most software is NOT in your PATH but under /share/apps
-#
-#   For further info please read http://hpc.cs.ucl.ac.uk
-#   For cluster help email cluster-support@cs.ucl.ac.uk
-#
-#   NOTE hash dollar is a scheduler directive not a comment.
-
-
-# These are flags you must include - Two memory and one runtime.
-# Runtime is either seconds or hours:min:sec
+# This file contains the directives for the high performance cluster
 
 #$ -l tmem=2G
 #$ -l h_vmem=2G
