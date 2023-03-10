@@ -3,7 +3,7 @@
 #$ -l tmem=2G
 #$ -l h_vmem=2G
 #$ -l h_rt=86000 
-#$ -wd /home/kdavitt/crews/
+#$ -wd /home/<user>/crews/
 #$ -t 1-200
 #These are optional flags but you probably want them in all jobs
 #$ -S /bin/bash
