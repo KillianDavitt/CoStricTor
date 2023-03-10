@@ -5,7 +5,7 @@ Go code to simulate the CoStricTor protocol.
 go run main.go bloom.go crews.go simulation.go
 #+END_SRC
 
-The code is designed to run on the cs high performance cluster, as such you will see references to this in the main.go file
+The code is designed to run on the cs high performance cluster, as such you will see references to this in the main.go file.
 
 * calculating p or q from epsilon
 
