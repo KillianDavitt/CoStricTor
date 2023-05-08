@@ -9,7 +9,7 @@ def client():
     return app.test_client()
 
 
-def test_request_example(client):
+def test_submission(client):
     headers = [('Accept-Encoding', 'br')]
     lengths = []
     for size in [20, 40]:
@@ -20,3 +20,12 @@ def test_request_example(client):
         print(size)
         print(mean(lengths))
         print(stdev(lengths))
+
+
+def test_filters(client):
+    headers = [('Accept-Encoding', 'br')]
+    for size in [20, 40]:
+        response = client.get(f"/compressed?size={size}", headers=headers)
+        print()
+        print(size)
+        print(response.calculate_content_length())
