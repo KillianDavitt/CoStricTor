@@ -8,6 +8,7 @@ from flask_compress import Compress
 
 app = Flask(__name__)
 app.config["COMPRESS_REGISTER"] = False  # disable default compression of all eligible requests
+app.config["COMPRESS_BR_LEVEL"] = 11  # set brotli compression level (1-11); default:4
 compress = Compress()
 compress.init_app(app)
 
