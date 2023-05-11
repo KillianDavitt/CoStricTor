@@ -1,6 +1,6 @@
 import random
 from bitarray import bitarray
-from bitarray.util import serialize
+from bitarray.util import serialize, ba2hex
 
 from flask import Flask, request, jsonify
 
@@ -53,7 +53,7 @@ def submituncompressed():
             data[i] = 1 if random.random() < q else 0
         else:
             data[i] = 0 if random.random() < p else 1
-    return serialize(data) if t == "bit" else jsonify(data)
+    return data.tobytes() if t == "bit" else jsonify(data)
 
 
 @app.route("/compressedsubmit")
