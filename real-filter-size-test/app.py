@@ -26,7 +26,7 @@ data40k = read_parse("crews_output_2.csv")
 def uncompressed():
     size = request.args.get("size", default=20, type=int)
     data = data20k if size == 20 else data40k
-    return jsonify([data])
+    return map(lambda x: x.to_bytes(4, byteorder='little'), data)
 
 
 @app.route("/compressed")
