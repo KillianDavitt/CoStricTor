@@ -1,6 +1,5 @@
 import random
 from bitarray import bitarray
-from bitarray.util import serialize, ba2hex
 
 from flask import Flask, request, jsonify
 
