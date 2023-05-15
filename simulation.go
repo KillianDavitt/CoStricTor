@@ -168,7 +168,8 @@ func runSim(prms []interface{}, hsts []string, http []string, https_no_hsts []st
 			hits_in_primary+=1
 		}
 	}
-	
+	fmt.Println(c.primary.data)
+	fmt.Println(c.secondary.data)
 	fmt.Printf("%d,%d,%d,%d,%d,%d,%d,%d,%g,%g,%g,%g,%d,%d,%d\n",len(hsts), final_benefit,disasters, initial_true_hsts,disasters_averted, filterSize, numSamples, numSites, p,q,primaryThresholdModifier,secondaryThresholdModifier , extra_disasters, hits_in_secondary, hits_in_primary)
 
 	defer wg.Done()
