@@ -13,19 +13,28 @@ compress.init_app(app)
 
 
 def read_parse(filename):
+    data = []
     with open(filename, "r") as f:
-        data = [int(x) for x in f.readline()[1:-2].split(" ")]
-        return data
+        for line in f.readlines():
+            if line[0] != "[":
+                return data
+            data += [int(x) for x in line[1:-2].split(" ")]
 
 
-data20k = read_parse("crews_output_1.csv")
-data40k = read_parse("crews_output_2.csv")
+data20k = read_parse("full_filter_data_20k.csv")
+data20k_alt = read_parse("alt_full_filter_data_20k.csv")
+
+data40k = read_parse("full_filter_data_40k.csv")
+data40k_alt = read_parse("alt_full_filter_data_40k.csv")
 
 
 @app.route("/uncompressed")
 def uncompressed():
     size = request.args.get("size", default=20, type=int)
-    data = data20k if size == 20 else data40k
+    if size == 20:
+        data = data20k_alt + data20k
+    else:
+        data = data40k_alt + data40k
     return map(lambda x: x.to_bytes(4, byteorder='little'), data)
 
 
