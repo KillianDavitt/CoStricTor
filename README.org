@@ -11,7 +11,7 @@ The code is designed to run on the cs high performance cluster, as such you will
 
 $$p = \frac{q}{(1-q)e^{\epsilon} + q}$$
 
-$$q = \frac{p e^epsilon}{1-p+pe^{\epsilon}}$$
+$$q = \frac{p e^{\epsilon}}{1-p+pe^{\epsilon}}$$
 
 #+begin_src python :export all
   import math
