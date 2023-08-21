@@ -48,13 +48,13 @@ func runSim(prms []interface{}, hsts []string, http []string, https_no_hsts []st
 	var p float64 = prms[2].(float64)
 	var q float64 = prms[3].(float64)
 
-	c := NewCrews(filterSize, numHashes, uint(float64(numSites)*0.2), primaryThresholdModifier, secondaryThresholdModifier, p, q);
+	c := NewCostrictor(filterSize, numHashes, uint(float64(numSites)*0.2), primaryThresholdModifier, secondaryThresholdModifier, p, q);
 	
 	source := rand.NewSource(time.Now().UnixNano()) 
 	hsts_zipf := rand.NewZipf(rand.New(source), 1.1, 1, uint64(len(hsts)-1))
 
 	numHstsReports := int(float64(numSamples) * hstsProp)
-	// Sample n sites to report to crews, these can and will be duplicates
+	// Sample n sites to report to costrictor, these can and will be duplicates
 	for i:=0; i<numHstsReports; i++ {
 		n := hsts_zipf.Uint64()
 		c.ReportHsts(hsts[n])
@@ -168,8 +168,8 @@ func runSim(prms []interface{}, hsts []string, http []string, https_no_hsts []st
 			hits_in_primary+=1
 		}
 	}
-	fmt.Println(c.primary.data)
-	fmt.Println(c.secondary.data)
+	//fmt.Println(c.primary.data)
+	//fmt.Println(c.secondary.data)
 	fmt.Printf("%d,%d,%d,%d,%d,%d,%d,%d,%g,%g,%g,%g,%d,%d,%d\n",len(hsts), final_benefit,disasters, initial_true_hsts,disasters_averted, filterSize, numSamples, numSites, p,q,primaryThresholdModifier,secondaryThresholdModifier , extra_disasters, hits_in_secondary, hits_in_primary)
 
 	defer wg.Done()
