@@ -24,6 +24,8 @@ def test_submission(compress_level, size):
 @pytest.mark.parametrize("size", [20, 40])
 def test_filters(compress_level, size):
     app.config["COMPRESS_BR_LEVEL"] = compress_level
+    # app.config["COMPRESS_BR_WINDOW"] = 24
+    # app.config["COMPRESS_BR_BLOCK"] = 24
     client = app.test_client()
     headers = [('Accept-Encoding', 'br')]
     response = client.get(f"/compressed?size={size}", headers=headers)
