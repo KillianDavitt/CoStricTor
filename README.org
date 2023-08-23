@@ -2,31 +2,24 @@
 Go code to simulate the CoStricTor protocol.
 
 #+BEGIN_SRC bash
-go run main.go bloom.go crews.go simulation.go
+  docker build --tag costrictor .
+  docker run costrictor
 #+END_SRC
 
-The code is designed to run on the cs high performance cluster, as such you will see references to this in the main.go file.
+The code is designed to run on a particular high performance cluster, as such you will see references to this in the main.go file. The code will run on other machines however the performance may be poor for the values contained in the paper.
 
-* calculating p or q from epsilon
+The codebase has only 2 dependencies which are installed automatically when building the docker image
 
-$$p = \frac{q}{(1-q)e^{\epsilon} + q}$$
+- github.com/detailyang/fastrand-go 
+- github.com/schwarmco/go-cartesian-product 
 
-$$q = \frac{p e^{\epsilon}}{1-p+pe^{\epsilon}}$$
+"websites.txt" is a copy of the Majestic Million list of top websites, obtained from here: https://majestic.com/reports/majestic-million and used via Creative Commons licence
+* Filter size testing
+The "real_filter_size_test" directory provides a small application to test the compressible size of Bloom filter data obtained from the simulation.
+* Additional utilities
+the p_from_q.py script is provided to assist with lookups of the p parameter given q and epsilon, or q given p and epsilon.
 
-#+begin_src python :export all
-  import math
-  
-  def p(q,ep):
-        return (q)/((1-q)*(math.e**ep + q))
-  
-  def q(p,ep):
-        return (p * math.e ** ep)/(1-p+p*math.e**ep)
-  
-  
-  qs = [0.95,0.94,0.93,0.92,0.91,0.9,0.89,0.88,0.87,0.86,0.85]
-  ps = []
-  for i in qs:
-        ps.append(p(i,7))
-  
-  return qs
-#+end_src
+
+n > (i/w) . c
+
+300000000/20 . 0.07     (0.045)
