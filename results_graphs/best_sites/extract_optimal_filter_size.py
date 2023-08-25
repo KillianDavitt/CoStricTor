@@ -34,7 +34,7 @@ for i in range(len(p_s)):
     t = []
     # Get the best filter size for this p, and add it to x,y
     for f in filter_sizes:
-        qualifies = lambda x: (((int(x[2])<int(x[1])/8)) and x[7]==f and x[8]==p_s[i])
+        qualifies = lambda x: (((int(x[2])<int(x[1])/4)) and x[7]==f and x[8]==p_s[i])
         end_results = []
         ## for every p in the test, find the optimal filter size
         
@@ -78,6 +78,6 @@ labels, handles = zip(*sorted(zip(l, h), key=lambda t: float(t[0])))
 
 axs[0].legend(bbox_to_anchor=(1.2, 1.05), title="epsilon")
 plt.xlabel('websites considered')
-axs[0].set_ylabel('upgrades')
-axs[1].set_ylabel('false positives')
+axs[0].set_ylabel('TP HSTS\nDetections')
+axs[1].set_ylabel('False Positives')
 plt.savefig('graph.png', dpi=600, bbox_inches='tight')

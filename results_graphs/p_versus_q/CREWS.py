@@ -71,7 +71,7 @@ for i in range(len(entries)):
     y = [a[1] for a in results]
     axs[2].scatter(y,x, label=round(float(entries[i][0][1][8]),3))
 
-axs[0].set(xlabel='p', ylabel='Upgrades')
+axs[0].set(xlabel='p', ylabel='TP HSTS\nDetections')
 axs[1].set(xlabel='p', ylabel='Significant FPs')
 axs[2].set(xlabel='p', ylabel='Additional FPs')
 
