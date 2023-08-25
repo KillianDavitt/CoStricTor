@@ -1,0 +1,4 @@
+github.com/detailyang/fastrand-go v0.0.0-20191106153122-53093851e761 h1:JE51IdKjdVb0HNPv7EUv0JLKDI8fhrLA4SJR0TMtIzk=
+github.com/detailyang/fastrand-go v0.0.0-20191106153122-53093851e761/go.mod h1:IXKL1jrjbhvw8i6ouDxzEI7os8Bap6AQS/21SfVTDmg=
+github.com/schwarmco/go-cartesian-product v0.0.0-20180515110546-d5ee747a6dc9 h1:rIlaPhb87A5GJy0FbjlxesD2lyr052gS/pF6NSAvSEo=
+github.com/schwarmco/go-cartesian-product v0.0.0-20180515110546-d5ee747a6dc9/go.mod h1:0jtE6j9sPEDD6gfLzxwt1eF2VI6u/w1sQ99IuZcUfyk=
