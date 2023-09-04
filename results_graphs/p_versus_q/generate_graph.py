@@ -4,7 +4,7 @@
 
 import matplotlib.pyplot as plt
 
-with open("crews_full_output.csv") as f:
+with open("simulator_results.csv") as f:
     data = f.readlines()
     
 d = [x.split(',') for x in data]
