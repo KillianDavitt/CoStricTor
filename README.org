@@ -1,12 +1,26 @@
+* CoStriTor
+This repository accompanies the following paper:
+
+CoStricTor: Collaborative HTTP Strict Transport Security in Tor
+  Browser, published at PETs 2024.
+
+  The repository is divided into 3 sections
+  - Protocol simulation
+  - results graphing
+  - filter size compressability testing
+
+
 * CoStricTor Simulator
-Go code to simulate the CoStricTor protocol.
+The core of this repository is the simulation code for the CoStricTor Protocol written in Go.
 
 #+BEGIN_SRC bash
   docker build --tag costrictor .
   docker run costrictor
 #+END_SRC
 
-The code is designed to run on a particular high performance cluster, as such you will see references to this in the main.go file. The code will run on other machines however the performance may be poor for the values contained in the paper.
+The code is designed to run on a particular high performance cluster, as such you will see references to this in the main.go file. The code will run on other machines however the simluation might be slow to run without high parallelisation
+
+
 
 The codebase has only 2 dependencies which are installed automatically when building the docker image
 
@@ -20,6 +34,3 @@ The "real_filter_size_test" directory provides a small application to test the c
 the p_from_q.py script is provided to assist with lookups of the p parameter given q and epsilon, or q given p and epsilon.
 
 
-n > (i/w) . c
-
-300000000/20 . 0.07     (0.045)
