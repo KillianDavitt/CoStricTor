@@ -65,7 +65,6 @@ func main() {
 
 	numSites := 50000
 	numJobs := int(config["numJobs"])
-	a := config["numJobs"]
 	numSubmissions := int(config["numSubmissions"]) //90000000
 
 	var perms []interface{};
