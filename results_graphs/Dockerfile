@@ -9,3 +9,13 @@ WORKDIR /code/changing_filter_size/
 
 # Run
 CMD [ "python3", "generate_graph.py"]
+
+WORKDIR /code/p_vs_q/
+
+# Run
+CMD [ "python3", "generate_graph.py"]
+
+WORKDIR /code/best_sites/
+
+# Run
+CMD [ "python3", "graph_optimal_filter_size.py"]
