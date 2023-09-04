@@ -9,7 +9,7 @@ Provides a web server with a few endpoints:
   - take `h` parameter -- number of hash functions
   - take `t` parameter -- which specifies the encoding: if `bit` then the submission is encoded as a bit vector, otherwise it is a json list.
 
-Tests
+* Tests
 -----
 Test methods are provided to more easily determine size post-compression and the time required to compress.
 
