@@ -1,4 +1,4 @@
-* CoStriTor
+* CoStricTor
 This repository accompanies the following paper:
 
 CoStricTor: Collaborative HTTP Strict Transport Security in Tor
@@ -28,8 +28,14 @@ The codebase has only 2 dependencies which are installed automatically when buil
 - github.com/schwarmco/go-cartesian-product 
 
 "websites.txt" is a copy of the Majestic Million list of top websites, obtained from here: https://majestic.com/reports/majestic-million and used via Creative Commons licence
+* Results Graphing
+Several figures were produced for the paper using the results of the simulation. These were created using the python code provided in the
+
+results_graphs directory.
 * Filter size testing
-The "real_filter_size_test" directory provides a small application to test the compressible size of Bloom filter data obtained from the simulation.
+The "filter_compressiblilty_test" directory provides a small application to test the compressible size of Bloom filter data obtained from the simulation.
+
+For instructions please see the directory readme here: https://github.com/KillianDavitt/CoStricTor/tree/main/filter_compressibility_test
 * Additional utilities
 the p_from_q.py script is provided to assist with lookups of the p parameter given q and epsilon, or q given p and epsilon.
 
