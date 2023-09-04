@@ -4,7 +4,7 @@
 
 import matplotlib.pyplot as plt
 import math
-with open("crews_full_output.csv") as f:
+with open("simulator_results.csv") as f:
     data = f.readlines()
     
 d = [x.split(',') for x in data]
@@ -89,7 +89,7 @@ axs[0].legend(handles, labels,bbox_to_anchor=(1.2, 1.05),fancybox=True, shadow=T
 #axs[2].legend(labels)
 
 
-plt.savefig('filename.png', dpi=600, bbox_inches='tight')
+plt.savefig('changing_filter_size.png', dpi=600, bbox_inches='tight')
 
 entries
 

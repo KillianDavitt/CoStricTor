@@ -1,12 +1,11 @@
 # syntax=docker/dockerfile:1
 
-FROM python:latest
+FROM python:3.9
 
-#WORKDIR /app
 COPY requirements.txt requirements.txt
 RUN pip install -r requirements.txt
 
-COPY . .
+WORKDIR /code/changing_filter_size/
 
 # Run
-CMD [ "python3", "changing_filter_size/crews.py"]
+CMD [ "python3", "generate_graph.py"]

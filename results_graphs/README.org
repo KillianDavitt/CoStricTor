@@ -1,1 +1,11 @@
 * Graphing results
+The three directories here correpond to figures 3,4 and 5 in the paper. They can be produced by running the python code in each directory.
+
+They can also be produced by building and running the provided docker image.
+
+#+BEGIN_SRC bash
+  docker build --tag costrictor-results .
+  docker run costrictor-results
+#+END_SRC
+
+This will provide the resultant 3 figures in the output folder.
