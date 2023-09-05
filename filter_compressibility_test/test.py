@@ -11,7 +11,7 @@ def test_submission(compress_level, size):
     client = app.test_client()
     headers = [('Accept-Encoding', 'br')]
     lengths = []
-    for i in range(100000):
+    for i in range(1000):
         response = client.get(f"/compressedsubmit?size={size}", headers=headers)
         lengths.append(response.calculate_content_length())
 

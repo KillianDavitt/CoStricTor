@@ -10,4 +10,4 @@ COPY . .
 
 # Run
 CMD [ "flask", "run"]
-CMD ["pytest","test.py"]
+CMD ["pytest","test.py", "-vv", "-s"]
