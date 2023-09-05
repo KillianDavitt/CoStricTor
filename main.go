@@ -46,8 +46,8 @@ func main() {
 	hstsProp := config["hstsProp"]
 	httpProp := config["httpProp"]
 	sitesToCheck := int(config["sitesToCheck"])
-	primaryThresh := [1]float64{config["primaryThreshold"]}
-
+	primaryThresh := [1]float64{config["primaryThresholds"]}
+	secondaryThreshs := [1]float64{config["secondaryThreshs"]}
 	filterSizeStart := int(config["filterSizeStart"])
 	filterSizeEnd := int(config["filterSizeEnd"])
 	filterSizeStep := int(config["filterSizeStep"])
@@ -56,12 +56,11 @@ func main() {
 	for i:=0; i< numFilterSizes; i++ {
 		filterSizes[i] = filterSizeStep * (i+1)
 	}
-	fmt.Println(filterSizes);
+
 	
-	//secondaryThresholds := [6]float64{0.01,0.02,0.03,0.04,0.05,0.06}
-	secondaryThreshs := [1]float64{0.07}
-	ps := [6]float64{0.0003700923931708333,0.5246331135813284,0.12995149343859222,0.01981333734650907,0.0027281825552509286,0.0000067809422394}
-	qs := [1]float64{0.75}
+
+	ps := [1]float64{config["ps"]}
+	qs := [1]float64{config["qs"]}
 
 	numSites := 50000
 	numJobs := int(config["numJobs"])
