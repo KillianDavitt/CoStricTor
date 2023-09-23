@@ -8,7 +8,7 @@ COPY go.mod go.sum ./
 RUN go mod download
 
 COPY *.go ./
-COPY run.csv ./
+COPY params.csv ./
 COPY websites.txt ./
 
 # Build
