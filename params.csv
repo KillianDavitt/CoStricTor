@@ -1,10 +1,12 @@
 hstsProp,0.2
 httpProp,0.2
 sitesToCheck,50000
-primaryThresh,0.045
+primaryThreshs,0.045
 secondaryThreshs,0.07
-filterSizeStarat,500
-filterSizeEnd,50000
-filterSizeStep,500
-numSubmissions,900000
+filterSizeStarat,1000
+filterSizeEnd,35000
+filterSizeStep,1000
+ps,0.0003700923931708333
+qs,0.75
+numSubmissions,300000
 numJobs,1
