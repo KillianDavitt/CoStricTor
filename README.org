@@ -9,16 +9,19 @@ CoStricTor: Collaborative HTTP Strict Transport Security in Tor
   - results graphing
   - filter size compressability testing
 
+All three components of this repository are run using docker (version 20.10.5)
 
 * CoStricTor Simulator
 The core of this repository is the simulation code for the CoStricTor Protocol written in Go.
 
 #+BEGIN_SRC bash
   docker build --tag costrictor .
-  docker run costrictor
+  docker run costrictor > results.csv
 #+END_SRC
 
 The code is designed to run on a particular high performance cluster, as such you will see references to this in the main.go file. The code will run on other machines however the simluation might be slow to run without high parallelisation
+
+The simulation runs with parameters given in params.csv the parameters provided should complete on an average laptop in approximately half an hour. These parameters are however not the ones used in the paper as the paper parameters would take a signficant length of time to complete especially when not using high performance hardware.
 
 
 
@@ -27,7 +30,7 @@ The codebase has only 2 dependencies which are installed automatically when buil
 - github.com/detailyang/fastrand-go 
 - github.com/schwarmco/go-cartesian-product 
 
-"websites.txt" is a copy of the Majestic Million list of top websites, obtained from here: https://majestic.com/reports/majestic-million and used via Creative Commons licence
+"websites.txt" is a copy of the Majestic Million list of top websites, obtained from Majestic.com: https://majestic.com/reports/majestic-million and used under a Creative Commons licence [[https://creativecommons.org/licenses/by/3.0][CC BY 3.0]]
 * Results Graphing
 Several figures were produced for the paper using the results of the simulation. These were created using the python code provided in the
 
