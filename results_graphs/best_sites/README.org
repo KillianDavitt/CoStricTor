@@ -1,0 +1,1 @@
+This graph is produced from the results of quite a number of simulation runs. Each simulation run, tested many results from a set filter size. Runs were completed for 10k-160k in increments of 10k, resulting in 16 large simulations. The results of these 16 simulations are combined and used as input for the python graphing script.
