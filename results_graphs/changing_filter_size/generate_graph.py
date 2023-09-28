@@ -52,7 +52,6 @@ for i in range(len(entries)):
 
     x = [a[0] for a in results]
     y = [a[1] for a in results]
-    print(float(e[0][1][8]))
     axs[0].scatter(y,x, label=round(get_ep(float(entries[i][0][1][8]))),marker=markers[i])
 
 for i in range(len(entries)):

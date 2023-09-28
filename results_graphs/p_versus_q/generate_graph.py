@@ -37,7 +37,6 @@ fig, axs = plt.subplots(3)
 NUM_COLORS = len(qs)
 
 cm = plt.get_cmap('gist_rainbow')
-print(cm(1))
 
 axs[0].set_prop_cycle('color', [cm(1.*6/NUM_COLORS) for i in range(NUM_COLORS)])
 axs[1].set_prop_cycle('color', [cm(1.*6/NUM_COLORS) for i in range(NUM_COLORS)])
@@ -88,7 +87,4 @@ axs[2].set(xlabel='p', ylabel='Additional FPs')
 
 plt.savefig('p_vs_q.png', dpi=600, bbox_inches='tight')
 print("Saved figure as 'p_vs_q.png'")
-entries
-
-results
 

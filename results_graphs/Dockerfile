@@ -7,12 +7,4 @@ RUN pip install -r requirements.txt
 
 WORKDIR /code/changing_filter_size/
 # Run
-CMD [ "python3", "generate_graph.py"]
-
-WORKDIR /code/p_versus_q/
-# Run
-CMD [ "python3", "generate_graph.py"]
-
-WORKDIR /code/best_sites/
-# Run
-CMD [ "python3", "graph_optimal_filter_size.py"]
+CMD [ "bash", "-c", "python3 generate_graph.py && cd ../p_versus_q && python3 generate_graph.py && cd ../best_sites && python3 graph_optimal_filter_size.py"]
