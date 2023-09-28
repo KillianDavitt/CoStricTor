@@ -90,8 +90,5 @@ axs[0].legend(handles, labels,bbox_to_anchor=(1.2, 1.05),fancybox=True, shadow=T
 
 
 plt.savefig('changing_filter_size.png', dpi=600, bbox_inches='tight')
-
-entries
-
-results
+print("Saved figure as 'changing_filter_size.png'")
 

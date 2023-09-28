@@ -5,7 +5,7 @@ They can also be produced by building and running the provided docker image.
 
 #+BEGIN_SRC bash
   docker build --tag costrictor-results .
-  docker run costrictor-results
+  docker run -v $(pwd):/code/ costrictor-results
 #+END_SRC
 
 This will provide the resultant 3 figures in the output folder.

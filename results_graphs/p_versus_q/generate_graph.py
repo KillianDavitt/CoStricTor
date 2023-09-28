@@ -86,8 +86,8 @@ axs[2].set(xlabel='p', ylabel='Additional FPs')
 #axs[2].legend(labels)
 
 
-plt.savefig('filename.png', dpi=600, bbox_inches='tight')
-
+plt.savefig('p_vs_q.png', dpi=600, bbox_inches='tight')
+print("Saved figure as 'p_vs_q.png'")
 entries
 
 results

@@ -41,7 +41,6 @@ for i in range(len(p_s)):
         first_filter = [x for x in raw_data if qualifies(x)]
         # If there are no good results, just say the best result is zero
         if len(first_filter)<1:
-            print("none qualified")
             y.append(0)
             x.append(f)
         else:
@@ -66,7 +65,6 @@ for i in range(len(p_s)):
     axs[1].scatter(k,l, color=colours[i], label=str(round(get_ep(0.75,float(p_s[i])))),marker=markers[i])
     #axs[2].scatter(z,t, color=colours[i], label=str(round(get_ep(0.75,float(p_s[i])))),marker=markers[i])
 
-    print(colours[i])
             
 #plt.ylim(0,3000)
 #labels = ([str(round(get_ep(0.75,float(p)))) for p in p_s])
@@ -81,3 +79,4 @@ plt.xlabel('websites considered')
 axs[0].set_ylabel('TP HSTS\nDetections')
 axs[1].set_ylabel('False Positives')
 plt.savefig('graph.png', dpi=600, bbox_inches='tight')
+print("Saved figure as 'graph.png'")
